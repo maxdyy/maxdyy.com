@@ -7,7 +7,7 @@ Note: process.env.NODE_ENV is automatically set by GAE  when deployed
   but will need to be manually set locally via `NODE_ENV=production npm run start`
 */
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const app = next({dev});
 
 const handle = app.getRequestHandler();
 
