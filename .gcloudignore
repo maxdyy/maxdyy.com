@@ -21,8 +21,6 @@ README.md
 .eslintignore
 .eslintrc
 .prettierrc
-.stylelintrc
 
 # Source code
-/pages/
-/style/
+/src/pages/
