@@ -31,9 +31,13 @@ const Footer = () => {
   return (
     <footer className={footerStyle}>
       <div className={innerWrapperStyle}>
-        <StyledLink href="https://github.com/maxdyy">GitHub</StyledLink>
-        <StyledLink href="https://twitter.com/maxdyy">Twitter</StyledLink>
-        <StyledLink href="https://www.linkedin.com/in/maxdyy">
+        <StyledLink href="https://github.com/maxdyy" target="_blank">
+          GitHub
+        </StyledLink>
+        <StyledLink href="https://twitter.com/maxdyy" target="_blank">
+          Twitter
+        </StyledLink>
+        <StyledLink href="https://www.linkedin.com/in/maxdyy" target="_blank">
           LinkedIn
         </StyledLink>
       </div>
