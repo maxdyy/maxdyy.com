@@ -46,7 +46,7 @@ const Header = () => {
   const logoStyle = css({
     width: '40px',
     padding: '3px',
-    border: `1px solid ${theme.colors.contentPrimary}`,
+    border: `2px solid ${theme.colors.border}`,
   });
 
   return (
