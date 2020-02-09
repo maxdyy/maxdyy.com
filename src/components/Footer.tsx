@@ -5,6 +5,7 @@ import {useStyletron} from 'baseui';
 
 // Components
 import {StyledLink} from 'baseui/link';
+import {Paragraph3} from 'baseui/typography';
 
 // Style
 import {wrapper} from '../styles/styles';
@@ -14,7 +15,7 @@ const Footer = () => {
   const [css, theme] = useStyletron();
   const footerStyle = css({
     margin: '20px 0 0 0',
-    padding: '30px 0',
+    padding: '30px 0 20px 0',
     backgroundColor: theme.colors.backgroundSecondary,
   });
   const innerWrapperStyle = css({
@@ -23,12 +24,27 @@ const Footer = () => {
     justifyContent: 'space-evenly',
   });
 
+  const copyRightStyle = css({
+    textAlign: 'center',
+  });
+
   return (
     <footer className={footerStyle}>
       <div className={innerWrapperStyle}>
-        <StyledLink>GitHub</StyledLink>
-        <StyledLink>Twitter</StyledLink>
-        <StyledLink>LinkedIn</StyledLink>
+        <StyledLink href="https://github.com/maxdyy" target="_blank">
+          GitHub
+        </StyledLink>
+        <StyledLink href="https://twitter.com/maxdyy" target="_blank">
+          Twitter
+        </StyledLink>
+        <StyledLink href="https://www.linkedin.com/in/maxdyy" target="_blank">
+          LinkedIn
+        </StyledLink>
+      </div>
+      <div className={copyRightStyle}>
+        <Paragraph3 marginBottom={0} marginTop="30px">
+          © 2017-{new Date().getFullYear()} Maksym Dmukhovskyy
+        </Paragraph3>
       </div>
     </footer>
   );
