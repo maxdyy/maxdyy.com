@@ -3,6 +3,9 @@ import Link from 'next/link';
 import GraphImg from 'graphcms-image';
 import CONSTS from '../../utils/consts';
 
+// Types
+import {PostProps} from '../../types/post';
+
 // Hooks
 import {useStyletron} from 'baseui';
 
@@ -12,18 +15,9 @@ import {Paragraph3} from 'baseui/typography';
 // Style
 import {flexBetween} from '../../styles/styles';
 
-type PostItemProps = {
-  post: {
-    id: string;
-    postThumbnail: string;
-    postTitle: string;
-    readtime: string;
-    postType: string;
-  };
-};
-
-const PostItem = ({post}: PostItemProps) => {
+const PostItem = ({post}: PostProps) => {
   const {
+    ROUTES,
     CONTENT: {POSTS},
   } = CONSTS;
   const {id, postThumbnail, postTitle, readtime} = post;
@@ -54,6 +48,7 @@ const PostItem = ({post}: PostItemProps) => {
   const postItemTitleStyle = css({
     margin: 0,
     color: theme.colors.contentPrimary,
+    textDecoration: 'none',
     fontWeight: 500,
     [theme.mediaQuery.small]: {
       fontSize: '20px',
@@ -74,7 +69,11 @@ const PostItem = ({post}: PostItemProps) => {
         </div>
         <div className={postItemInnerWrapperStyle}>
           <div className={postItemInfoWrapperStyle}>
-            <h1 className={postItemTitleStyle}>{postTitle}</h1>
+            <Link href={`${ROUTES.POST}${id}`} passHref replace>
+              <a className={postItemTitleStyle}>
+                <h1 className={postItemTitleStyle}>{postTitle}</h1>
+              </a>
+            </Link>
             <Paragraph3>
               {readtime} {POSTS.READ}
             </Paragraph3>

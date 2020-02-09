@@ -7,6 +7,7 @@ import {useStyletron} from 'baseui';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+// Types
 type LayoutProps = {
   children: React.ReactNode;
 };

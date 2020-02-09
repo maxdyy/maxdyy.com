@@ -20,10 +20,10 @@ app
     const server = express();
     server.use(compression());
 
-    // Note: We're using Next.Js 9's file based dynamic routing so no need to match dynamic urls as in  version
+    // Note: We're using Next.Js 9's file based dynamic routing so no need to match dynamic urls
     server.get('*', (req, res) => handle(req, res));
 
-    server.listen(port, err => {
+      server.listen(port, err => {
       if (err) throw err;
       console.log(
         `> Ready on http://localhost:${port} NODE_ENV: ${process.env.NODE_ENV} 🚀`,
