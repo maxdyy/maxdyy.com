@@ -1,4 +1,7 @@
 const CONSTS = {
+  ROUTES: {
+    POST: '/post/',
+  },
   API: {
     ENDPOINTS: {
       MASTER:

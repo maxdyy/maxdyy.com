@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Types
+import {PostsProps} from '../../types/posts';
+
 // Hooks
 import {useStyletron} from 'baseui';
 
@@ -9,11 +12,7 @@ import PostItem from './PostItem';
 // Style
 import {wrapper} from '../../styles/styles';
 
-type PostsProps = {
-  posts: object;
-};
-
-const Posts = ({posts}) => {
+const Posts = ({posts}: PostsProps) => {
   // Style
   const [css] = useStyletron();
   const postsWrapperStyle = css({

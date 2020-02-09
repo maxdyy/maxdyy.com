@@ -17,12 +17,6 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
   }
 
   render() {
-    const baseStyle = {
-      margin: 0,
-      padding: 0,
-      fontFamily:
-        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    };
     return (
       <html>
         <Head>
@@ -109,7 +103,7 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#141414" />
         </Head>
-        <body style={baseStyle}>
+        <body>
           <Main />
           <NextScript />
         </body>
