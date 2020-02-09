@@ -1,4 +1,5 @@
 import React from 'react';
+import CONSTS from '../utils/consts';
 
 // Hooks
 import {useStyletron} from 'baseui';
@@ -11,6 +12,15 @@ import {Paragraph3} from 'baseui/typography';
 import {wrapper} from '../styles/styles';
 
 const Footer = () => {
+  const {
+    CONTENT: {
+      FOOTER: {
+        SOCIAL: {GITHUB, TWITTER, LINKEDIN},
+        COPYRIGHT,
+      },
+    },
+  } = CONSTS;
+
   // Style
   const [css, theme] = useStyletron();
   const footerStyle = css({
@@ -31,19 +41,20 @@ const Footer = () => {
   return (
     <footer className={footerStyle}>
       <div className={innerWrapperStyle}>
-        <StyledLink href="https://github.com/maxdyy" target="_blank">
-          GitHub
+        <StyledLink href={GITHUB.URL} target="_blank">
+          {GITHUB.LABEL}
         </StyledLink>
-        <StyledLink href="https://twitter.com/maxdyy" target="_blank">
-          Twitter
+        <StyledLink href={TWITTER.URL} target="_blank">
+          {TWITTER.LABEL}
         </StyledLink>
-        <StyledLink href="https://www.linkedin.com/in/maxdyy" target="_blank">
-          LinkedIn
+        <StyledLink href={LINKEDIN.URL} target="_blank">
+          {LINKEDIN.LABEL}
         </StyledLink>
       </div>
       <div className={copyRightStyle}>
         <Paragraph3 marginBottom={0} marginTop="30px">
-          © 2017-{new Date().getFullYear()} Maksym Dmukhovskyy
+          {COPYRIGHT.START}
+          {new Date().getFullYear()} {COPYRIGHT.END}
         </Paragraph3>
       </div>
     </footer>
