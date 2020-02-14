@@ -4,6 +4,46 @@ html, body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+/* Post Markdown */
+.maxdyy-post-markdown p {
+    margin: 24px 0;
+}
+
+.maxdyy-post-markdown table {
+    width: 100%;
+}
+
+.maxdyy-post-markdown thead {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.maxdyy-post-markdown td,
+.maxdyy-post-markdown th {
+    padding: 15px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.maxdyy-post-markdown code,
+.maxdyy-post-markdown kbd,
+.maxdyy-post-markdown pre,
+.maxdyy-post-markdown samp {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.maxdyy-post-markdown blockquote {
+    border-left: 5px solid #E2E2E2;
+    margin: 18px 0 18px 18px;
+    padding-left: 18px;
+}
+
+.maxdyy-post-markdown a {
+    color: #EEEEEE;
+}
+
 
 
 /*
