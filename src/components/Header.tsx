@@ -44,7 +44,7 @@ const Header = () => {
     alignItems: 'center',
   });
   const logoStyle = css({
-    width: '40px',
+    width: theme.sizing.scale1000,
     padding: '3px',
     border: `2px solid ${theme.colors.border}`,
   });

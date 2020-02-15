@@ -14,13 +14,14 @@ import {Paragraph3} from 'baseui/typography';
 
 // Style
 import {flexBetween} from '../../styles/styles';
+import getPostTypeStyle from '../../utils/getPostTypeStyle';
 
 const PostItem = ({post}: PostProps) => {
   const {
     ROUTES,
     CONTENT: {POSTS},
   } = CONSTS;
-  const {id, postThumbnail, postTitle, readtime} = post;
+  const {id, postThumbnail, postTitle, readtime, postType} = post;
 
   // Style
   const [css, theme] = useStyletron();
@@ -28,11 +29,18 @@ const PostItem = ({post}: PostProps) => {
     margin: '32px 0',
     padding: '0 16px 0 24px',
   });
+  const {borderStyle, backgroundStyle} = getPostTypeStyle(postType);
   const postItemBorderWrapperStyle = css({
     display: 'flex',
     alignItems: 'center',
     padding: '16px',
     border: `2px solid ${theme.colors.border}`,
+    borderBottom: `2px solid ${borderStyle}`,
+    transition: theme.animation.timing100,
+    animation: theme.animation.easeInCurve,
+    ':hover': {
+      backgroundColor: backgroundStyle,
+    },
   });
   const postItemInnerWrapperStyle = css({
     ...flexBetween,
@@ -41,7 +49,7 @@ const PostItem = ({post}: PostProps) => {
     margin: '0 16px',
   });
   const postImageStyle = css({
-    width: '100px',
+    width: theme.sizing.scale2400,
     flexShrink: 0,
     border: `2px solid ${theme.colors.border}`,
   });
@@ -63,23 +71,23 @@ const PostItem = ({post}: PostProps) => {
 
   return (
     <div className={postItemStyle}>
-      <div className={postItemBorderWrapperStyle}>
-        <div className={postImageStyle}>
-          <GraphImg image={postThumbnail} maxWidth={150} />
-        </div>
-        <div className={postItemInnerWrapperStyle}>
-          <div className={postItemInfoWrapperStyle}>
-            <Link href={`${ROUTES.POST}${id}`} passHref replace>
-              <a className={postItemTitleStyle}>
+      <Link href={`${ROUTES.POST}${id}`} passHref replace>
+        <a className={postItemTitleStyle}>
+          <div className={postItemBorderWrapperStyle}>
+            <div className={postImageStyle}>
+              <GraphImg image={postThumbnail} maxWidth={150} />
+            </div>
+            <div className={postItemInnerWrapperStyle}>
+              <div className={postItemInfoWrapperStyle}>
                 <h1 className={postItemTitleStyle}>{postTitle}</h1>
-              </a>
-            </Link>
-            <Paragraph3>
-              {readtime} {POSTS.READ}
-            </Paragraph3>
+                <Paragraph3>
+                  {readtime} {POSTS.READ}
+                </Paragraph3>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </a>
+      </Link>
     </div>
   );
 };
