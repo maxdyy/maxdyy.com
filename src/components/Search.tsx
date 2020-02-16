@@ -18,7 +18,11 @@ const Search = () => {
 
   return (
     <div className={searchWrapperStyle}>
-      <StatefulSelect placeholder="Search..." type={TYPE.search} onChange={val => console.log(val)} />
+      <StatefulSelect
+        placeholder="Search..."
+        type={TYPE.search}
+        onChange={val => console.log(val)}
+      />
     </div>
   );
 };
