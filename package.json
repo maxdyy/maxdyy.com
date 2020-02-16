@@ -57,5 +57,8 @@
     "styletron-react": "^5.0.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "husky": "^4.2.3"
   }
 }

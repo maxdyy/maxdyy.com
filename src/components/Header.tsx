@@ -13,6 +13,7 @@ import {
   StyledNavigationItem,
 } from 'baseui/header-navigation';
 import {Button} from 'baseui/button';
+import Search from './Search';
 
 // Style
 import {wrapper, flexBetween} from '../styles/styles';
@@ -61,6 +62,7 @@ const Header = () => {
             </Link>
           </StyledNavigationItem>
         </StyledNavigationList>
+        <Search />
         <StyledNavigationList $align={ALIGN.right}>
           <StyledNavigationItem>
             <Button kind={'minimal'}>
