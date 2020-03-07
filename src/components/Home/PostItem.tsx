@@ -71,7 +71,7 @@ const PostItem = ({post}: PostProps) => {
 
   return (
     <div className={postItemStyle}>
-      <Link href={`${ROUTES.POST}${id}`} passHref replace>
+      <Link href={`/post/[id]`} as={`${ROUTES.POST}${id}`}>
         <a className={postItemTitleStyle}>
           <div className={postItemBorderWrapperStyle}>
             <div className={postImageStyle}>
