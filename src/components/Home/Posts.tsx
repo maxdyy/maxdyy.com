@@ -17,7 +17,7 @@ const Posts = ({posts}: PostsProps) => {
   const [css] = useStyletron();
   const postsWrapperStyle = css({
     ...wrapper,
-    margin: '30px auto',
+    margin: '60px auto',
   });
 
   const postItems = [...posts].map(post => (
