@@ -13,7 +13,7 @@ import {
   StyledNavigationItem,
 } from 'baseui/header-navigation';
 import {Button} from 'baseui/button';
-import Search from './Search';
+import SearchBar from './SearchBar';
 
 // Style
 import {wrapper, flexBetween} from '../styles/styles';
@@ -22,7 +22,7 @@ const Header = () => {
   const {
     CONTENT: {
       HEADER: {
-        NAVIGATION: {LOGO, ABOUT, CONTACT},
+        NAVIGATION: {LOGO, ABOUT},
       },
     },
   } = CONSTS;
@@ -62,21 +62,17 @@ const Header = () => {
             </Link>
           </StyledNavigationItem>
         </StyledNavigationList>
-        <Search />
-        <StyledNavigationList $align={ALIGN.right}>
+        <SearchBar />
+        <StyledNavigationList
+          $align={ALIGN.right}
+          $style={{marginRight: '24px'}}
+        >
           <StyledNavigationItem>
-            <Button kind={'minimal'}>
-              <Link href={ABOUT.URL}>
+            <Link href={ABOUT.URL}>
+              <Button kind={'minimal'}>
                 <a className={linkStyle}>{ABOUT.LABEL}</a>
-              </Link>
-            </Button>
-          </StyledNavigationItem>
-          <StyledNavigationItem>
-            <Button kind={'minimal'}>
-              <Link href={CONTACT.URL}>
-                <a className={linkStyle}>{CONTACT.LABEL}</a>
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </StyledNavigationItem>
         </StyledNavigationList>
       </div>

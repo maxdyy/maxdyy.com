@@ -19,9 +19,6 @@ const About = () => {
   const aboutTextWrapper = css({
     width: '40%',
   });
-  const aboutImageWrapper = css({
-    width: '60%',
-  });
 
   return (
     <Layout>
@@ -34,9 +31,6 @@ const About = () => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div className={aboutImageWrapper}>
-          <img src="/about-avatar.png" alt="Maksym's photo" />
         </div>
       </div>
     </Layout>
