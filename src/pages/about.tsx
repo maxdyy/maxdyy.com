@@ -1,5 +1,8 @@
 import React from 'react';
 
+// API
+import getPosts from '../api/get/posts';
+
 // Hooks
 import {useStyletron} from 'baseui';
 
@@ -9,7 +12,7 @@ import Layout from '../components/Layout';
 // Style
 import {wrapper} from '../styles/styles';
 
-const About = () => {
+const About = ({posts}) => {
   // Style
   const [css, theme] = useStyletron();
   const wrapperStyle = css({
@@ -35,6 +38,11 @@ const About = () => {
       </div>
     </Layout>
   );
+};
+
+About.getInitialProps = async () => {
+  const posts = await getPosts();
+  return {posts};
 };
 
 export default About;

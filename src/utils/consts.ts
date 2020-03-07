@@ -10,8 +10,7 @@ const CONSTS = {
     QUERIES: {
       POSTS_QUERY: `
         {
-          blogPosts(orderBy:createdAt_DESC) {
-            status
+          blogPosts(where: {status: PUBLISHED}, orderBy:createdAt_DESC) {
             id
             createdAt
             postThumbnail {

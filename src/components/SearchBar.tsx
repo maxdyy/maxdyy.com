@@ -9,6 +9,7 @@ import {useStyletron} from 'baseui';
 import {StatefulSelect, TYPE} from 'baseui/select';
 
 const SearchBar = () => {
+  // State
   const [searchOpen, toggleSearchOpen] = useState(false);
 
   // Style
