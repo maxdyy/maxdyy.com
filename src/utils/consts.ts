@@ -72,10 +72,12 @@ const CONSTS = {
         HOME: 'MAXDYY - Web Development',
         ABOUT: 'MAXDYY - About',
         POST: 'MAXDYY - ',
+        ERROR: 'MAXDYY - ERROR ',
       },
       DESCRIPTION: {
         HOME: 'All about Web Development',
         ABOUT: 'About MAXDYY',
+        ERROR: 'MAXDYY - ERROR ',
       },
       AUTHOR: 'Maksym Dmukhovskyy',
     },

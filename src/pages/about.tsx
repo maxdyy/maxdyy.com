@@ -30,7 +30,7 @@ const About = () => {
     display: 'flex',
   });
   const aboutTextWrapper = css({
-    padding: '50px 24px',
+    padding: '60px 24px',
   });
   const aboutTitle = css({
     margin: 0,
