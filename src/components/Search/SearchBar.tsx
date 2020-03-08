@@ -17,6 +17,7 @@ import SearchResults from './SearchResults';
 const SearchBar = () => {
   // State
   const [searchOpen, toggleSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [initialSearchPosts, setInitialSearchPosts] = useState([]);
 
@@ -39,16 +40,20 @@ const SearchBar = () => {
 
   // Filter Search Function
   const handleSearch = e => {
-    const searchQuery = e.target.value.toLowerCase();
+    const newSearchQuery = e.target.value.toLowerCase();
 
-    if (searchQuery.length >= 2) {
-      const filteredSearchResults = initialSearchPosts.filter(post =>
-        post.postText.toLowerCase().includes(searchQuery),
+    if (newSearchQuery.length >= 2) {
+      const filteredSearchResults = initialSearchPosts.filter(
+        post =>
+          post.postTitle.toLowerCase().includes(newSearchQuery) ||
+          post.postText.toLowerCase().includes(newSearchQuery),
       );
       setSearchResults(filteredSearchResults);
+      setSearchQuery(newSearchQuery);
       return;
     }
     setSearchResults([]);
+    setSearchQuery('');
     return;
   };
 
@@ -60,15 +65,18 @@ const SearchBar = () => {
     justifyContent: 'flex-end',
     flexGrow: 1,
     flexShrink: 1,
-    maxWidth: '300px',
+    maxWidth: '360px',
+    [theme.mediaQuery.medium]: {
+      position: 'relative',
+    },
   });
 
   const searchBarStyle = css({
     width: '100%',
     transition: theme.animation.timing100,
     [theme.mediaQuery.small]: {
-      display: searchOpen ? 'block' : 'none',
-      opacity: searchOpen ? 1 : 0,
+      display: searchOpen || searchQuery ? 'block' : 'none',
+      opacity: searchOpen || searchQuery ? 1 : 0,
       position: 'absolute',
       top: '75px',
       left: 0,
@@ -97,7 +105,7 @@ const SearchBar = () => {
           onChange={e => handleSearch(e)}
         />
       </div>
-      {searchResults.length ? (
+      {searchResults.length && (searchOpen || searchQuery) ? (
         <SearchResults searchResults={searchResults} />
       ) : null}
       <div className={searchBarButton}>
