@@ -60,6 +60,7 @@ const CONSTS = {
       SEARCH_POSTS: `{
         blogPosts(where: {status: PUBLISHED}, orderBy:createdAt_DESC) {
           id,
+          postTitle,
           postText
         }
       }`,
