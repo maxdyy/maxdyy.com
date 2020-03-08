@@ -1,18 +1,28 @@
 import React from 'react';
+import Head from 'next/head';
 
-// API
-import getPosts from '../api/get/posts';
+// Consts
+import CONSTS from '../utils/consts';
 
 // Hooks
 import {useStyletron} from 'baseui';
 
 // Components
 import Layout from '../components/Layout';
+import {Paragraph3} from 'baseui/typography';
+import Bubbles from '../components/About/Bubbles';
 
 // Style
 import {wrapper} from '../styles/styles';
 
 const About = () => {
+  const {
+    CONTENT: {
+      HEAD: {TITLE, DESCRIPTION, AUTHOR},
+      ABOUT,
+    },
+  } = CONSTS;
+
   // Style
   const [css, theme] = useStyletron();
   const wrapperStyle = css({
@@ -20,20 +30,48 @@ const About = () => {
     display: 'flex',
   });
   const aboutTextWrapper = css({
-    width: '40%',
+    padding: '50px 24px',
+  });
+  const aboutTitle = css({
+    margin: 0,
+    color: theme.colors.contentPrimary,
+    textDecoration: 'none',
+    fontWeight: 500,
+    [theme.mediaQuery.small]: {
+      fontSize: '20px',
+    },
+    [theme.mediaQuery.medium]: {
+      fontSize: '28px',
+    },
+    [theme.mediaQuery.large]: {
+      fontSize: '36px',
+    },
+  });
+  const aboutText = css({
+    margin: '40px 0',
   });
 
   return (
     <Layout>
       <div className={wrapperStyle}>
+        <Head>
+          <title>{TITLE.ABOUT}</title>
+          <meta name="description" content={DESCRIPTION.ABOUT} />
+          <meta name="author" content={AUTHOR} />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@maxdyy" />
+          <meta name="twitter:title" content={`\`${TITLE.ABOUT}`} />
+          <meta name="twitter:description" content={DESCRIPTION.ABOUT} />
+          <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
+        </Head>
         <div className={aboutTextWrapper}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <h1 className={aboutTitle}>{ABOUT.TITLE}</h1>
+          <div className={aboutText}>
+            <Paragraph3>{ABOUT.TEXT}</Paragraph3>
+          </div>
+          <div>
+            <Bubbles />
+          </div>
         </div>
       </div>
     </Layout>

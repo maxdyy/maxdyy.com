@@ -3,6 +3,9 @@ import GraphImg from 'graphcms-image';
 import ReactMarkdown from 'react-markdown';
 import hljs from 'highlight.js';
 
+// Constants
+import CONSTS from '../../utils/consts';
+
 // Types
 import {PostProps} from '../../types/post';
 
@@ -14,12 +17,20 @@ import {useStyletron} from 'baseui';
 
 // Components
 import Layout from '../../components/Layout';
+import SeoHead from '../../components/SEO/SeoHead';
 
 // Style
 import {wrapper} from '../../styles/styles';
 
 const Post = ({post}: PostProps) => {
-  const {createdAt, postImage, postTitle, postText} = post;
+  const {
+    postImage,
+    postTitle,
+    postText,
+    postDescription,
+    postThumbnail,
+    postKeywords,
+  } = post;
 
   useEffect(() => {
     const codeBlocks = document.querySelectorAll('pre code');
@@ -33,7 +44,7 @@ const Post = ({post}: PostProps) => {
     ...wrapper,
     padding: '0 16px 0 24px',
     boxSizing: 'border-box',
-    margin: '24px auto 96px auto',
+    margin: '60px auto 96px auto',
   });
 
   const imageStyle = css({
@@ -54,6 +65,12 @@ const Post = ({post}: PostProps) => {
   return (
     <Layout>
       <div className={wrapperStyle}>
+        <SeoHead
+          postThumbnail={postThumbnail}
+          postTitle={postTitle}
+          postKeywords={postKeywords}
+          postDescription={postDescription}
+        />
         <div className={imageStyle}>
           <GraphImg image={postImage} />
         </div>
