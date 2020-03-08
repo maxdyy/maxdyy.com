@@ -12,7 +12,7 @@ import Layout from '../components/Layout';
 // Style
 import {wrapper} from '../styles/styles';
 
-const About = ({posts}) => {
+const About = () => {
   // Style
   const [css, theme] = useStyletron();
   const wrapperStyle = css({
@@ -38,11 +38,6 @@ const About = ({posts}) => {
       </div>
     </Layout>
   );
-};
-
-About.getInitialProps = async () => {
-  const posts = await getPosts();
-  return {posts};
 };
 
 export default About;
