@@ -13,7 +13,7 @@ import {
   StyledNavigationItem,
 } from 'baseui/header-navigation';
 import {Button} from 'baseui/button';
-import SearchBar from './SearchBar';
+import SearchBar from './Search/SearchBar';
 
 // Style
 import {wrapper, flexBetween} from '../styles/styles';

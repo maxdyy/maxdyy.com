@@ -1,5 +1,8 @@
 import React from 'react';
 
+// API
+import getPosts from '../api/get/posts';
+
 // Hooks
 import {useStyletron} from 'baseui';
 
