@@ -13,7 +13,7 @@ import {
   StyledNavigationItem,
 } from 'baseui/header-navigation';
 import {Button} from 'baseui/button';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 
 // Style
 import {wrapper, flexBetween} from '../styles/styles';
@@ -62,7 +62,7 @@ const Header = () => {
             </Link>
           </StyledNavigationItem>
         </StyledNavigationList>
-        <SearchBar />
+        {/*<SearchBar />*/}
         <StyledNavigationList
           $align={ALIGN.right}
           $style={{marginRight: '24px'}}
