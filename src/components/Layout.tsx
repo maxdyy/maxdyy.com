@@ -17,6 +17,8 @@ const Layout = ({children}: LayoutProps) => {
   const [css, theme] = useStyletron();
   const layoutStyle = css({
     backgroundColor: theme.colors.backgroundPrimary,
+    overflow: 'hidden',
+    position: 'relative',
   });
 
   return (
