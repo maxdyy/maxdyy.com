@@ -18,7 +18,7 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
 
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           {this.props.stylesheets.map((sheet, i) => (
             <style

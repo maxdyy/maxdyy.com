@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 
 // Constants
@@ -6,6 +6,7 @@ import CONSTS from '../../utils/consts';
 
 // Hooks
 import {useStyletron} from 'baseui';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 // Components
 import {Button} from 'baseui/button';
@@ -16,10 +17,14 @@ import SearchResults from './SearchResults';
 
 const SearchBar = () => {
   // State
-  const [searchOpen, toggleSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchOpen, toggleSearchOpen] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [searchResults, setSearchResults] = useState([]);
   const [initialSearchPosts, setInitialSearchPosts] = useState([]);
+
+  // Ref
+  const searchBarRef = useRef();
+  useOnClickOutside(searchBarRef, () => toggleSearchOpen(false));
 
   useEffect(() => {
     const {
@@ -65,9 +70,10 @@ const SearchBar = () => {
     justifyContent: 'flex-end',
     flexGrow: 1,
     flexShrink: 1,
-    maxWidth: '360px',
+    maxWidth: '50px',
     [theme.mediaQuery.medium]: {
       position: 'relative',
+      maxWidth: '360px',
     },
   });
 
@@ -75,8 +81,8 @@ const SearchBar = () => {
     width: '100%',
     transition: theme.animation.timing100,
     [theme.mediaQuery.small]: {
-      display: searchOpen || searchQuery ? 'block' : 'none',
-      opacity: searchOpen || searchQuery ? 1 : 0,
+      display: searchOpen ? 'block' : 'none',
+      opacity: searchOpen ? 1 : 0,
       position: 'absolute',
       top: '75px',
       left: 0,
@@ -97,15 +103,17 @@ const SearchBar = () => {
   });
 
   return (
-    <div className={searchWrapperStyle}>
+    <div ref={searchBarRef} className={searchWrapperStyle}>
       <div className={searchBarStyle}>
         <Input
           endEnhancer={<Search size="18px" />}
           placeholder="Search..."
           onChange={e => handleSearch(e)}
+          aria-label="search"
+          onFocus={() => toggleSearchOpen(true)}
         />
       </div>
-      {searchResults.length && (searchOpen || searchQuery) ? (
+      {searchOpen && searchQuery ? (
         <SearchResults searchResults={searchResults} />
       ) : null}
       <div className={searchBarButton}>
