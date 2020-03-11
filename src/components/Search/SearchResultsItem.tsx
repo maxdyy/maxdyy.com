@@ -29,19 +29,28 @@ const SearchResultItem = ({post}) => {
       border: 'none',
     },
   });
+  const searchItemLink = css({
+    color: theme.colors.contentPrimary,
+    textDecoration: 'none',
+    [':hover']: {
+      textDecoration: 'none',
+    },
+  });
 
   return (
     <div className={searchItem}>
       <Link href={`/post/[id]`} as={`${ROUTES.POST}${id}`}>
-        <Paragraph3
-          $style={{
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-          }}
-        >
-          {postTitle}
-        </Paragraph3>
+        <a className={searchItemLink}>
+          <Paragraph3
+            $style={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
+          >
+            {postTitle}
+          </Paragraph3>
+        </a>
       </Link>
     </div>
   );
