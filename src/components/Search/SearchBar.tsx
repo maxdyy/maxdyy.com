@@ -110,6 +110,7 @@ const SearchBar = () => {
           placeholder="Search..."
           onChange={e => handleSearch(e)}
           aria-label="search"
+          onFocus={() => toggleSearchOpen(true)}
         />
       </div>
       {searchOpen && searchQuery ? (
