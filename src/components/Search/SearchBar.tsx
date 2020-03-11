@@ -103,6 +103,7 @@ const SearchBar = () => {
           endEnhancer={<Search size="18px" />}
           placeholder="Search..."
           onChange={e => handleSearch(e)}
+          aria-label="search"
         />
       </div>
       {searchResults.length && (searchOpen || searchQuery) ? (

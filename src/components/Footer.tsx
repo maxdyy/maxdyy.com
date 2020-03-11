@@ -41,13 +41,13 @@ const Footer = () => {
   return (
     <footer className={footerStyle}>
       <div className={innerWrapperStyle}>
-        <StyledLink href={GITHUB.URL} target="_blank">
+        <StyledLink href={GITHUB.URL} target="_blank" rel="noreferrer">
           {GITHUB.LABEL}
         </StyledLink>
-        <StyledLink href={TWITTER.URL} target="_blank">
+        <StyledLink href={TWITTER.URL} target="_blank" rel="noreferrer">
           {TWITTER.LABEL}
         </StyledLink>
-        <StyledLink href={LINKEDIN.URL} target="_blank">
+        <StyledLink href={LINKEDIN.URL} target="_blank" rel="noreferrer">
           {LINKEDIN.LABEL}
         </StyledLink>
       </div>
