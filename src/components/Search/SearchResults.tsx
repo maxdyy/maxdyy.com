@@ -30,7 +30,9 @@ const SearchResults = ({searchResults}) => {
     },
   });
 
-  return <div className={searchResultsWrapper}>{searchResultsItems}</div>;
+  return searchResults.length ? (
+    <div className={searchResultsWrapper}>{searchResultsItems}</div>
+  ) : null;
 };
 
 export default SearchResults;
