@@ -60,9 +60,12 @@ const About = () => {
           <meta name="author" content={AUTHOR} />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@maxdyy" />
-          <meta name="twitter:title" content={`\`${TITLE.ABOUT}`} />
+          <meta name="twitter:title" content={TITLE.ABOUT} />
           <meta name="twitter:description" content={DESCRIPTION.ABOUT} />
-          <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
+          <meta
+            name="twitter:image"
+            content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
+          />
         </Head>
         <div className={aboutTextWrapper}>
           <h1 className={aboutTitle}>{ABOUT.TITLE}</h1>

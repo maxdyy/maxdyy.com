@@ -45,9 +45,15 @@ const SearchBar = () => {
 
   // Filter Search Function
   const handleSearch = e => {
+    if (e.keyCode === 27) {
+      toggleSearchOpen(false);
+      return;
+    }
+
     const newSearchQuery = e.target.value.toLowerCase();
 
     if (newSearchQuery.length >= 2) {
+      toggleSearchOpen(true);
       const filteredSearchResults = initialSearchPosts.filter(
         post =>
           post.postTitle.toLowerCase().includes(newSearchQuery) ||
@@ -108,9 +114,9 @@ const SearchBar = () => {
         <Input
           endEnhancer={<Search size="18px" />}
           placeholder="Search..."
-          onChange={e => handleSearch(e)}
           aria-label="search"
           onFocus={() => toggleSearchOpen(true)}
+          onKeyDown={e => handleSearch(e)}
         />
       </div>
       {searchOpen && searchQuery ? (
