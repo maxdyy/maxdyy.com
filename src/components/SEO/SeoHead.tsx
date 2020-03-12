@@ -19,7 +19,7 @@ const SeoHead = ({postTitle, postThumbnail, postDescription, postKeywords}) => {
       <meta name="author" content="Maksym Dmukhovskyy" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@maxdyy" />
-      <meta name="twitter:title" content={`\`${TITLE.POST} ${postTitle}`} />
+      <meta name="twitter:title" content={`${TITLE.POST} ${postTitle}`} />
       <meta name="twitter:description" content={postDescription} />
       <meta
         name="twitter:image"
