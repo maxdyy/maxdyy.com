@@ -127,13 +127,57 @@ const CONSTS = {
     },
     ABOUT: {
       TITLE: `About Me`,
-      TEXT: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.`,
+      TEXT: `My name is <strong>Maksym Dmukhovskyy</strong>.
+            <br>
+            <br>
+
+            I'm a <strong>Lead Front End Engineer</strong> on e-commerce projects.
+            <br>
+            <br>
+            My day to day work involves:
+            <br>
+            - Coordinating a team of Front End Engineers
+            <br>
+            - Doing code reviews and pair programming sessions
+            <br>
+            - Working with UI/UX Designers and Business Analysts
+            <br>
+            - Implementing complex Front End solutions
+            <br>
+            <br>
+            The tech stack that I've been working with includes:
+            <br>
+            - JSP, SCSS, JavaScript (ES6), ReactJS
+            <br>
+            - Webpack, ESLint, StyleLint
+            <br>
+            - SAP Commerce Cloud / Shopware 6
+            <br>
+            <br>
+            I'm very lucky to say that I have a big passion for what I'm doing on my job.
+            <br>
+            This motivates me to learn new things and improve my skills.
+            <br>
+            I'm very curios and love experimenting with new technologies.
+            <br>
+            <br>
+            Besides my daily job I love traveling, hiking with friends and exploring new places.
+            <br>
+            And occasionally shooting some photos. 
+            <br>
+            <br>
+            <br>
+            If you feel like chatting, you can find me on:
+            
+            <a class="maxdyy-link-no-decor" href="https://twitter.com/maxdyy" target="_blank" rel="noreferrer">
+                <strong>@Twitter</strong>
+            </a> or 
+            <a class="maxdyy-link-no-decor" href="https://www.linkedin.com/in/maxdyy/" target="_blank" rel="noreferrer">
+                <strong>@LinkedIn</strong>
+            </a>.
+            <br>
+            I speak Italian, English and Russian :)
+        `,
     },
   },
 };
