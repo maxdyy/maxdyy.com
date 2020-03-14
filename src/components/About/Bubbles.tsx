@@ -9,7 +9,7 @@ const Bubbles = () => {
   const bubblesWrapper = css({
     height: '380px',
     width: '100%',
-    margin: '200px 0 0 -30%',
+    margin: '130px 0 0 -30%',
   });
 
   // REST OF THE CSS IS INSIDE OF STYLE/STYLE.CSS

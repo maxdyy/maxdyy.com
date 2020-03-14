@@ -5,6 +5,11 @@ html, body {
     background-color: #141414;
 }
 
+.maxdyy-link-no-decor {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Post Markdown */
 .maxdyy-post-markdown p {
     margin: 24px 0;

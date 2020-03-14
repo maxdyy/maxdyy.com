@@ -31,6 +31,7 @@ const About = () => {
   });
   const aboutTextWrapper = css({
     padding: '60px 24px',
+    width: '100%',
   });
   const aboutTitle = css({
     margin: 0,
@@ -49,6 +50,7 @@ const About = () => {
   });
   const aboutText = css({
     margin: '40px 0',
+    width: '100%',
   });
 
   return (
@@ -70,7 +72,9 @@ const About = () => {
         <div className={aboutTextWrapper}>
           <h1 className={aboutTitle}>{ABOUT.TITLE}</h1>
           <div className={aboutText}>
-            <Paragraph3>{ABOUT.TEXT}</Paragraph3>
+            <Paragraph3>
+              <span dangerouslySetInnerHTML={{__html: ABOUT.TEXT}} />
+            </Paragraph3>
           </div>
           <div>
             <Bubbles />
