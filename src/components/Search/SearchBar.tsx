@@ -63,6 +63,8 @@ const SearchBar = () => {
       setSearchQuery(newSearchQuery);
       return;
     }
+
+    toggleSearchOpen(false);
     setSearchResults([]);
     setSearchQuery('');
     return;
@@ -116,7 +118,7 @@ const SearchBar = () => {
           placeholder="Search..."
           aria-label="search"
           onFocus={() => toggleSearchOpen(true)}
-          onKeyDown={e => handleSearch(e)}
+          onChange={e => handleSearch(e)}
         />
       </div>
       {searchOpen && searchQuery ? (
