@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development node server.js",
-    "build": "next build",
+    "prod": "next build",
     "start": "NODE_ENV=production node server.js",
-    "deploy": "rm -rf .next && npm run build && gcloud app deploy",
+    "deploy": "rm -rf .next && npm run prod && gcloud app deploy",
     "lint": "eslint 'pages/**/*.{js,ts,tsx}'",
     "test": "jest",
     "tsc": "tsc --noEmit"
