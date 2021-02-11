@@ -34,7 +34,6 @@ const CONSTS = {
         blogPost(where: {
           id: "${id}"
         }) {
-          status
             id
             createdAt
             postThumbnail {

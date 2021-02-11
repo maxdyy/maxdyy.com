@@ -1,6 +1,5 @@
 export type PostProps = {
   post: {
-    status: string;
     id: string;
     createdAt: string;
     postThumbnail: object;
