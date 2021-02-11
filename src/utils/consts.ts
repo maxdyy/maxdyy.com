@@ -4,12 +4,12 @@ const CONSTS = {
   },
   API: {
     ENDPOINTS: {
-      MASTER: `https://api-euwest.graphcms.com/v1/cjjvpziwn0ehw01d06ai7cygj/master`,
+      MASTER: `https://api-eu-central-1.graphcms.com/v2/cjjvpziwn0ehw01d06ai7cygj/master`,
     },
     QUERIES: {
       POSTS_QUERY: `
         {
-          blogPosts(where: {status: PUBLISHED}, orderBy:createdAt_DESC) {
+          blogPosts(orderBy:createdAt_DESC) {
             id
             createdAt
             postThumbnail {
@@ -34,7 +34,6 @@ const CONSTS = {
         blogPost(where: {
           id: "${id}"
         }) {
-          status
             id
             createdAt
             postThumbnail {
@@ -57,7 +56,7 @@ const CONSTS = {
         }`;
       },
       SEARCH_POSTS: `{
-        blogPosts(where: {status: PUBLISHED}, orderBy:createdAt_DESC) {
+        blogPosts(orderBy:createdAt_DESC) {
           id,
           postTitle,
           postText

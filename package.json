@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development node server.js",
-    "build": "next build",
+    "prod": "next build",
     "start": "NODE_ENV=production node server.js",
-    "deploy": "rm -rf .next && npm run build && gcloud app deploy",
+    "deploy": "rm -rf .next && npm run prod && gcloud app deploy",
     "lint": "eslint 'pages/**/*.{js,ts,tsx}'",
     "test": "jest",
     "tsc": "tsc --noEmit"
@@ -38,7 +38,7 @@
     "@types/styletron-react": "^5.0.2",
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "baseui": "^9.30.0",
     "compression": "^1.7.4",
     "eslint": "^6.7.2",
@@ -56,7 +56,7 @@
     "react-markdown": "^4.3.1",
     "styletron-engine-atomic": "^1.1.2",
     "styletron-react": "^5.0.1",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^26.5.1",
     "typescript": "^3.7.3"
   },
   "devDependencies": {

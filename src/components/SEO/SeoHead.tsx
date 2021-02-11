@@ -25,6 +25,11 @@ const SeoHead = ({postTitle, postThumbnail, postDescription, postKeywords}) => {
         name="twitter:image"
         content={`https://media.graphcms.com/resize=width:450/${postThumbnail.handle}`}
       />
+      <meta property="og:title" content={`${TITLE.POST} ${postTitle}`} />
+      <meta
+        property="og:image"
+        content={`https://media.graphcms.com/resize=width:450/${postThumbnail.handle}`}
+      />
     </Head>
   );
 };
