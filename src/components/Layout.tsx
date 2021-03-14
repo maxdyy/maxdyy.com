@@ -24,15 +24,6 @@ const Layout = ({children}: LayoutProps) => {
   return (
     <div className={layoutStyle}>
       {/*ANALYTICS*/}
-      <noscript>
-        <div>
-          <img
-            src="https://mc.yandex.ru/watch/47621770"
-            style={{position: 'absolute', left: '-9999px'}}
-            alt=""
-          />
-        </div>
-      </noscript>
       {/*ANALYTICS*/}
       <Header />
       {children}

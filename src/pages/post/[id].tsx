@@ -34,7 +34,7 @@ const Post = ({post}: PostProps) => {
 
   useEffect(() => {
     const codeBlocks = document.querySelectorAll('pre code');
-    codeBlocks.forEach(block => hljs.highlightBlock(block));
+    codeBlocks.forEach(block => hljs.highlightBlock(block as HTMLElement));
   }, []);
 
   // Style
