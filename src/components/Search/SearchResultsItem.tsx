@@ -8,7 +8,7 @@ import {useStyletron} from 'baseui';
 // Components
 import {Paragraph3} from 'baseui/typography';
 
-const SearchResultItem = ({post}) => {
+const SearchResultItem = ({post, onResultClick}) => {
   const {ROUTES} = CONSTS;
   const {postTitle, id} = post;
 
@@ -40,7 +40,7 @@ const SearchResultItem = ({post}) => {
   return (
     <div className={searchItem}>
       <Link href={`/post/[id]`} as={`${ROUTES.POST}${id}`}>
-        <a className={searchItemLink}>
+        <a className={searchItemLink} onClick={onResultClick}>
           <Paragraph3
             $style={{
               whiteSpace: 'nowrap',

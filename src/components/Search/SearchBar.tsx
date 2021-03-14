@@ -52,21 +52,14 @@ const SearchBar = () => {
 
     const newSearchQuery = e.target.value.toLowerCase();
 
-    if (newSearchQuery.length >= 2) {
-      toggleSearchOpen(true);
-      const filteredSearchResults = initialSearchPosts.filter(
-        post =>
-          post.postTitle.toLowerCase().includes(newSearchQuery) ||
-          post.postText.toLowerCase().includes(newSearchQuery),
-      );
-      setSearchResults(filteredSearchResults);
-      setSearchQuery(newSearchQuery);
-      return;
-    }
-
-    toggleSearchOpen(false);
-    setSearchResults([]);
-    setSearchQuery('');
+    toggleSearchOpen(true);
+    const filteredSearchResults = initialSearchPosts.filter(
+      post =>
+        post.postTitle.toLowerCase().includes(newSearchQuery) ||
+        post.postText.toLowerCase().includes(newSearchQuery),
+    );
+    setSearchResults(filteredSearchResults);
+    setSearchQuery(newSearchQuery);
     return;
   };
 
@@ -122,7 +115,10 @@ const SearchBar = () => {
         />
       </div>
       {searchOpen && searchQuery ? (
-        <SearchResults searchResults={searchResults} />
+        <SearchResults
+          searchResults={searchResults}
+          onResultClick={() => toggleSearchOpen(false)}
+        />
       ) : null}
       <div className={searchBarButton}>
         <Button

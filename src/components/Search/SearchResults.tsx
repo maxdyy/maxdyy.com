@@ -6,9 +6,9 @@ import {useStyletron} from 'baseui';
 // Components
 import SearchResultItem from './SearchResultsItem';
 
-const SearchResults = ({searchResults}) => {
+const SearchResults = ({searchResults, onResultClick}) => {
   const searchResultsItems = searchResults.map(post => (
-    <SearchResultItem key={post.id} post={post} />
+    <SearchResultItem key={post.id} post={post} onResultClick={onResultClick} />
   ));
 
   // Style
