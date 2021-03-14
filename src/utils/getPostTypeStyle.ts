@@ -7,28 +7,28 @@ const getPostTypeStyle = (postType: string) => {
   switch (postType) {
     case 'WEBpost':
       return {
-        borderStyle: theme.colors.borderAccent,
-        backgroundStyle: theme.colors.backgroundAccent,
+        borderStyle: theme.colors.accent500,
+        backgroundStyle: theme.colors.accent500,
       };
     case 'JSpost':
       return {
-        borderStyle: theme.colors.borderWarning,
-        backgroundStyle: theme.colors.backgroundWarning,
+        borderStyle: theme.colors.accent500,
+        backgroundStyle: theme.colors.accent500,
       };
     case 'HTMLpost':
       return {
-        borderStyle: theme.colors.borderNegative,
-        backgroundStyle: theme.colors.backgroundNegative,
+        borderStyle: theme.colors.accent500,
+        backgroundStyle: theme.colors.accent500,
       };
     case 'CSSpost':
       return {
-        borderStyle: theme.colors.borderPositive,
-        backgroundStyle: theme.colors.backgroundPositive,
+        borderStyle: theme.colors.accent500,
+        backgroundStyle: theme.colors.accent500,
       };
     default:
       return {
-        borderStyle: theme.colors.border,
-        backgroundStyle: theme.colors.backgroundTertiary,
+        borderStyle: theme.colors.accent500,
+        backgroundStyle: theme.colors.accent500,
       };
   }
 };

@@ -45,7 +45,8 @@ const Header = () => {
     alignItems: 'center',
   });
   const logoStyle = css({
-    width: theme.sizing.scale1000,
+    height: '40px',
+    width: '40px',
     padding: '3px',
     border: `2px solid ${theme.colors.border}`,
   });
@@ -70,7 +71,9 @@ const Header = () => {
           <StyledNavigationItem>
             <Link href={ABOUT.URL}>
               <Button kind={'minimal'}>
-                <a className={linkStyle}>{ABOUT.LABEL}</a>
+                <a href={ABOUT.URL} className={linkStyle}>
+                  {ABOUT.LABEL}
+                </a>
               </Button>
             </Link>
           </StyledNavigationItem>
