@@ -1,5 +1,5 @@
 import React from 'react';
-import Document, {Head, Main, NextScript} from 'next/document';
+import Document, {Html, Head, Main, NextScript} from 'next/document';
 import {Provider as StyletronProvider} from 'styletron-react';
 import {Server, Sheet} from 'styletron-engine-atomic';
 import {styletron} from '../styles/styletron';
@@ -18,7 +18,7 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
 
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head>
           {this.props.stylesheets.map((sheet, i) => (
             <style
@@ -30,11 +30,6 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
             />
           ))}
           {/*ANALYTICS*/}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(47621770, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true })`,
-            }}
-          />
           {/*ANALYTICS*/}
           <link
             rel="apple-touch-icon"
@@ -114,7 +109,7 @@ class MyDocument extends Document<{stylesheets: Sheet[]}> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
