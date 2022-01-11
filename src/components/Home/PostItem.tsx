@@ -1,44 +1,44 @@
-import React from 'react';
-import Link from 'next/link';
-import GraphImg from 'graphcms-image';
-import CONSTS from '../../utils/consts';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import CONSTS from "../../utils/consts";
 
 // Types
-import {PostProps} from '../../types/post';
+import { PostProps } from "../../types/post";
 
 // Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from "baseui";
 
 // Components
-import {Paragraph3} from 'baseui/typography';
+import { Paragraph3 } from "baseui/typography";
 
 // Style
-import {flexBetween} from '../../styles/styles';
-import getPostTypeStyle from '../../utils/getPostTypeStyle';
+import { flexBetween } from "../../styles/styles";
+import getPostTypeStyle from "../../utils/getPostTypeStyle";
 
-const PostItem = ({post}: PostProps) => {
+const PostItem = ({ post }: PostProps) => {
   const {
     ROUTES,
-    CONTENT: {POSTS},
+    CONTENT: { POSTS },
   } = CONSTS;
-  const {id, postThumbnail, postTitle, readtime, postType} = post;
+  const { id, postThumbnail, postTitle, readtime, postType } = post;
 
   // Style
   const [css, theme] = useStyletron();
   const postItemStyle = css({
-    margin: '32px 0',
-    padding: '0 16px 0 24px',
+    margin: "32px 0",
+    padding: "0 16px 0 24px",
   });
-  const {borderStyle, backgroundStyle} = getPostTypeStyle(postType);
+  const { borderStyle, backgroundStyle } = getPostTypeStyle(postType);
   const postItemBorderWrapperStyle = css({
-    display: 'flex',
-    alignItems: 'center',
-    padding: '16px',
+    display: "flex",
+    alignItems: "center",
+    padding: "16px",
     border: `2px solid ${theme.colors.border}`,
     borderBottom: `2px solid ${borderStyle}`,
     transition: theme.animation.timing100,
     animation: theme.animation.easeInCurve,
-    ':hover': {
+    ":hover": {
       backgroundColor: backgroundStyle,
     },
   });
@@ -46,7 +46,7 @@ const PostItem = ({post}: PostProps) => {
     ...flexBetween,
   });
   const postItemInfoWrapperStyle = css({
-    margin: '0 16px',
+    margin: "0 16px",
   });
   const postImageStyle = css({
     width: theme.sizing.scale2400,
@@ -56,18 +56,20 @@ const PostItem = ({post}: PostProps) => {
   const postItemTitleStyle = css({
     margin: 0,
     color: theme.colors.contentPrimary,
-    textDecoration: 'none',
+    textDecoration: "none",
     fontWeight: 500,
     [theme.mediaQuery.small]: {
-      fontSize: '20px',
+      fontSize: "20px",
     },
     [theme.mediaQuery.medium]: {
-      fontSize: '28px',
+      fontSize: "28px",
     },
     [theme.mediaQuery.large]: {
-      fontSize: '36px',
+      fontSize: "36px",
     },
   });
+
+  console.log(postThumbnail);
 
   return (
     <div className={postItemStyle}>
@@ -75,7 +77,11 @@ const PostItem = ({post}: PostProps) => {
         <a className={postItemTitleStyle}>
           <div className={postItemBorderWrapperStyle}>
             <div className={postImageStyle}>
-              <GraphImg image={postThumbnail} maxWidth={150} />
+              <Image
+                src={`https://media.graphcms.com/${postThumbnail.handle}`}
+                width={96}
+                height={96}
+              />
             </div>
             <div className={postItemInnerWrapperStyle}>
               <div className={postItemInfoWrapperStyle}>

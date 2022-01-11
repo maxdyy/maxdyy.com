@@ -1,28 +1,25 @@
 import React, {useEffect} from 'react';
-import GraphImg from 'graphcms-image';
-import ReactMarkdown from 'react-markdown';
-import hljs from 'highlight.js';
-
-// Constants
-import CONSTS from '../../utils/consts';
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import hljs from "highlight.js";
 
 // Types
-import {PostProps} from '../../types/post';
+import { PostProps } from "../../types/post";
 
 // API
-import getPost from '../../api/get/post';
+import getPost from "../../api/get/post";
 
 // Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from "baseui";
 
 // Components
-import Layout from '../../components/Layout';
-import SeoHead from '../../components/SEO/SeoHead';
+import Layout from "../../components/Layout";
+import SeoHead from "../../components/SEO/SeoHead";
 
 // Style
-import {wrapper} from '../../styles/styles';
+import { wrapper } from "../../styles/styles";
 
-const Post = ({post}: PostProps) => {
+const Post = ({ post }: PostProps) => {
   const {
     postImage,
     postTitle,
@@ -33,8 +30,8 @@ const Post = ({post}: PostProps) => {
   } = post;
 
   useEffect(() => {
-    const codeBlocks = document.querySelectorAll('pre code');
-    codeBlocks.forEach(block => hljs.highlightBlock(block as HTMLElement));
+    const codeBlocks = document.querySelectorAll("pre code");
+    codeBlocks.forEach((block) => hljs.highlightBlock(block as HTMLElement));
   }, []);
 
   // Style
@@ -42,9 +39,9 @@ const Post = ({post}: PostProps) => {
 
   const wrapperStyle = css({
     ...wrapper,
-    padding: '0 16px 0 24px',
-    boxSizing: 'border-box',
-    margin: '60px auto 96px auto',
+    padding: "0 16px 0 24px",
+    boxSizing: "border-box",
+    margin: "60px auto 96px auto",
   });
 
   const imageStyle = css({
@@ -53,13 +50,13 @@ const Post = ({post}: PostProps) => {
 
   const titleStyle = css({
     color: theme.colors.contentPrimary,
-    margin: '48px 0 0 0',
+    margin: "48px 0 0 0",
   });
 
   const postStyle = css({
     color: theme.colors.contentPrimary,
-    margin: '32px 0',
-    textAlign: 'justify',
+    margin: "32px 0",
+    textAlign: "justify",
   });
 
   return (
@@ -72,11 +69,16 @@ const Post = ({post}: PostProps) => {
           postDescription={postDescription}
         />
         <div className={imageStyle}>
-          <GraphImg image={postImage} />
+          <Image
+            src={`https://media.graphcms.com/${postImage.handle}`}
+            width={500}
+            height={500}
+            className="hello"
+          />
         </div>
         <h1 className={titleStyle}>{postTitle}</h1>
         <ReactMarkdown
-          source={postText}
+          children={postText}
           className={`${postStyle} maxdyy-post-markdown`}
         />
         <div>{}</div>

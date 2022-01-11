@@ -1,22 +1,20 @@
 {
   "name": "maxdyy.com",
   "version": "1.0.0",
-  "description": "Personal Website 2020",
+  "description": "Personal Website 2021",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node server.js",
-    "prod": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "deploy": "rm -rf .next && npm run prod && gcloud app deploy",
-    "lint": "eslint 'pages/**/*.{js,ts,tsx}'",
+    "dev": "next",
+    "build": "next build",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}'",
+    "start": "next start",
     "test": "jest",
     "tsc": "tsc --noEmit"
   },
   "jest": {
     "globals": {
       "ts-jest": {
-        "tsConfig": "tsconfig.jest.json"
+        "tsconfig": "tsconfig.jest.json"
       }
     },
     "transform": {
@@ -31,35 +29,31 @@
     ]
   },
   "dependencies": {
-    "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.18",
-    "@types/react": "^16.9.16",
-    "@types/styletron-engine-atomic": "^1.1.0",
-    "@types/styletron-react": "^5.0.2",
-    "@typescript-eslint/eslint-plugin": "^2.12.0",
-    "@typescript-eslint/parser": "^2.12.0",
-    "axios": "^0.21.1",
-    "baseui": "^9.111.2",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.34",
+    "@types/styletron-engine-atomic": "^1.1.1",
+    "@types/styletron-react": "^5.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "axios": "^0.24.0",
+    "baseui": "^10.5.0",
     "compression": "^1.7.4",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.17.0",
-    "express": "^4.17.1",
-    "graphcms-image": "^1.1.0-beta4",
-    "highlight.js": "^10.6.0",
-    "jest": "^24.9.0",
-    "next": "^9.1.5",
-    "prettier": "^1.19.1",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "react-markdown": "^4.3.1",
-    "styletron-engine-atomic": "^1.4.7",
-    "styletron-react": "^5.0.1",
-    "ts-jest": "^26.5.1",
-    "typescript": "^3.7.3"
-  },
-  "devDependencies": {
-    "husky": "^4.2.3"
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "express": "^4.17.2",
+    "highlight.js": "^11.4.0",
+    "jest": "^27.3.1",
+    "next": "^12.0.2",
+    "prettier": "^2.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-markdown": "^7.1.2",
+    "styletron-engine-atomic": "^1.4.8",
+    "styletron-react": "^6.0.2",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
   }
 }
