@@ -1,21 +1,21 @@
-import React from 'react';
-import CONSTS from '../utils/consts';
+import React from "react";
+import CONSTS from "../utils/consts";
 
 // Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from "baseui";
 
 // Components
-import {StyledLink} from 'baseui/link';
-import {Paragraph3} from 'baseui/typography';
+import { StyledLink } from "baseui/link";
+import { Paragraph3 } from "baseui/typography";
 
 // Style
-import {wrapper} from '../styles/styles';
+import { wrapper } from "../styles/styles";
 
 const Footer = () => {
   const {
     CONTENT: {
       FOOTER: {
-        SOCIAL: {GITHUB, TWITTER, LINKEDIN},
+        SOCIAL: { GITHUB, TWITTER, LINKEDIN },
         COPYRIGHT,
       },
     },
@@ -24,18 +24,18 @@ const Footer = () => {
   // Style
   const [css, theme] = useStyletron();
   const footerStyle = css({
-    margin: '20px 0 0 0',
-    padding: '30px 0 20px 0',
+    margin: "20px 0 0 0",
+    padding: "30px 0 20px 0",
     backgroundColor: theme.colors.backgroundSecondary,
   });
   const innerWrapperStyle = css({
     ...wrapper,
-    display: 'flex',
-    justifyContent: 'space-evenly',
+    display: "flex",
+    justifyContent: "space-evenly",
   });
 
   const copyRightStyle = css({
-    textAlign: 'center',
+    textAlign: "center",
   });
 
   return (

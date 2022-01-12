@@ -1,16 +1,16 @@
 export const wrapper = {
-  margin: '0 auto',
-  maxWidth: '1240px',
+  margin: "0 auto",
+  maxWidth: "1240px",
 };
 
 export const flexCenter = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 export const flexBetween = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
 };

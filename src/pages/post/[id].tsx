@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import hljs from "highlight.js";
@@ -18,6 +18,9 @@ import SeoHead from "../../components/SEO/SeoHead";
 
 // Style
 import { wrapper } from "../../styles/styles";
+
+// Utils
+import { getImageByHandle } from "../../utils/index";
 
 const Post = ({ post }: PostProps) => {
   const {
@@ -70,7 +73,7 @@ const Post = ({ post }: PostProps) => {
         />
         <div className={imageStyle}>
           <Image
-            src={`https://media.graphcms.com/${postImage.handle}`}
+            src={getImageByHandle(postImage.handle)}
             width={500}
             height={500}
             className="hello"
@@ -87,10 +90,10 @@ const Post = ({ post }: PostProps) => {
   );
 };
 
-Post.getInitialProps = async context => {
-  const {id} = context.query;
+Post.getInitialProps = async (context) => {
+  const { id } = context.query;
   const post = await getPost(id);
-  return {post};
+  return { post };
 };
 
 export default Post;

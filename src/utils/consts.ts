@@ -29,7 +29,7 @@ const CONSTS = {
           }
         }
       `,
-      POST_QUERY: id => {
+      POST_QUERY: (id) => {
         return `{
         blogPost(where: {
           id: "${id}"
@@ -87,17 +87,17 @@ const CONSTS = {
           URL: `/`,
           SRC: `/logo.png`,
         },
-        ABOUT: {
-          LABEL: `About`,
-          URL: `/about`,
+        BLOG: {
+          LABEL: `Blog`,
+          URL: `/blog`,
         },
         CONTACT: {
           LABEL: `Contact`,
           URL: `/contact`,
         },
-        PRIVACY: {
-          LABEL: `Privacy`,
-          URL: `/privacy`,
+        WORK: {
+          LABEL: `Work`,
+          URL: `/work`,
         },
       },
     },

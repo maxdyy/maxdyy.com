@@ -1,31 +1,31 @@
-import React from 'react';
+import React from "react";
 
 // Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from "baseui";
 
 // Components
-import SearchResultItem from './SearchResultsItem';
+import SearchResultItem from "./SearchResultsItem";
 
-const SearchResults = ({searchResults, onResultClick}) => {
-  const searchResultsItems = searchResults.map(post => (
+const SearchResults = ({ searchResults, onResultClick }) => {
+  const searchResultsItems = searchResults.map((post) => (
     <SearchResultItem key={post.id} post={post} onResultClick={onResultClick} />
   ));
 
   // Style
   const [css, theme] = useStyletron();
   const searchResultsWrapper = css({
-    width: '100%',
+    width: "100%",
     [theme.mediaQuery.small]: {
-      boxSizing: 'border-box',
+      boxSizing: "border-box",
       border: `2px solid ${theme.colors.border}`,
-      position: 'absolute',
-      top: '123px',
+      position: "absolute",
+      top: "123px",
       left: 0,
-      padding: '24px',
+      padding: "24px",
       zIndex: theme.zIndex.modal,
       backgroundColor: theme.colors.backgroundSecondary,
       [theme.mediaQuery.medium]: {
-        top: '48px',
+        top: "48px",
       },
     },
   });

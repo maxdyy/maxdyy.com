@@ -30,8 +30,6 @@ class MyDocument extends Document<{ stylesheets: Sheet[] }> {
               key={i}
             />
           ))}
-          {/*ANALYTICS*/}
-          {/*ANALYTICS*/}
           <link
             rel="apple-touch-icon"
             sizes="57x57"

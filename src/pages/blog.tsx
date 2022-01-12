@@ -11,7 +11,7 @@ import getPosts from "../api/get/posts";
 import Layout from "../components/Layout";
 import Posts from "../components/Home/Posts";
 
-const Index = ({ posts }) => {
+const Blog = ({ posts }) => {
   const {
     CONTENT: {
       HEAD: { TITLE, DESCRIPTION, AUTHOR },
@@ -35,15 +35,15 @@ const Index = ({ posts }) => {
             content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
-        <div>HOME PAGE</div>
+        <Posts posts={posts} />
       </div>
     </Layout>
   );
 };
 
-Index.getInitialProps = async () => {
+Blog.getInitialProps = async () => {
   const posts = await getPosts();
   return { posts };
 };
 
-export default Index;
+export default Blog;

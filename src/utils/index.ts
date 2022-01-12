@@ -1,26 +1,25 @@
-// Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from "baseui";
 
-const getPostTypeStyle = (postType: string) => {
+export const getPostTypeStyle = (postType: string) => {
   const [, theme] = useStyletron();
 
   switch (postType) {
-    case 'WEBpost':
+    case "WEBpost":
       return {
         borderStyle: theme.colors.accent500,
         backgroundStyle: theme.colors.accent500,
       };
-    case 'JSpost':
+    case "JSpost":
       return {
         borderStyle: theme.colors.accent500,
         backgroundStyle: theme.colors.accent500,
       };
-    case 'HTMLpost':
+    case "HTMLpost":
       return {
         borderStyle: theme.colors.accent500,
         backgroundStyle: theme.colors.accent500,
       };
-    case 'CSSpost':
+    case "CSSpost":
       return {
         borderStyle: theme.colors.accent500,
         backgroundStyle: theme.colors.accent500,
@@ -33,4 +32,5 @@ const getPostTypeStyle = (postType: string) => {
   }
 };
 
-export default getPostTypeStyle;
+export const getImageByHandle = (handle: string) =>
+  `https://media.graphcms.com/${handle}`;

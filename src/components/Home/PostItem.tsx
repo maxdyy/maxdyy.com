@@ -14,7 +14,9 @@ import { Paragraph3 } from "baseui/typography";
 
 // Style
 import { flexBetween } from "../../styles/styles";
-import getPostTypeStyle from "../../utils/getPostTypeStyle";
+
+// Utils
+import { getPostTypeStyle, getImageByHandle } from "../../utils/index";
 
 const PostItem = ({ post }: PostProps) => {
   const {
@@ -78,7 +80,7 @@ const PostItem = ({ post }: PostProps) => {
           <div className={postItemBorderWrapperStyle}>
             <div className={postImageStyle}>
               <Image
-                src={`https://media.graphcms.com/${postThumbnail.handle}`}
+                src={getImageByHandle(postThumbnail.handle)}
                 width={96}
                 height={96}
               />

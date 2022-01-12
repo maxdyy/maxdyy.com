@@ -3,14 +3,18 @@ export type PostsProps = {
     {
       id: string;
       createdAt: string;
-      postThumbnail: object;
-      postImage: object;
+      postThumbnail: {
+        handle: string;
+      };
+      postImage: {
+        handle: string;
+      };
       postType: string;
       postTitle: string;
       postText: string;
       postDescription: string;
       postKeywords: string;
       readtime: string;
-    },
+    }
   ];
 };
