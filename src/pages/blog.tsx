@@ -1,15 +1,15 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 // Constants
-import CONSTS from "../utils/consts";
+import CONSTS from '@utils/consts';
 
 // API
-import getPosts from "../api/get/posts";
+import getPosts from '@api/get/posts';
 
 // Components
-import Layout from "../components/Layout";
-import Posts from "../components/Home/Posts";
+import Layout from '@components/Layout';
+import Posts from '@components/Blog/Posts';
 
 const Blog = ({ posts }) => {
   const {

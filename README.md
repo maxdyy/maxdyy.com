@@ -1,2 +1,2 @@
 # maxdyy.com
-Redesign of personal Website for 2021
+Redesign of personal Website for 2022

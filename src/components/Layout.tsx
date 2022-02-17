@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 // Hooks
-import { useStyletron } from "baseui";
+import { useStyletron } from 'baseui';
 
 // Components
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from './Header/Header';
+import Footer from '../components/Footer';
 
 // Types
 type LayoutProps = {
@@ -17,8 +17,8 @@ const Layout = ({ children }: LayoutProps) => {
   const [css, theme] = useStyletron();
   const layoutStyle = css({
     backgroundColor: theme.colors.backgroundPrimary,
-    overflow: "hidden",
-    position: "relative",
+    overflow: 'hidden',
+    position: 'relative',
   });
 
   return (

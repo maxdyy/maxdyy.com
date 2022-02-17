@@ -1,14 +1,14 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 // Consts
-import CONSTS from "../utils/consts";
+import CONSTS from '@utils/consts';
 
 // Components
-import Layout from "../components/Layout";
+import Layout from '@components/Layout';
 
 // Style
-import { useStyletron } from "baseui";
+import { useStyletron } from 'baseui';
 
 const Error = ({ statusCode }) => {
   const {
@@ -20,27 +20,27 @@ const Error = ({ statusCode }) => {
   // Style
   const [css, theme] = useStyletron();
   const pageWrapper = css({
-    width: "100vw",
-    height: "100vh",
-    position: "relative",
-    overflow: "hidden",
-    marginBottom: "-20px",
+    width: '100vw',
+    height: '100vh',
+    position: 'relative',
+    overflow: 'hidden',
+    marginBottom: '-20px',
   });
 
   const textWrapper = css({
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    boxSizing: "border-box",
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
     zIndex: 1,
   });
 
   const videoStyle = css({
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
   });
@@ -48,13 +48,13 @@ const Error = ({ statusCode }) => {
   const textStyle = css({
     color: theme.colors.contentPrimary,
     [theme.mediaQuery.small]: {
-      fontSize: "150px",
+      fontSize: '150px',
     },
     [theme.mediaQuery.medium]: {
-      fontSize: "300px",
+      fontSize: '300px',
     },
     [theme.mediaQuery.large]: {
-      fontSize: "500px",
+      fontSize: '500px',
     },
   });
 

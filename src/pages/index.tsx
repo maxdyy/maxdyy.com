@@ -1,22 +1,33 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 // Constants
-import CONSTS from "../utils/consts";
+import CONSTS from '@utils/consts';
+
+// Hooks
+import { useStyletron } from 'baseui';
 
 // API
-import getPosts from "../api/get/posts";
+import getPosts from '@api/get/posts';
 
 // Components
-import Layout from "../components/Layout";
-import Posts from "../components/Home/Posts";
+import Layout from '@components/Layout';
 
-const Index = ({ posts }) => {
-  const {
-    CONTENT: {
-      HEAD: { TITLE, DESCRIPTION, AUTHOR },
-    },
-  } = CONSTS;
+const {
+  CONTENT: {
+    HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  },
+} = CONSTS;
+
+const Index = () => {
+  const [css] = useStyletron();
+
+  const wrapperStyle = css({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+  });
 
   return (
     <Layout>
@@ -35,7 +46,7 @@ const Index = ({ posts }) => {
             content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
-        <div>HOME PAGE</div>
+        <div className={wrapperStyle}>HOME PAGE</div>
       </div>
     </Layout>
   );

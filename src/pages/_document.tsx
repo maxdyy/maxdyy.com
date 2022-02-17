@@ -1,13 +1,14 @@
-import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { Provider as StyletronProvider } from "styletron-react";
-import { Server, Sheet } from "styletron-engine-atomic";
-import { styletron } from "../styles/styletron";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/display-name */
+import React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { Provider as StyletronProvider } from 'styletron-react';
+import { Server, Sheet } from 'styletron-engine-atomic';
+import { styletron } from '@styles/styletron';
 
 class MyDocument extends Document<{ stylesheets: Sheet[] }> {
   // Initial Props
   static getInitialProps(props: any) {
-    // eslint-disable-next-line react/display-name
     const page = props.renderPage((App: any) => (props: any) => (
       <StyletronProvider value={styletron}>
         <App {...props} />
@@ -26,7 +27,7 @@ class MyDocument extends Document<{ stylesheets: Sheet[] }> {
               className="_styletron_hydrate_"
               dangerouslySetInnerHTML={{ __html: sheet.css }}
               media={sheet.attrs.media}
-              data-hydrate={sheet.attrs["data-hydrate"]}
+              data-hydrate={sheet.attrs['data-hydrate']}
               key={i}
             />
           ))}

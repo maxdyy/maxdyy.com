@@ -15,6 +15,6 @@ export type PostsProps = {
       postDescription: string;
       postKeywords: string;
       readtime: string;
-    }
+    },
   ];
 };

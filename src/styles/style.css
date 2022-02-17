@@ -2,8 +2,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: #141414;
 }
 
@@ -179,7 +179,7 @@ hue-6-2: #e6c07b
 }
 
 .vscode {
-  background-image: url("../../public/tech-logos/vscode.svg");
+  background-image: url('../../public/tech-logos/vscode.svg');
   animation: noiseVscode 6s ease-in-out infinite;
   animation-delay: -1.5s;
   background-size: 90px;
@@ -195,7 +195,7 @@ hue-6-2: #e6c07b
   top: 10px;
   animation: noiseGit 6s ease-in-out infinite;
   animation-delay: -6.7s;
-  background-image: url("../../public/tech-logos/git.svg");
+  background-image: url('../../public/tech-logos/git.svg');
   background-size: 75px;
 }
 
@@ -209,7 +209,7 @@ hue-6-2: #e6c07b
   top: 50px;
   animation: noiseGraphql 7s ease-in-out infinite;
   animation-delay: -14s;
-  background-image: url("../../public/tech-logos/graphql.svg");
+  background-image: url('../../public/tech-logos/graphql.svg');
   background-size: 100px;
 }
 
@@ -223,7 +223,7 @@ hue-6-2: #e6c07b
   top: 70px;
   animation: noiseCSS 8s ease-in-out infinite;
   animation-delay: -19s;
-  background-image: url("../../public/tech-logos/css.svg");
+  background-image: url('../../public/tech-logos/css.svg');
   background-size: 70% 70%;
   background-position: center 70%;
 }
@@ -238,7 +238,7 @@ hue-6-2: #e6c07b
   top: 40px;
   animation: noiseGithub 6s ease-in-out infinite;
   animation-delay: -26s;
-  background-image: url("../../public/tech-logos/github.svg");
+  background-image: url('../../public/tech-logos/github.svg');
 }
 
 .animation-wrapper-github {
@@ -251,7 +251,7 @@ hue-6-2: #e6c07b
   top: 15px;
   animation: noiseGoogle 7s ease-in-out infinite;
   animation-delay: -32s;
-  background-image: url("../../public/tech-logos/google-cloud.svg");
+  background-image: url('../../public/tech-logos/google-cloud.svg');
   background-position: center 70%;
 }
 
@@ -265,7 +265,7 @@ hue-6-2: #e6c07b
   top: 35px;
   animation: noiseHTML 6s ease-in-out infinite;
   animation-delay: -38s;
-  background-image: url("../../public/tech-logos/html.svg");
+  background-image: url('../../public/tech-logos/html.svg');
   background-size: 70% 70%;
   background-position: center 70%;
 }
@@ -280,7 +280,7 @@ hue-6-2: #e6c07b
   top: 190px;
   animation: noisePhotoshop 8s ease-in-out infinite;
   animation-delay: -4.2s;
-  background-image: url("../../public/tech-logos/photoshop.svg");
+  background-image: url('../../public/tech-logos/photoshop.svg');
   background-color: #001d26;
   background-size: 60% 60%;
 }
@@ -295,7 +295,7 @@ hue-6-2: #e6c07b
   top: 175px;
   animation: noiseJQuery 6s ease-in-out infinite;
   animation-delay: -9s;
-  background-image: url("../../public/tech-logos/jQuery.svg");
+  background-image: url('../../public/tech-logos/jQuery.svg');
 }
 
 .animation-wrapper-jQuery {
@@ -308,7 +308,7 @@ hue-6-2: #e6c07b
   top: 165px;
   animation: noiseJavascript 6s ease-in-out infinite;
   animation-delay: -23s;
-  background-image: url("../../public/tech-logos/javascript.svg");
+  background-image: url('../../public/tech-logos/javascript.svg');
   background-color: #f7df1e;
   background-size: 67% 67%;
 }
@@ -323,7 +323,7 @@ hue-6-2: #e6c07b
   top: 170px;
   animation: noisePython 7s ease-in-out infinite;
   animation-delay: -29.7s;
-  background-image: url("../../public/tech-logos/python.svg");
+  background-image: url('../../public/tech-logos/python.svg');
 }
 
 .animation-wrapper-python {
@@ -336,7 +336,7 @@ hue-6-2: #e6c07b
   top: 170px;
   animation: noiseWebpack 7s ease-in-out infinite;
   animation-delay: -35s;
-  background-image: url("../../public/tech-logos/webpack.svg");
+  background-image: url('../../public/tech-logos/webpack.svg');
   background-position: center;
 }
 
@@ -350,7 +350,7 @@ hue-6-2: #e6c07b
   top: 190px;
   animation: noiseSASS 6s ease-in-out infinite;
   animation-delay: -39s;
-  background-image: url("../../public/tech-logos/sass.svg");
+  background-image: url('../../public/tech-logos/sass.svg');
 }
 
 .animation-wrapper-sass {
@@ -363,7 +363,7 @@ hue-6-2: #e6c07b
   top: 160px;
   animation: noiseReact 6s ease-in-out infinite;
   animation-delay: -42.8s;
-  background-image: url("../../public/tech-logos/react.svg");
+  background-image: url('../../public/tech-logos/react.svg');
   background-color: #222;
 }
 
@@ -377,7 +377,7 @@ hue-6-2: #e6c07b
   top: 200px;
   animation: noiseGulp 8s ease-in-out infinite;
   animation-delay: -16.5s;
-  background-image: url("../../public/tech-logos/gulp.svg");
+  background-image: url('../../public/tech-logos/gulp.svg');
   background-size: 35px;
 }
 

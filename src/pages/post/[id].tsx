@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import Image from "next/image";
-import ReactMarkdown from "react-markdown";
-import hljs from "highlight.js";
+import React, { useEffect } from 'react';
+import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import hljs from 'highlight.js';
 
 // Types
-import { PostProps } from "../../types/post";
+import { PostProps } from '@types/post';
 
 // API
-import getPost from "../../api/get/post";
+import getPost from '@api/get/post';
 
 // Hooks
-import { useStyletron } from "baseui";
+import { useStyletron } from 'baseui';
 
 // Components
-import Layout from "../../components/Layout";
-import SeoHead from "../../components/SEO/SeoHead";
+import Layout from '@components/Layout';
+import SeoHead from '@components/SEO/SeoHead';
 
 // Style
-import { wrapper } from "../../styles/styles";
+import { wrapper } from '@styles/styles';
 
 // Utils
-import { getImageByHandle } from "../../utils/index";
+import { getImageByHandle } from '@utils/index';
 
 const Post = ({ post }: PostProps) => {
   const {
@@ -33,7 +33,7 @@ const Post = ({ post }: PostProps) => {
   } = post;
 
   useEffect(() => {
-    const codeBlocks = document.querySelectorAll("pre code");
+    const codeBlocks = document.querySelectorAll('pre code');
     codeBlocks.forEach((block) => hljs.highlightBlock(block as HTMLElement));
   }, []);
 
@@ -42,9 +42,9 @@ const Post = ({ post }: PostProps) => {
 
   const wrapperStyle = css({
     ...wrapper,
-    padding: "0 16px 0 24px",
-    boxSizing: "border-box",
-    margin: "60px auto 96px auto",
+    padding: '0 16px 0 24px',
+    boxSizing: 'border-box',
+    margin: '60px auto 96px auto',
   });
 
   const imageStyle = css({
@@ -53,13 +53,13 @@ const Post = ({ post }: PostProps) => {
 
   const titleStyle = css({
     color: theme.colors.contentPrimary,
-    margin: "48px 0 0 0",
+    margin: '48px 0 0 0',
   });
 
   const postStyle = css({
     color: theme.colors.contentPrimary,
-    margin: "32px 0",
-    textAlign: "justify",
+    margin: '32px 0',
+    textAlign: 'justify',
   });
 
   return (

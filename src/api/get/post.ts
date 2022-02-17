@@ -4,8 +4,8 @@ import CONSTS from '../../utils/consts';
 const getPost = async (id: string) => {
   const {
     API: {
-      ENDPOINTS: {MASTER},
-      QUERIES: {POST_QUERY},
+      ENDPOINTS: { MASTER },
+      QUERIES: { POST_QUERY },
     },
   } = CONSTS;
 
@@ -15,7 +15,7 @@ const getPost = async (id: string) => {
     data: {
       query: POST_QUERY(id),
     },
-  }).then(result => result.data);
+  }).then((result) => result.data);
 
   return res.data.blogPost;
 };

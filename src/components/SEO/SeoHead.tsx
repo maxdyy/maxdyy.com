@@ -1,8 +1,8 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 // Constants
-import CONSTS from "../../utils/consts";
+import CONSTS from '@utils/consts';
 
 const SeoHead = ({
   postTitle,
