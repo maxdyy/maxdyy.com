@@ -1,4 +1,4 @@
-export type PostProps = {
+type PostProps = {
   post: {
     id: string;
     createdAt: string;
@@ -16,3 +16,5 @@ export type PostProps = {
     readtime: string;
   };
 };
+
+export default PostProps;

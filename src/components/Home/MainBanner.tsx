@@ -7,6 +7,7 @@ import { useStyletron } from 'baseui';
 import avatarImg from '@public/avatar.png';
 import Image from 'next/image';
 import { H1, Paragraph1 } from 'baseui/typography';
+import TiltWrapper from '@components/Wrapper/TiltWrapper';
 
 // Style
 import { wrapper, flexCenter } from '@styles/styles';
@@ -28,24 +29,47 @@ const MainBanner: React.FC = () => {
     ...flexCenter,
     flexDirection: 'column',
     width: '100%',
+    maxWidth: '1240px',
+    margin: '40px 20px',
 
     [theme.mediaQuery.medium]: {
       flexDirection: 'row',
+      margin: '80px 20px',
     },
   });
 
   const topSectionStyle = css({
-    margin: '40px 20px 20px 20px',
+    marginBottom: '20px',
+
+    [theme.mediaQuery.medium]: {
+      margin: '0px 25px 0 0',
+    },
+
+    [theme.mediaQuery.large]: {
+      margin: '0px 35px 0 0',
+    },
   });
 
-  const bottomSectionStyle = css({
-    margin: '0 20px',
+  const bottomSectionStyle = css({});
+
+  const mainTitleStyle = css({
+    backgroundColor: '#4158D0',
+    backgroundImage:
+      'linear-gradient(43deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+  });
+
+  const avatarImageWrapperStyle = css({
+    padding: '3px 3px 1px 3px',
+    backgroundImage:
+      'linear-gradient( 96.5deg,  rgba(39,103,187,1) 10.4%, rgba(16,72,144,1) 87.7% )',
   });
 
   return (
     <div className={wrapperStyle}>
       <div className={topSectionStyle}>
-        <H1>Design, Develop and Deploy</H1>
+        <H1 className={mainTitleStyle}>Design, Develop and Deploy</H1>
         <Paragraph1>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
           accusamus, nihil nemo ea nam magni natus quisquam in ipsam eveniet
@@ -53,7 +77,11 @@ const MainBanner: React.FC = () => {
         </Paragraph1>
       </div>
       <div className={bottomSectionStyle}>
-        <Image alt={LOGO.ALT} src={avatarImg} />
+        <TiltWrapper scale={1.02} degrees={15}>
+          <div className={avatarImageWrapperStyle}>
+            <Image alt={LOGO.ALT} src={avatarImg} />
+          </div>
+        </TiltWrapper>
       </div>
     </div>
   );

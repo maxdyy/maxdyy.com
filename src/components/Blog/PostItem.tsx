@@ -4,7 +4,7 @@ import Image from 'next/image';
 import CONSTS from '@utils/consts';
 
 // Types
-import { PostProps } from '@types/post';
+import PostProps from '../../types/post';
 
 // Hooks
 import { useStyletron } from 'baseui';

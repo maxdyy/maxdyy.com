@@ -13,6 +13,7 @@ import getPosts from '@api/get/posts';
 // Components
 import Layout from '@components/Wrapper/Layout';
 import MainBanner from '@components/Home/MainBanner';
+import CardsSection from '@components/Home/CardsSection';
 
 const {
   CONTENT: {
@@ -23,11 +24,11 @@ const {
 const Index = () => {
   const [css] = useStyletron();
 
-  const wrapperStyle = css({
+  const mainBannerWrapperStyle = css({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100vh',
+    marginTop: '65px',
   });
 
   return (
@@ -47,9 +48,10 @@ const Index = () => {
             content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
-        <div className={wrapperStyle}>
+        <section className={mainBannerWrapperStyle}>
           <MainBanner />
-        </div>
+        </section>
+        <CardsSection />
       </div>
     </Layout>
   );

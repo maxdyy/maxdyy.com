@@ -1,4 +1,4 @@
-export type PostsProps = {
+type PostsProps = {
   posts: [
     {
       id: string;
@@ -18,3 +18,5 @@ export type PostsProps = {
     },
   ];
 };
+
+export default PostsProps;

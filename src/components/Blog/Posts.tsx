@@ -1,12 +1,12 @@
 import React from 'react';
 
 // Types
-import { PostsProps } from '../../types/posts';
+import PostsProps from '../../types/posts';
 
 // Hooks
 import { useStyletron } from 'baseui';
 
-// Components
+// Componentszw
 import PostItem from './PostItem';
 
 // Style

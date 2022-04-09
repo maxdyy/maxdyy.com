@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import hljs from 'highlight.js';
 
 // Types
-import { PostProps } from '@types/post';
+import PostProps from '../../types/post';
 
 // API
 import getPost from '@api/get/post';
@@ -76,14 +76,12 @@ const Post = ({ post }: PostProps) => {
             src={getImageByHandle(postImage.handle)}
             width={500}
             height={500}
-            className="hello"
           />
         </div>
         <h1 className={titleStyle}>{postTitle}</h1>
-        <ReactMarkdown
-          children={postText}
-          className={`${postStyle} maxdyy-post-markdown`}
-        />
+        <ReactMarkdown className={`${postStyle} maxdyy-post-markdown`}>
+          {postText}
+        </ReactMarkdown>
         <div>{}</div>
       </div>
     </Layout>
