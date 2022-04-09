@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import CONSTS from '@utils/consts';
 
 // Hooks
@@ -10,6 +12,7 @@ import {
   StyledNavigationItem,
 } from 'baseui/header-navigation';
 import { Button } from 'baseui/button';
+import { Menu, Delete } from 'baseui/icon';
 
 const {
   CONTENT: {
@@ -20,13 +23,15 @@ const {
 } = CONSTS;
 
 const Navigation = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   // Style
   const [css, theme] = useStyletron();
 
   const navigationStyle = css({
     position: 'absolute',
     top: '0',
-    left: '0',
+    left: menuOpen ? '0' : '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -34,43 +39,101 @@ const Navigation = () => {
     height: '100vh',
     zIndex: 100,
     backgroundColor: theme.colors.backgroundSecondary,
+    transition: theme.animation.timing200,
+    [theme.mediaQuery.medium]: {
+      position: 'relative',
+      backgroundColor: 'transparent',
+      flexDirection: 'row',
+      height: '100%',
+      width: 'auto',
+      left: 'auto',
+      top: 'auto',
+    },
   });
 
   const linkStyle = css({
     color: 'inherit',
     textDecoration: 'none',
+    width: '250px',
+    [theme.mediaQuery.medium]: {
+      width: 'auto',
+    },
   });
 
+  const lastNavigationItemStyle = css({
+    [theme.mediaQuery.medium]: {
+      marginRight: '10px',
+    },
+  });
+
+  const menuButtonStyle = css({
+    marginRight: '10px',
+    [theme.mediaQuery.medium]: {
+      display: 'none',
+    },
+  });
+
+  const closeMenuButtonStyle = css({
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    [theme.mediaQuery.medium]: {
+      display: 'none',
+    },
+  });
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
-    <StyledNavigationList className={navigationStyle}>
-      <StyledNavigationItem>
-        <Link href={BLOG.URL} passHref>
-          <Button kind={'minimal'}>
-            <a href={BLOG.URL} className={linkStyle}>
-              {BLOG.LABEL}
-            </a>
+    <nav>
+      <StyledNavigationList className={navigationStyle}>
+        <StyledNavigationItem>
+          <Link href={BLOG.URL} passHref>
+            <Button kind={'minimal'}>
+              <a href={BLOG.URL} className={linkStyle}>
+                {BLOG.LABEL}
+              </a>
+            </Button>
+          </Link>
+        </StyledNavigationItem>
+        <StyledNavigationItem>
+          <Link href={WORK.URL} passHref>
+            <Button kind={'minimal'}>
+              <a href={WORK.URL} className={linkStyle}>
+                {WORK.LABEL}
+              </a>
+            </Button>
+          </Link>
+        </StyledNavigationItem>
+        <StyledNavigationItem className={lastNavigationItemStyle}>
+          <Link href={CONTACT.URL} passHref>
+            <Button kind={'minimal'}>
+              <a href={CONTACT.URL} className={linkStyle}>
+                {CONTACT.LABEL}
+              </a>
+            </Button>
+          </Link>
+        </StyledNavigationItem>
+        <div className={closeMenuButtonStyle}>
+          <Button
+            kind={'minimal'}
+            onClick={toggleMenu}
+            $style={{ padding: '10px' }}
+          >
+            <Delete size={30} />
           </Button>
-        </Link>
-      </StyledNavigationItem>
-      <StyledNavigationItem>
-        <Link href={WORK.URL} passHref>
-          <Button kind={'minimal'}>
-            <a href={WORK.URL} className={linkStyle}>
-              {WORK.LABEL}
-            </a>
-          </Button>
-        </Link>
-      </StyledNavigationItem>
-      <StyledNavigationItem>
-        <Link href={CONTACT.URL} passHref>
-          <Button kind={'minimal'}>
-            <a href={CONTACT.URL} className={linkStyle}>
-              {CONTACT.LABEL}
-            </a>
-          </Button>
-        </Link>
-      </StyledNavigationItem>
-    </StyledNavigationList>
+        </div>
+      </StyledNavigationList>
+      <div className={menuButtonStyle}>
+        <Button
+          kind={'minimal'}
+          onClick={toggleMenu}
+          $style={{ padding: '10px' }}
+        >
+          <Menu size={30} />
+        </Button>
+      </div>
+    </nav>
   );
 };
 

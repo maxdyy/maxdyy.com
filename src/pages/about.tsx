@@ -8,7 +8,7 @@ import CONSTS from '@utils/consts';
 import { useStyletron } from 'baseui';
 
 // Components
-import Layout from '@components/Layout';
+import Layout from '@components/Wrapper/Layout';
 import { Paragraph3 } from 'baseui/typography';
 import Bubbles from '@components/Home/Bubbles';
 

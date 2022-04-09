@@ -2,18 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 // Constants
-import CONSTS from '../../utils/consts';
+import CONSTS from '@utils/consts';
 
 // Hooks
 import { useStyletron } from 'baseui';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
+import useOnClickOutside from '@hooks/useOnClickOutside';
 
 // Components
 import { Button } from 'baseui/button';
 import { Search } from 'baseui/icon';
 import { Input } from 'baseui/input';
 
-import SearchResults from './SearchResults';
+import SearchResults from '@components/Search/SearchResults';
 
 const SearchBar = () => {
   // State
@@ -74,6 +74,9 @@ const SearchBar = () => {
     maxWidth: '50px',
     marginRight: '24px',
     [theme.mediaQuery.medium]: {
+      marginRight: 0,
+    },
+    [theme.mediaQuery.large]: {
       position: 'relative',
       maxWidth: '360px',
     },
@@ -86,10 +89,10 @@ const SearchBar = () => {
       display: searchOpen ? 'block' : 'none',
       opacity: searchOpen ? 1 : 0,
       position: 'absolute',
-      top: '75px',
+      top: '66px',
       left: 0,
     },
-    [theme.mediaQuery.medium]: {
+    [theme.mediaQuery.large]: {
       display: 'block',
       opacity: 1,
       position: 'static',
@@ -99,7 +102,7 @@ const SearchBar = () => {
   });
 
   const searchBarButton = css({
-    [theme.mediaQuery.medium]: {
+    [theme.mediaQuery.large]: {
       display: 'none',
     },
   });
@@ -108,7 +111,6 @@ const SearchBar = () => {
     <div ref={searchBarRef} className={searchWrapperStyle}>
       <div className={searchBarStyle}>
         <Input
-          endEnhancer={<Search size="18px" />}
           placeholder="Search..."
           aria-label="search"
           onFocus={() => toggleSearchOpen(true)}

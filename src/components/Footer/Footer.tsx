@@ -1,5 +1,5 @@
 import React from 'react';
-import CONSTS from '../utils/consts';
+import CONSTS from '../../utils/consts';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -9,7 +9,7 @@ import { StyledLink } from 'baseui/link';
 import { Paragraph3 } from 'baseui/typography';
 
 // Style
-import { wrapper } from '../styles/styles';
+import { wrapper } from '../../styles/styles';
 
 const Footer = () => {
   const {

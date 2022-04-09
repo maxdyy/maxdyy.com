@@ -8,7 +8,7 @@ import CONSTS from '@utils/consts';
 import getPosts from '@api/get/posts';
 
 // Components
-import Layout from '@components/Layout';
+import Layout from '@components/Wrapper/Layout';
 import Posts from '@components/Blog/Posts';
 
 const Blog = ({ posts }) => {

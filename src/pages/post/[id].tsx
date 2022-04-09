@@ -13,7 +13,7 @@ import getPost from '@api/get/post';
 import { useStyletron } from 'baseui';
 
 // Components
-import Layout from '@components/Layout';
+import Layout from '@components/Wrapper/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 
 // Style

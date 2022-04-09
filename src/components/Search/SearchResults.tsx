@@ -4,7 +4,7 @@ import React from 'react';
 import { useStyletron } from 'baseui';
 
 // Components
-import SearchResultItem from './SearchResultsItem';
+import SearchResultItem from '@components/Search/SearchResultsItem';
 
 const SearchResults = ({ searchResults, onResultClick }) => {
   const searchResultsItems = searchResults.map((post) => (
@@ -19,12 +19,12 @@ const SearchResults = ({ searchResults, onResultClick }) => {
       boxSizing: 'border-box',
       border: `2px solid ${theme.colors.border}`,
       position: 'absolute',
-      top: '123px',
+      top: '114px',
       left: 0,
       padding: '24px',
       zIndex: theme.zIndex.modal,
       backgroundColor: theme.colors.backgroundSecondary,
-      [theme.mediaQuery.medium]: {
+      [theme.mediaQuery.large]: {
         top: '48px',
       },
     },

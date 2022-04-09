@@ -4,8 +4,8 @@ import React from 'react';
 import { useStyletron } from 'baseui';
 
 // Components
-import Header from './Header/Header';
-import Footer from '../components/Footer';
+import Header from '@components/Header/Header';
+import Footer from '@components/Footer/Footer';
 
 // Types
 type LayoutProps = {
@@ -19,6 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
     backgroundColor: theme.colors.backgroundPrimary,
     overflow: 'hidden',
     position: 'relative',
+    color: theme.colors.primary50,
   });
 
   return (

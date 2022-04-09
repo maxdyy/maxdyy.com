@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import CONSTS from '../../utils/consts';
+import CONSTS from '@utils/consts';
 
 // Hooks
 import { useStyletron } from 'baseui';

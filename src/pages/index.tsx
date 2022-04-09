@@ -11,7 +11,8 @@ import { useStyletron } from 'baseui';
 import getPosts from '@api/get/posts';
 
 // Components
-import Layout from '@components/Layout';
+import Layout from '@components/Wrapper/Layout';
+import MainBanner from '@components/Home/MainBanner';
 
 const {
   CONTENT: {
@@ -46,7 +47,9 @@ const Index = () => {
             content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
-        <div className={wrapperStyle}>HOME PAGE</div>
+        <div className={wrapperStyle}>
+          <MainBanner />
+        </div>
       </div>
     </Layout>
   );

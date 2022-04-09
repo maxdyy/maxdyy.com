@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import CONSTS from '../../utils/consts';
+import CONSTS from '@utils/consts';
 
 // Types
-import { PostProps } from '../../types/post';
+import { PostProps } from '@types/post';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -13,10 +13,10 @@ import { useStyletron } from 'baseui';
 import { Paragraph3 } from 'baseui/typography';
 
 // Style
-import { flexBetween } from '../../styles/styles';
+import { flexBetween } from '@styles/styles';
 
 // Utils
-import { getPostTypeStyle, getImageByHandle } from '../../utils/index';
+import { getPostTypeStyle, getImageByHandle } from '@utils/index';
 
 const PostItem = ({ post }: PostProps) => {
   const {
