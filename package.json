@@ -38,7 +38,7 @@
     "@types/styletron-react": "^5.0.2",
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "baseui": "^9.111.2",
     "compression": "^1.7.4",
     "eslint": "^6.7.2",
