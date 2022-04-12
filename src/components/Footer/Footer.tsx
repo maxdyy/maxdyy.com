@@ -35,6 +35,7 @@ const Footer = () => {
     ...wrapper,
     display: 'flex',
     justifyContent: 'space-evenly',
+    flexWrap: 'wrap',
   });
 
   const copyRightStyle = css({
@@ -42,6 +43,7 @@ const Footer = () => {
   });
 
   const linkStyle = css({
+    margin: '5px 20px',
     textDecoration: 'none !important',
     display: 'flex',
     alignItems: 'center',
@@ -54,7 +56,7 @@ const Footer = () => {
 
   const contactIconStyle = css({
     marginRight: '10px',
-    fontSize : theme.typography.font650.fontSize,
+    fontSize: theme.typography.font650.fontSize,
   });
 
   return (
@@ -93,7 +95,7 @@ const Footer = () => {
         </StyledLink>
       </div>
       <div className={copyRightStyle}>
-        <Paragraph3 marginBottom={0} marginTop="30px">
+        <Paragraph3 marginBottom={0} marginTop="20px">
           {COPYRIGHT.START}
           {new Date().getFullYear()} {COPYRIGHT.END}
         </Paragraph3>

@@ -22,19 +22,18 @@ const {
 } = CONSTS;
 
 const Privacy = () => {
-
-    // Style
-  const [css, theme] = useStyletron();
+  // Style
+  const [css] = useStyletron();
 
   const wrapperStyle = css({
     ...wrapper,
     marginTop: '120px',
-    marginBottom: '120px'
+    marginBottom: '120px',
   });
 
   const innerWrapperStyle = css({
     margin: '0 20px',
-  })
+  });
 
   return (
     <Layout>
@@ -84,9 +83,10 @@ const Privacy = () => {
               Service or parts of our Service.
             </Paragraph1>
             <Paragraph1>
-              * Company (referred to as either "the Company", "We", "Us" or
-              "Our" in this Agreement) refers to Individual Entrepreneur Maxdyy,
-              Tbilisi, Vake district, Zakaria Paliashvili Street, N 41.
+              * Company (referred to as either &quot;the Company&quot;,
+              &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this
+              Agreement) refers to Individual Entrepreneur Maxdyy, Tbilisi, Vake
+              district, Zakaria Paliashvili Street, N 41.
             </Paragraph1>
             <Paragraph1>
               * Cookies are small files that are placed on Your computer, mobile
@@ -152,11 +152,11 @@ const Privacy = () => {
               Usage Data is collected automatically when using the Service.
             </Paragraph1>
             <Paragraph1>
-              Usage Data may include information such as Your Device's Internet
-              Protocol address (e.g. IP address), browser type, browser version,
-              the pages of our Service that You visit, the time and date of Your
-              visit, the time spent on those pages, unique device identifiers
-              and other diagnostic data.
+              Usage Data may include information such as Your Device&apos;s
+              Internet Protocol address (e.g. IP address), browser type, browser
+              version, the pages of our Service that You visit, the time and
+              date of Your visit, the time spent on those pages, unique device
+              identifiers and other diagnostic data.
             </Paragraph1>
             <Paragraph1>
               When You access the Service by or through a mobile device, We may
@@ -193,8 +193,9 @@ const Privacy = () => {
               about Your preferences or Your activity on our Service. Flash
               Cookies are not managed by the same browser settings as those used
               for Browser Cookies. For more information on how You can delete
-              Flash Cookies, please read "Where can I change the settings for
-              disabling, or deleting local shared objects?" available at{' '}
+              Flash Cookies, please read &quot;Where can I change the settings
+              for disabling, or deleting local shared objects?&quot; available
+              at{' '}
               <StyledLink
                 target="_blank"
                 rel="noreferrer"
@@ -213,10 +214,11 @@ const Privacy = () => {
               verifying system and server integrity).
             </Paragraph1>
             <Paragraph1>
-              Cookies can be "Persistent" or "Session" Cookies. Persistent
-              Cookies remain on Your personal computer or mobile device when You
-              go offline, while Session Cookies are deleted as soon as You close
-              Your web browser. Learn more about cookies:{' '}
+              Cookies can be &quot;Persistent&quot; or &quot;Session&quot;
+              Cookies. Persistent Cookies remain on Your personal computer or
+              mobile device when You go offline, while Session Cookies are
+              deleted as soon as You close Your web browser. Learn more about
+              cookies:{' '}
               <StyledLink
                 target="_blank"
                 rel="noreferrer"
@@ -302,7 +304,7 @@ const Privacy = () => {
             <Paragraph1>
               * To contact You: To contact You by email, telephone calls, SMS,
               or other equivalent forms of electronic communication, such as a
-              mobile application's push notifications regarding updates or
+              mobile application&apos;s push notifications regarding updates or
               informative communications related to the functionalities,
               products or contracted services, including the security updates,
               when necessary or reasonable for their implementation.
@@ -386,7 +388,7 @@ const Privacy = () => {
             <H3>Transfer of Your Personal Data</H3>
             <Paragraph1>
               Your information, including Personal Data, is processed at the
-              Company's operating offices and in any other places where the
+              Company&apos;s operating offices and in any other places where the
               parties involved in the processing are located. It means that this
               information may be transferred to — and maintained on — computers
               located outside of Your state, province, country or other
@@ -444,7 +446,7 @@ const Privacy = () => {
               use commercially acceptable means to protect Your Personal Data,
               We cannot guarantee its absolute security.
             </Paragraph1>
-            <H3>Children's Privacy</H3>
+            <H3>Children&apos;s Privacy</H3>
             <Paragraph1>
               Our Service does not address anyone under the age of 13. We do not
               knowingly collect personally identifiable information from anyone
@@ -458,15 +460,15 @@ const Privacy = () => {
             <Paragraph1>
               If We need to rely on consent as a legal basis for processing Your
               information and Your country requires consent from a parent, We
-              may require Your parent's consent before We collect and use that
-              information.
+              may require Your parent&apos;s consent before We collect and use
+              that information.
             </Paragraph1>
             <H3>Links to Other Websites</H3>
             <Paragraph1>
               Our Service may contain links to other websites that are not
               operated by Us. If You click on a third party link, You will be
-              directed to that third party's site. We strongly advise You to
-              review the Privacy Policy of every site You visit.
+              directed to that third party&apos;s site. We strongly advise You
+              to review the Privacy Policy of every site You visit.
             </Paragraph1>
             <Paragraph1>
               We have no control over and assume no responsibility for the
@@ -481,7 +483,7 @@ const Privacy = () => {
             <Paragraph1>
               We will let You know via email and/or a prominent notice on Our
               Service, prior to the change becoming effective and update the
-              "Last updated" date at the top of this Privacy Policy.
+              &quot;Last updated&quot; date at the top of this Privacy Policy.
             </Paragraph1>
             <Paragraph1>
               You are advised to review this Privacy Policy periodically for any
@@ -494,7 +496,7 @@ const Privacy = () => {
               contact us:
             </Paragraph1>
             <Paragraph1>
-              * By visiting this page on our website: {' '}
+              * By visiting this page on our website:{' '}
               <StyledLink
                 target="_blank"
                 rel="noreferrer"

@@ -1,5 +1,10 @@
 interface ICard {
-  image: StaticImageData;
+  image: {
+    src: string;
+    height: number;
+    width: number;
+    blurDataURL?: string;
+  };
   imageAlt: string;
   title: string;
   firstParagraph: string;

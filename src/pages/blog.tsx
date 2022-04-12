@@ -17,7 +17,6 @@ const {
   },
 } = CONSTS;
 
-
 const Blog = ({ posts }) => {
   return (
     <Layout>
