@@ -11,13 +11,14 @@ import getPosts from '@api/get/posts';
 import Layout from '@components/Wrapper/Layout';
 import Posts from '@components/Blog/Posts';
 
-const Blog = ({ posts }) => {
-  const {
-    CONTENT: {
-      HEAD: { TITLE, DESCRIPTION, AUTHOR },
-    },
-  } = CONSTS;
+const {
+  CONTENT: {
+    HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  },
+} = CONSTS;
 
+
+const Blog = ({ posts }) => {
   return (
     <Layout>
       <div>

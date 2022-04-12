@@ -29,7 +29,7 @@ const CONSTS = {
           }
         }
       `,
-      POST_QUERY: (id) => {
+      POST_QUERY: id => {
         return `{
         blogPost(where: {
           id: "${id}"
@@ -68,12 +68,17 @@ const CONSTS = {
     HEAD: {
       TITLE: {
         HOME: `MAXDYY - Web Development`,
+        BLOG: `MAXDYY - Blog`,
+        WORK: `MAXDYY - Work`,
         ABOUT: `MAXDYY - About`,
         POST: `MAXDYY - `,
+        PRIVACY: `MAXDYY - Privacy Policy`,
         ERROR: `MAXDYY - ERROR `,
       },
       DESCRIPTION: {
         HOME: `All about Web Development`,
+        BLOG: `All about Web Development`,
+        PRIVACY: `Privacy Policy Page`,
         ABOUT: `About MAXDYY`,
         ERROR: `MAXDYY - ERROR `,
       },
@@ -116,9 +121,13 @@ const CONSTS = {
           URL: `https://www.linkedin.com/in/maxdyy`,
         },
       },
+      PRIVACY: {
+        LABEL: `Privacy Policy`,
+        URL: `/privacy`,
+      },
       COPYRIGHT: {
         START: `© 2017-`,
-        END: `Maksym Dmukhovskyy`,
+        END: ` | Individual Entrepreneur Maxdyy`,
       },
     },
     POSTS: {
