@@ -1,6 +1,6 @@
 // next.config.js
 module.exports = {
-    images: {
-      domains: ['media.graphcms.com'],
-    },
-  }
+  images: {
+    domains: ['media.graphassets.com'],
+  },
+};

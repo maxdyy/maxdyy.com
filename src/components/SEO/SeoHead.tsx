@@ -1,8 +1,13 @@
-import React from 'react';
 import Head from 'next/head';
 
 // Constants
 import CONSTS from '@utils/consts';
+
+const {
+  CONTENT: {
+    HEAD: { TITLE },
+  },
+} = CONSTS;
 
 const SeoHead = ({
   postTitle,
@@ -10,12 +15,6 @@ const SeoHead = ({
   postDescription,
   postKeywords,
 }) => {
-  const {
-    CONTENT: {
-      HEAD: { TITLE },
-    },
-  } = CONSTS;
-
   return (
     <Head>
       <title>{`${TITLE.POST} ${postTitle}`}</title>
@@ -28,12 +27,12 @@ const SeoHead = ({
       <meta name="twitter:description" content={postDescription} />
       <meta
         name="twitter:image"
-        content={`https://media.graphcms.com/resize=width:450/${postThumbnail.handle}`}
+        content={`https://media.graphassets.com/resize=width:450/${postThumbnail.handle}`}
       />
       <meta property="og:title" content={`${TITLE.POST} ${postTitle}`} />
       <meta
         property="og:image"
-        content={`https://media.graphcms.com/resize=width:450/${postThumbnail.handle}`}
+        content={`https://media.graphassets.com/resize=width:450/${postThumbnail.handle}`}
       />
     </Head>
   );

@@ -1,4 +1,5 @@
 const CONSTS = {
+  REVALIDATE_INTERVAL: 1000,
   ROUTES: {
     POST: `/post/`,
   },
@@ -12,39 +13,58 @@ const CONSTS = {
           blogPosts(orderBy:createdAt_DESC) {
             id
             createdAt
+            postSlug
             postThumbnail {
               handle
               width
               height
+              url
+            }
+            postThumbnailBig {
+              handle
+              width
+              height
+              url
             }
             postImage {
               handle
               width
               height
+              url
             }
             postType
             postTitle
             postText
+            postDescription
             readtime
           }
         }
       `,
-      POST_QUERY: id => {
+      POST_QUERY: (id) => {
         return `{
         blogPost(where: {
           id: "${id}"
         }) {
             id
             createdAt
+            postSlug
             postThumbnail {
               handle
               width
               height
+              url
+            }
+            postThumbnailBig {
+              handle
+              width
+              height
+              url
             }
             postImage {
               handle
               width
               height
+              url
             }
             postType
             postTitle

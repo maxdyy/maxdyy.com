@@ -3,7 +3,7 @@ import { useStyletron } from 'baseui';
 
 // Components
 import { HeadingLarge } from 'baseui/typography';
-import Card from '@components/Home/Card';
+import Card from '@components/UI/Card';
 import designImage from '@public/home/Design.png';
 import developImage from '@public/home/Develop.png';
 import deployImage from '@public/home/Deploy.png';
@@ -23,7 +23,6 @@ const CardsSection: React.FC = () => {
     ...wrapper,
     ...flexBetween,
     width: '100%',
-    margin: '0px 20px',
     flexDirection: 'column',
 
     [theme.mediaQuery.medium]: {

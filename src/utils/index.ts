@@ -33,4 +33,4 @@ export const getPostTypeStyle = (postType: string) => {
 };
 
 export const getImageByHandle = (handle: string) =>
-  `https://media.graphcms.com/${handle}`;
+  `https://media.graphassets.com/${handle}`;

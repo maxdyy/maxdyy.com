@@ -5,15 +5,10 @@ import Head from 'next/head';
 import CONSTS from '@utils/consts';
 
 // Components
-import Layout from '@components/Wrapper/Layout';
+import Layout from '@components/UI/Layout';
+import BodyWrapper from '@components/UI/BodyWrapper';
 import { H1, H2, H3, H4, Paragraph1 } from 'baseui/typography';
 import { StyledLink } from 'baseui/link';
-
-// Hooks
-import { useStyletron } from 'baseui';
-
-// Style
-import { wrapper } from '@styles/styles';
 
 const {
   CONTENT: {
@@ -22,19 +17,6 @@ const {
 } = CONSTS;
 
 const Privacy = () => {
-  // Style
-  const [css] = useStyletron();
-
-  const wrapperStyle = css({
-    ...wrapper,
-    marginTop: '120px',
-    marginBottom: '120px',
-  });
-
-  const innerWrapperStyle = css({
-    margin: '0 20px',
-  });
-
   return (
     <Layout>
       <div>
@@ -49,12 +31,12 @@ const Privacy = () => {
           <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
           <meta
             name="twitter:image"
-            content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
+            content={`https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
 
-        <div className={wrapperStyle}>
-          <div className={innerWrapperStyle}>
+        <BodyWrapper>
+          <section>
             <H1>Privacy Policy</H1>
             <Paragraph1>Last updated: April 12, 2022</Paragraph1>
             <Paragraph1>
@@ -505,8 +487,8 @@ const Privacy = () => {
                 https://www.maxdyy.com/contact
               </StyledLink>
             </Paragraph1>
-          </div>
-        </div>
+          </section>
+        </BodyWrapper>
       </div>
     </Layout>
   );

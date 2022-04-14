@@ -3,8 +3,8 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import hljs from 'highlight.js';
 
-// Types
-import PostProps from '../../types/post';
+// Interface
+import IPost from '@interface/post';
 
 // API
 import getPost from '@api/get/post';
@@ -13,7 +13,7 @@ import getPost from '@api/get/post';
 import { useStyletron } from 'baseui';
 
 // Components
-import Layout from '@components/Wrapper/Layout';
+import Layout from '@components/UI/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 
 // Style
@@ -22,16 +22,14 @@ import { wrapper } from '@styles/styles';
 // Utils
 import { getImageByHandle } from '@utils/index';
 
-const Post = ({ post }: PostProps) => {
-  const {
-    postImage,
-    postTitle,
-    postText,
-    postDescription,
-    postThumbnail,
-    postKeywords,
-  } = post;
-
+const BlogPost = ({
+  postImage,
+  postTitle,
+  postText,
+  postDescription,
+  postThumbnail,
+  postKeywords,
+}: IPost) => {
   useEffect(() => {
     const codeBlocks = document.querySelectorAll('pre code');
     codeBlocks.forEach((block) => hljs.highlightBlock(block as HTMLElement));
@@ -88,10 +86,10 @@ const Post = ({ post }: PostProps) => {
   );
 };
 
-Post.getInitialProps = async (context) => {
+BlogPost.getInitialProps = async (context) => {
   const { id } = context.query;
   const post = await getPost(id);
   return { post };
 };
 
-export default Post;
+export default BlogPost;

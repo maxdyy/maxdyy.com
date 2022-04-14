@@ -7,7 +7,7 @@ import { useStyletron } from 'baseui';
 import avatarImg from '@public/avatar.png';
 import Image from 'next/image';
 import { H1, Paragraph1 } from 'baseui/typography';
-import TiltWrapper from '@components/Wrapper/TiltWrapper';
+import TiltWrapper from '@components/UI/TiltWrapper';
 
 // Style
 import { wrapper, flexCenter } from '@styles/styles';
@@ -29,12 +29,9 @@ const MainBanner: React.FC = () => {
     ...flexCenter,
     flexDirection: 'column',
     width: '100%',
-    maxWidth: '1240px',
-    margin: '40px 20px',
 
     [theme.mediaQuery.medium]: {
       flexDirection: 'row',
-      margin: '80px 20px',
     },
   });
 

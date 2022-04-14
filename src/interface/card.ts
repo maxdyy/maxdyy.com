@@ -1,4 +1,5 @@
 interface ICard {
+  CTALink?: string;
   image: {
     src: string;
     height: number;
@@ -12,6 +13,7 @@ interface ICard {
   thirdParagraph?: string;
   marginLeft?: string;
   marginRight?: string;
+  marginBottom?: string;
 }
 
 export default ICard;

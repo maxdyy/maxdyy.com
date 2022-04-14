@@ -8,7 +8,7 @@ import CONSTS from '@utils/consts';
 import { useStyletron } from 'baseui';
 
 // Components
-import Layout from '@components/Wrapper/Layout';
+import Layout from '@components/UI/Layout';
 import { Paragraph3 } from 'baseui/typography';
 import Bubbles from '@components/Home/Bubbles';
 
@@ -69,7 +69,7 @@ const About = () => {
           <meta name="twitter:description" content={DESCRIPTION.ABOUT} />
           <meta
             name="twitter:image"
-            content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
+            content={`https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
         <div className={aboutTextWrapper}>

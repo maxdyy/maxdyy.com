@@ -5,6 +5,7 @@ import CONSTS from '../../utils/consts';
 import { useStyletron } from 'baseui';
 
 // Components
+import Link from 'next/link';
 import { StyledLink } from 'baseui/link';
 import { Paragraph3 } from 'baseui/typography';
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -42,6 +43,11 @@ const Footer = () => {
     textAlign: 'center',
   });
 
+  const linkWrapperStyle = css({
+    minWidth: '180px',
+    display: 'flex',
+  });
+
   const linkStyle = css({
     margin: '5px 20px',
     textDecoration: 'none !important',
@@ -62,37 +68,47 @@ const Footer = () => {
   return (
     <footer className={footerStyle}>
       <div className={innerWrapperStyle}>
-        <StyledLink
-          className={linkStyle}
-          href={GITHUB.URL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaGithub className={contactIconStyle} />
-          {GITHUB.LABEL}
-        </StyledLink>
-        <StyledLink
-          className={linkStyle}
-          href={TWITTER.URL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaTwitter className={contactIconStyle} />
-          {TWITTER.LABEL}
-        </StyledLink>
-        <StyledLink
-          className={linkStyle}
-          href={LINKEDIN.URL}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin className={contactIconStyle} />
-          {LINKEDIN.LABEL}
-        </StyledLink>
-        <StyledLink className={linkStyle} href={PRIVACY.URL}>
-          <MdPrivacyTip className={contactIconStyle} />
-          {PRIVACY.LABEL}
-        </StyledLink>
+        <div className={linkWrapperStyle}>
+          <StyledLink
+            className={linkStyle}
+            href={GITHUB.URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub className={contactIconStyle} />
+            {GITHUB.LABEL}
+          </StyledLink>
+        </div>
+        <div className={linkWrapperStyle}>
+          <StyledLink
+            className={linkStyle}
+            href={TWITTER.URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaTwitter className={contactIconStyle} />
+            {TWITTER.LABEL}
+          </StyledLink>
+        </div>
+        <div className={linkWrapperStyle}>
+          <StyledLink
+            className={linkStyle}
+            href={LINKEDIN.URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedin className={contactIconStyle} />
+            {LINKEDIN.LABEL}
+          </StyledLink>
+        </div>
+        <div className={linkWrapperStyle}>
+          <Link href={PRIVACY.URL} passHref>
+            <StyledLink className={linkStyle} href={PRIVACY.URL}>
+              <MdPrivacyTip className={contactIconStyle} />
+              {PRIVACY.LABEL}
+            </StyledLink>
+          </Link>
+        </div>
       </div>
       <div className={copyRightStyle}>
         <Paragraph3 marginBottom={0} marginTop="20px">

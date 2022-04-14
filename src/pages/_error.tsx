@@ -5,7 +5,7 @@ import Head from 'next/head';
 import CONSTS from '@utils/consts';
 
 // Components
-import Layout from '@components/Wrapper/Layout';
+import Layout from '@components/UI/Layout';
 
 // Style
 import { useStyletron } from 'baseui';
