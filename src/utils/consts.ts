@@ -1,7 +1,7 @@
 const CONSTS = {
   REVALIDATE_INTERVAL: 1000,
   ROUTES: {
-    POST: `/post/`,
+    POST: `/blog/`,
   },
   API: {
     ENDPOINTS: {
@@ -14,6 +14,7 @@ const CONSTS = {
             id
             createdAt
             postSlug
+            blogPostType
             postThumbnail {
               handle
               width
@@ -32,7 +33,6 @@ const CONSTS = {
               height
               url
             }
-            postType
             postTitle
             postText
             postDescription
@@ -48,6 +48,7 @@ const CONSTS = {
             id
             createdAt
             postSlug
+            blogPostType
             postThumbnail {
               handle
               width
@@ -66,7 +67,6 @@ const CONSTS = {
               height
               url
             }
-            postType
             postTitle
             postText
             postDescription

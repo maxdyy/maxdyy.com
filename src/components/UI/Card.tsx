@@ -7,10 +7,8 @@ import { useStyletron } from 'baseui';
 // Components
 import { HeadingMedium, ParagraphMedium } from 'baseui/typography';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const Card: React.FC<ICard> = ({
-  CTALink,
   image,
   imageAlt,
   title,
@@ -41,19 +39,9 @@ const Card: React.FC<ICard> = ({
     overflow: 'hidden',
   });
 
-  const imageContainer = CTALink ? (
-    <Link href={CTALink} passHref>
-      <a href={CTALink}>
-        <Image src={image} alt={imageAlt} />
-      </a>
-    </Link>
-  ) : (
-    <Image src={image} alt={imageAlt} />
-  );
-
   return (
     <div className={wrapperStyle}>
-      {imageContainer}
+      <Image src={image} alt={imageAlt} />
       <div>
         <HeadingMedium className={titleStyle}>{title}</HeadingMedium>
         <ParagraphMedium>{firstParagraph}</ParagraphMedium>

@@ -1,7 +1,15 @@
+export enum blogPostType {
+  career = 'career',
+  web = 'web',
+  dev = 'dev',
+  tech = 'tech',
+}
+
 interface IPost {
   id: string;
   postSlug: string;
   createdAt: string;
+  blogPostType: [blogPostType];
   postThumbnail: {
     handle: string;
     url: string;

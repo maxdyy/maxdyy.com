@@ -1,5 +1,4 @@
 interface ICard {
-  CTALink?: string;
   image: {
     src: string;
     height: number;

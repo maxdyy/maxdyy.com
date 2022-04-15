@@ -5,7 +5,7 @@ import IPostsGrid from '@interface/postsGrid';
 import { useStyletron } from 'baseui';
 
 // Components
-import Card from '@components/UI/Card';
+import BlogCard from '@components/Blog/BlogCard';
 
 const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
   // Style
@@ -36,6 +36,7 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
       postTitle,
       postDescription,
       readtime,
+      blogPostType,
     } = post;
 
     const image = {
@@ -45,15 +46,17 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
     };
 
     return (
-      <Card
+      <BlogCard
         key={id}
+        id={id}
+        createdAt={createdAt}
+        readtime={readtime}
+        blogPostType={blogPostType}
+        postSlug={postSlug}
         image={image}
         imageAlt={postTitle}
         title={postTitle}
-        firstParagraph={postDescription}
-        marginLeft={'0px'}
-        marginRight={'0px'}
-        marginBottom={'0px'}
+        paragraph={postDescription}
       />
     );
   });
