@@ -127,7 +127,12 @@ const SearchBar = () => {
         <Button
           onClick={() => toggleSearchOpen(!searchOpen)}
           kind={'minimal'}
-          $style={{ padding: '10px' }}
+          $style={{
+            paddingTop: '10px',
+            paddingLeft: '10px',
+            paddingBottom: '10px',
+            paddingRight: '10px',
+          }}
         >
           <Search size={30} />
         </Button>

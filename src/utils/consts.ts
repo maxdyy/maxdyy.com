@@ -40,10 +40,18 @@ const CONSTS = {
           }
         }
       `,
-      POST_QUERY: (id) => {
+      POST_SLUGS_QUERY: `
+        {
+          blogPosts(orderBy: createdAt_DESC) {
+            id
+            postSlug
+          }
+        }
+      `,
+      POST_QUERY: (slug) => {
         return `{
         blogPost(where: {
-          id: "${id}"
+          postSlug: "${slug}"
         }) {
             id
             createdAt
@@ -78,6 +86,7 @@ const CONSTS = {
       SEARCH_POSTS: `{
         blogPosts(orderBy:createdAt_DESC) {
           id,
+          postSlug,
           postTitle,
           postText
         }

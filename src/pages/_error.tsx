@@ -1,11 +1,9 @@
-import React from 'react';
-import Head from 'next/head';
-
 // Consts
 import CONSTS from '@utils/consts';
 
 // Components
 import Layout from '@components/UI/Layout';
+import SeoHead from '@components/SEO/SeoHead';
 
 // Style
 import { useStyletron } from 'baseui';
@@ -61,19 +59,13 @@ const Error = ({ statusCode }) => {
   return (
     <Layout>
       <div className={pageWrapper}>
-        <Head>
-          <title>
-            {TITLE.ERROR}
-            {statusCode}
-          </title>
-          <meta name="description" content={DESCRIPTION.ERROR} />
-          <meta name="author" content={AUTHOR} />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@maxdyy" />
-          <meta name="twitter:title" content={`\`${TITLE.ERROR}`} />
-          <meta name="twitter:description" content={DESCRIPTION.ERROR} />
-          <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
-        </Head>
+        <SeoHead
+          title={TITLE.HOME}
+          description={DESCRIPTION.HOME}
+          author={AUTHOR}
+          keywords={DESCRIPTION.HOME}
+          imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+        />
         <video className={videoStyle} autoPlay loop muted playsInline>
           <source src="/video/error-background.mp4" type="video/mp4" />
         </video>

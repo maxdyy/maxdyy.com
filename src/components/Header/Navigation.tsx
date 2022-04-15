@@ -118,7 +118,12 @@ const Navigation = () => {
           <Button
             kind={'minimal'}
             onClick={toggleMenu}
-            $style={{ padding: '10px' }}
+            $style={{
+              paddingTop: '10px',
+              paddingLeft: '10px',
+              paddingBottom: '10px',
+              paddingRight: '10px',
+            }}
           >
             <Delete size={30} />
           </Button>
@@ -128,7 +133,12 @@ const Navigation = () => {
         <Button
           kind={'minimal'}
           onClick={toggleMenu}
-          $style={{ padding: '10px' }}
+          $style={{
+            paddingTop: '10px',
+            paddingLeft: '10px',
+            paddingBottom: '10px',
+            paddingRight: '10px',
+          }}
         >
           <Menu size={30} />
         </Button>

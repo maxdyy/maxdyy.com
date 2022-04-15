@@ -1,39 +1,28 @@
 import Head from 'next/head';
 
-// Constants
-import CONSTS from '@utils/consts';
+// Interface
+import ISEOHead from '@interface/seoHead';
 
-const {
-  CONTENT: {
-    HEAD: { TITLE },
-  },
-} = CONSTS;
-
-const SeoHead = ({
-  postTitle,
-  postThumbnail,
-  postDescription,
-  postKeywords,
+const SeoHead: React.FC<ISEOHead> = ({
+  title,
+  description,
+  author,
+  keywords,
+  imageUrl,
 }) => {
   return (
     <Head>
-      <title>{`${TITLE.POST} ${postTitle}`}</title>
-      <meta name="description" content={postDescription} />
-      <meta name="keywords" content={postKeywords} />
-      <meta name="author" content="Maksym Dmukhovskyy" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content={author} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@maxdyy" />
-      <meta name="twitter:title" content={`${TITLE.POST} ${postTitle}`} />
-      <meta name="twitter:description" content={postDescription} />
-      <meta
-        name="twitter:image"
-        content={`https://media.graphassets.com/resize=width:450/${postThumbnail.handle}`}
-      />
-      <meta property="og:title" content={`${TITLE.POST} ${postTitle}`} />
-      <meta
-        property="og:image"
-        content={`https://media.graphassets.com/resize=width:450/${postThumbnail.handle}`}
-      />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content={imageUrl} />
     </Head>
   );
 };

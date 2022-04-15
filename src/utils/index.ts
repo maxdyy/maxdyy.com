@@ -1,36 +1,17 @@
-import { useStyletron } from "baseui";
+import { blogPostType } from '@interface/post';
+import { KIND } from 'baseui/tag';
 
-export const getPostTypeStyle = (postType: string) => {
-  const [, theme] = useStyletron();
-
+export const getBlogPostTagKind = (postType: blogPostType) => {
   switch (postType) {
-    case "WEBpost":
-      return {
-        borderStyle: theme.colors.accent500,
-        backgroundStyle: theme.colors.accent500,
-      };
-    case "JSpost":
-      return {
-        borderStyle: theme.colors.accent500,
-        backgroundStyle: theme.colors.accent500,
-      };
-    case "HTMLpost":
-      return {
-        borderStyle: theme.colors.accent500,
-        backgroundStyle: theme.colors.accent500,
-      };
-    case "CSSpost":
-      return {
-        borderStyle: theme.colors.accent500,
-        backgroundStyle: theme.colors.accent500,
-      };
+    case blogPostType.career:
+      return KIND.red;
+    case blogPostType.web:
+      return KIND.blue;
+    case blogPostType.dev:
+      return KIND.green;
+    case blogPostType.tech:
+      return KIND.yellow;
     default:
-      return {
-        borderStyle: theme.colors.accent500,
-        backgroundStyle: theme.colors.accent500,
-      };
+      return KIND.purple;
   }
 };
-
-export const getImageByHandle = (handle: string) =>
-  `https://media.graphassets.com/${handle}`;

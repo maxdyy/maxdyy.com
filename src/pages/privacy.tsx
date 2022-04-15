@@ -1,11 +1,9 @@
-import React from 'react';
-import Head from 'next/head';
-
 // Constants
 import CONSTS from '@utils/consts';
 
 // Components
 import Layout from '@components/UI/Layout';
+import SeoHead from '@components/SEO/SeoHead';
 import BodyWrapper from '@components/UI/BodyWrapper';
 import { H1, H2, H3, H4, Paragraph1 } from 'baseui/typography';
 import { StyledLink } from 'baseui/link';
@@ -20,20 +18,13 @@ const Privacy = () => {
   return (
     <Layout>
       <div>
-        <Head>
-          <title>{TITLE.PRIVACY}</title>
-          <meta name="description" content={DESCRIPTION.PRIVACY} />
-          <meta name="author" content={AUTHOR} />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@maxdyy" />
-          <meta name="twitter:title" content={TITLE.PRIVACY} />
-          <meta name="twitter:description" content={DESCRIPTION.PRIVACY} />
-          <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
-          <meta
-            name="twitter:image"
-            content={`https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`}
-          />
-        </Head>
+        <SeoHead
+          title={TITLE.HOME}
+          description={DESCRIPTION.HOME}
+          author={AUTHOR}
+          keywords={DESCRIPTION.HOME}
+          imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+        />
 
         <BodyWrapper>
           <section>

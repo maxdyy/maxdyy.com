@@ -4,20 +4,20 @@ import CONSTS from '@utils/consts';
 const {
   API: {
     ENDPOINTS: { MASTER },
-    QUERIES: { POSTS_QUERY },
+    QUERIES: { POST_SLUGS_QUERY },
   },
 } = CONSTS;
 
-const getPosts = async () => {
+const getPostSlugs = async () => {
   const res = await axios({
     url: MASTER,
     method: 'post',
     data: {
-      query: POSTS_QUERY,
+      query: POST_SLUGS_QUERY,
     },
   }).then((result) => result.data);
 
   return res.data.blogPosts;
 };
 
-export default getPosts;
+export default getPostSlugs;

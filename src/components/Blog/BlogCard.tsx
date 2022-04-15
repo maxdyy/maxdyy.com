@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 
 // Consts
 import CONSTS from '@utils/consts';
+import { getBlogPostTagKind } from '@utils/index';
 
 // Interface
 import IBlogCard from '@interface/blogCard';
@@ -46,7 +47,8 @@ const BlogCard: React.FC<IBlogCard> = ({
     WebkitLineClamp: '2',
     WebkitBoxOrient: 'vertical',
     overflow: 'hidden',
-    marginTop: '20px',
+    marginTop: 0,
+    marginBottom: 0,
   });
 
   const titleLinkStyle = css({
@@ -64,16 +66,19 @@ const BlogCard: React.FC<IBlogCard> = ({
     fontSize: '12px',
   });
 
-  const blogTypeTags = blogPostType.map((blogType) => (
-    <Tag
-      kind={'positive'}
-      closeable={false}
-      variant={VARIANT.solid}
-      key={`${id}-${blogType}`}
-    >
-      {blogType}
-    </Tag>
-  ));
+  const blogTypeTags = blogPostType.map((blogType) => {
+    const tagKind = getBlogPostTagKind(blogType);
+    return (
+      <Tag
+        kind={tagKind}
+        closeable={false}
+        variant={VARIANT.solid}
+        key={`${id}-${blogType}`}
+      >
+        {blogType}
+      </Tag>
+    );
+  });
   const blogPostLink = `${POST}${postSlug}`;
 
   return (
