@@ -14,14 +14,13 @@ import {Paragraph3} from 'baseui/typography';
 
 // Style
 import {flexBetween} from '../../styles/styles';
-import getPostTypeStyle from '../../utils/getPostTypeStyle';
 
 const PostItem = ({post}: PostProps) => {
   const {
     ROUTES,
     CONTENT: {POSTS},
   } = CONSTS;
-  const {id, postThumbnail, postTitle, readtime, postType} = post;
+  const {id, postThumbnail, postTitle, readtime } = post;
 
   // Style
   const [css, theme] = useStyletron();
@@ -29,7 +28,9 @@ const PostItem = ({post}: PostProps) => {
     margin: '32px 0',
     padding: '0 16px 0 24px',
   });
-  const {borderStyle, backgroundStyle} = getPostTypeStyle(postType);
+  const borderStyle = theme.colors.accent500;
+  const backgroundStyle = theme.colors.accent500;
+
   const postItemBorderWrapperStyle = css({
     display: 'flex',
     alignItems: 'center',
