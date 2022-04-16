@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 
 // Consts
 import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Interface
 import IBlogPage from '@interface/blogPage';
@@ -16,12 +17,10 @@ import BodyWrapper from '@components/UI/BodyWrapper';
 import { H1, Paragraph1 } from 'baseui/typography';
 import PostsGrind from '@components/Blog/PostsGrid';
 
+const { REVALIDATE_INTERVAL } = CONSTS;
 const {
-  REVALIDATE_INTERVAL,
-  CONTENT: {
-    HEAD: { TITLE, DESCRIPTION, AUTHOR },
-  },
-} = CONSTS;
+  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+} = CONTENT;
 
 const Blog = ({ posts }: IBlogPage) => {
   return (

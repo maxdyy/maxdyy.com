@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -15,12 +15,10 @@ import { Button } from 'baseui/button';
 import { Menu, Delete } from 'baseui/icon';
 
 const {
-  CONTENT: {
-    HEADER: {
-      NAVIGATION: { BLOG, CONTACT, WORK },
-    },
+  HEADER: {
+    NAVIGATION: { BLOG, CONTACT, WORK },
   },
-} = CONSTS;
+} = CONTENT;
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);

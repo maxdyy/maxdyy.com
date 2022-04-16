@@ -1,4 +1,4 @@
-import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -13,12 +13,10 @@ import TiltWrapper from '@components/UI/TiltWrapper';
 import { wrapper, flexCenter } from '@styles/styles';
 
 const {
-  CONTENT: {
-    HEADER: {
-      NAVIGATION: { LOGO },
-    },
+  HEADER: {
+    NAVIGATION: { LOGO },
   },
-} = CONSTS;
+} = CONTENT;
 
 const MainBanner: React.FC = () => {
   // Style

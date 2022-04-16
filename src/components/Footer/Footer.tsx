@@ -1,5 +1,5 @@
 import React from 'react';
-import CONSTS from '../../utils/consts';
+import CONTENT from '@utils/data';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -12,18 +12,16 @@ import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdPrivacyTip } from 'react-icons/md';
 
 // Style
-import { wrapper } from '../../styles/styles';
+import { wrapper } from '@styles/styles';
 
 const Footer = () => {
   const {
-    CONTENT: {
-      FOOTER: {
-        SOCIAL: { GITHUB, TWITTER, LINKEDIN },
-        COPYRIGHT,
-        PRIVACY,
-      },
+    FOOTER: {
+      SOCIAL: { GITHUB, TWITTER, LINKEDIN },
+      COPYRIGHT,
+      PRIVACY,
     },
-  } = CONSTS;
+  } = CONTENT;
 
   // Style
   const [css, theme] = useStyletron();

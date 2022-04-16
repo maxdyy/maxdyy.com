@@ -1,3 +1,5 @@
+import ICmsImage from '@interface/cmsImage';
+
 export enum blogPostType {
   career = 'career',
   web = 'web',
@@ -10,24 +12,9 @@ interface IPost {
   postSlug: string;
   createdAt: string;
   blogPostType: [blogPostType];
-  postThumbnail: {
-    handle: string;
-    url: string;
-    width: number;
-    height: number;
-  };
-  postThumbnailBig: {
-    handle: string;
-    width: number;
-    height: number;
-    url: string;
-  };
-  postImage: {
-    handle: string;
-    url: string;
-    width: number;
-    height: number;
-  };
+  postThumbnail: ICmsImage;
+  postThumbnailBig: ICmsImage;
+  postImage: ICmsImage;
   postType: string;
   postTitle: string;
   postText: string;

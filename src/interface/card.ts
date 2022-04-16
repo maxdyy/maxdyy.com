@@ -4,6 +4,7 @@ interface ICard {
     height: number;
     width: number;
     blurDataURL?: string;
+    alt?: string;
   };
   imageAlt: string;
   title: string;

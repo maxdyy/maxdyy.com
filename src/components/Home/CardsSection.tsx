@@ -34,6 +34,10 @@ const CardsSection: React.FC = () => {
     textAlign: 'center',
     marginTop: '120px',
     marginBottom: '60px',
+    backgroundColor: '#21D4FD',
+    backgroundImage: 'linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
   });
 
   return (

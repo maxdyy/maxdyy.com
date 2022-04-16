@@ -1,4 +1,4 @@
-import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -19,12 +19,10 @@ import Navigation from '@components/Header/Navigation';
 import { wrapper, flexBetween } from '@styles/styles';
 
 const {
-  CONTENT: {
-    HEADER: {
-      NAVIGATION: { LOGO },
-    },
+  HEADER: {
+    NAVIGATION: { LOGO },
   },
-} = CONSTS;
+} = CONTENT;
 
 const Header = () => {
   // Style

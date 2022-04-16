@@ -1,5 +1,5 @@
 // Constants
-import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Components
 import Layout from '@components/UI/Layout';
@@ -9,12 +9,10 @@ import { H1, H2, H3, H4, Paragraph1 } from 'baseui/typography';
 import { StyledLink } from 'baseui/link';
 
 const {
-  CONTENT: {
-    HEAD: { TITLE, DESCRIPTION, AUTHOR },
-  },
-} = CONSTS;
+  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+} = CONTENT;
 
-const Privacy = () => {
+const Privacy: React.FC = () => {
   return (
     <Layout>
       <div>
