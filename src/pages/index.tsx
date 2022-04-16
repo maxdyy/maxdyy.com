@@ -12,7 +12,7 @@ import Layout from '@components/UI/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 import BodyWrapper from '@components/UI/BodyWrapper';
 import MainBanner from '@components/Home/MainBanner';
-import CardsSection from '@components/Home/CardsSection';
+import CardsGrid from '@components/Home/CardsGrid';
 import { H2, Paragraph1 } from 'baseui/typography';
 import Bubbles from '@components/Home/Bubbles';
 
@@ -26,10 +26,9 @@ const Index = () => {
 
   const secondaryTitleStyle = css({
     textAlign: 'center',
-    marginTop: '50px',
-    backgroundColor: '#FF3CAC',
-    backgroundImage:
-      'linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)',
+    marginTop: '100px',
+    backgroundColor: '#21D4FD',
+    backgroundImage: 'linear-gradient(45deg, #21D4FD 0%, #B721FF 80%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
   });
@@ -51,8 +50,10 @@ const Index = () => {
         <BodyWrapper>
           <>
             <MainBanner />
-            <CardsSection />
-            <H2 className={secondaryTitleStyle}>LOREM IPSUM</H2>
+            <CardsGrid />
+            <H2 className={secondaryTitleStyle}>
+              Lets shape your future together
+            </H2>
             <Paragraph1 className={secondaryParagraphStyle}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
               fugiat labore, accusamus unde quasi laboriosam ea consequatur

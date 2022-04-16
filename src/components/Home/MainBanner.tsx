@@ -48,17 +48,10 @@ const MainBanner: React.FC = () => {
   const bottomSectionStyle = css({});
 
   const mainTitleStyle = css({
-    backgroundColor: '#4158D0',
-    backgroundImage:
-      'linear-gradient(43deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%)',
+    backgroundColor: '#21D4FD',
+    backgroundImage: 'linear-gradient(45deg, #21D4FD 0%, #B721FF 75%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-  });
-
-  const avatarImageWrapperStyle = css({
-    padding: '3px 3px 1px 3px',
-    backgroundImage:
-      'linear-gradient( 96.5deg,  rgba(39,103,187,1) 10.4%, rgba(16,72,144,1) 87.7% )',
   });
 
   return (
@@ -73,7 +66,7 @@ const MainBanner: React.FC = () => {
       </div>
       <div className={bottomSectionStyle}>
         <TiltWrapper scale={1.02} degrees={15}>
-          <div className={avatarImageWrapperStyle}>
+          <div>
             <Image alt={LOGO.ALT} src={avatarImg} />
           </div>
         </TiltWrapper>

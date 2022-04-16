@@ -5,7 +5,7 @@ import ICard from '@interface/card';
 import { useStyletron } from 'baseui';
 
 // Components
-import { HeadingMedium, ParagraphMedium } from 'baseui/typography';
+import { H2, ParagraphMedium } from 'baseui/typography';
 import Image from 'next/image';
 
 const Card: React.FC<ICard> = ({
@@ -15,20 +15,15 @@ const Card: React.FC<ICard> = ({
   firstParagraph,
   secondParagraph,
   thirdParagraph,
-  marginLeft = '20px',
-  marginRight = '20px',
-  marginBottom = '60px',
 }) => {
   // Style
   const [css, theme] = useStyletron();
 
   const wrapperStyle = css({
-    marginBottom,
+    marginBottom: '35px',
     width: '100%',
     [theme.mediaQuery.medium]: {
       maxWidth: '370px',
-      marginLeft,
-      marginRight,
     },
   });
 
@@ -43,7 +38,7 @@ const Card: React.FC<ICard> = ({
     <div className={wrapperStyle}>
       <Image src={image} alt={imageAlt} />
       <div>
-        <HeadingMedium className={titleStyle}>{title}</HeadingMedium>
+        <H2 className={titleStyle}>{title}</H2>
         <ParagraphMedium>{firstParagraph}</ParagraphMedium>
         {secondParagraph && (
           <ParagraphMedium>{secondParagraph}</ParagraphMedium>

@@ -11,8 +11,6 @@ interface ICard {
   firstParagraph: string;
   secondParagraph?: string;
   thirdParagraph?: string;
-  marginLeft?: string;
-  marginRight?: string;
   marginBottom?: string;
 }
 
