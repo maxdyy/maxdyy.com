@@ -1,5 +1,5 @@
 // Consts
-import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Components
 import Layout from '@components/UI/Layout';
@@ -10,10 +10,8 @@ import { useStyletron } from 'baseui';
 
 const Error = ({ statusCode }) => {
   const {
-    CONTENT: {
-      HEAD: { TITLE, DESCRIPTION, AUTHOR },
-    },
-  } = CONSTS;
+    HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  } = CONTENT;
 
   // Style
   const [css, theme] = useStyletron();

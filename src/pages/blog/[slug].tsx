@@ -6,6 +6,7 @@ import hljs from 'highlight.js';
 
 // Consts
 import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 
 // Interface
 import IBlogPostPage from '@interface/blogPostPage';
@@ -22,13 +23,11 @@ import Layout from '@components/UI/Layout';
 import BodyWrapper from '@components/UI/BodyWrapper';
 import SeoHead from '@components/SEO/SeoHead';
 
+const { REVALIDATE_INTERVAL, ROUTES } = CONSTS;
+
 const {
-  REVALIDATE_INTERVAL,
-  ROUTES,
-  CONTENT: {
-    HEAD: { TITLE, DESCRIPTION, AUTHOR },
-  },
-} = CONSTS;
+  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+} = CONTENT;
 
 const BlogPost = ({ post }: IBlogPostPage) => {
   const { postTitle, postImage, postText } = post;
