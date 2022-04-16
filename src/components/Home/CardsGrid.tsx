@@ -4,9 +4,12 @@ import { useStyletron } from 'baseui';
 // Components
 import { HeadingLarge } from 'baseui/typography';
 import Card from '@components/UI/Card';
-import designImage from '@public/home/Design.png';
-import developImage from '@public/home/Develop.png';
-import deployImage from '@public/home/Deploy.png';
+import specificImg from '@public/home/SMART/Specific.png';
+import measurableImg from '@public/home/SMART/Measurable.png';
+import achievableImg from '@public/home/SMART/Achievable.png';
+import realisticImg from '@public/home/SMART/Realistic.png';
+import timeOrientedImg from '@public/home/SMART/Time-oriented.png';
+import preciseImg from '@public/home/SMART/Precise.png';
 
 const CardsGrid: React.FC = () => {
   // Style
@@ -46,7 +49,7 @@ const CardsGrid: React.FC = () => {
       </HeadingLarge>
       <section className={gridStyle}>
         <Card
-          image={designImage}
+          image={specificImg}
           imageAlt="avatar"
           title="Title"
           firstParagraph="First Paragraph"
@@ -54,7 +57,7 @@ const CardsGrid: React.FC = () => {
           thirdParagraph="Third Paragraph"
         />
         <Card
-          image={developImage}
+          image={measurableImg}
           imageAlt="avatar"
           title="Title"
           firstParagraph="First Paragraph"
@@ -62,7 +65,7 @@ const CardsGrid: React.FC = () => {
           thirdParagraph="Third Paragraph"
         />
         <Card
-          image={deployImage}
+          image={achievableImg}
           imageAlt="avatar"
           title="Title"
           firstParagraph="First Paragraph"
@@ -70,7 +73,7 @@ const CardsGrid: React.FC = () => {
           thirdParagraph="Third Paragraph"
         />
         <Card
-          image={deployImage}
+          image={realisticImg}
           imageAlt="avatar"
           title="Title"
           firstParagraph="First Paragraph"
@@ -78,7 +81,7 @@ const CardsGrid: React.FC = () => {
           thirdParagraph="Third Paragraph"
         />
         <Card
-          image={deployImage}
+          image={timeOrientedImg}
           imageAlt="avatar"
           title="Title"
           firstParagraph="First Paragraph"
@@ -86,7 +89,7 @@ const CardsGrid: React.FC = () => {
           thirdParagraph="Third Paragraph"
         />
         <Card
-          image={deployImage}
+          image={preciseImg}
           imageAlt="avatar"
           title="Title"
           firstParagraph="First Paragraph"
