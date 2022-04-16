@@ -17,14 +17,11 @@ const Card: React.FC<ICard> = ({
   thirdParagraph,
 }) => {
   // Style
-  const [css, theme] = useStyletron();
+  const [css] = useStyletron();
 
   const wrapperStyle = css({
     marginBottom: '35px',
     width: '100%',
-    [theme.mediaQuery.medium]: {
-      maxWidth: '370px',
-    },
   });
 
   const titleStyle = css({

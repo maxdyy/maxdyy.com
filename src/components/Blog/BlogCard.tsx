@@ -37,9 +37,6 @@ const BlogCard: React.FC<IBlogCard> = ({
   const wrapperStyle = css({
     marginBottom: '60px',
     width: '100%',
-    [theme.mediaQuery.medium]: {
-      maxWidth: '370px',
-    },
   });
 
   const titleStyle = css({

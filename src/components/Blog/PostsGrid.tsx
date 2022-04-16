@@ -21,6 +21,7 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
 
     [theme.mediaQuery.medium]: {
       gridTemplateColumns: 'repeat(2, 1fr)',
+      gridColumnGap: '35px',
     },
     [theme.mediaQuery.large]: {
       gridTemplateColumns: 'repeat(3, 1fr)',
