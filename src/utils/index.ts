@@ -15,3 +15,7 @@ export const getBlogPostTagKind = (postType: blogPostType) => {
       return KIND.purple;
   }
 };
+
+export const createMarkup = (text: string) => {
+  return { __html: text };
+};

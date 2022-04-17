@@ -9,6 +9,7 @@ import { useStyletron } from 'baseui';
 import Link from 'next/link';
 import { H1, Paragraph1 } from 'baseui/typography';
 import { Button } from 'baseui/button';
+import TiltWrapper from '@components/UI/TiltWrapper';
 
 const ProjectBanner: React.FC<IProjectBanner> = ({
   mobileImage,
@@ -56,7 +57,7 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '20px',
+    padding: '25px',
     backgroundColor: theme.colors.primary700,
     [theme.mediaQuery.medium]: {
       width: 'calc(40% - 25px)',
@@ -69,23 +70,38 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     padding: '10px 0',
   });
 
-  const linkStyle = css({ color: 'inherit', textDecoration: 'none' });
+  const linkStyle = css({
+    color: 'inherit',
+    textDecoration: 'none',
+    fontSize: '22px',
+  });
 
   return (
     <div className={wrapperStyle}>
-      <div className={imageWrapperStyle}>
-        <picture>
-          <source media="(min-width:600px)" srcSet={image.url} />
-          <img className={imageStyle} src={mobileImage.url} alt={imageAlt} />
-        </picture>
-      </div>
+      <TiltWrapper className={imageWrapperStyle} scale={1.02} degrees={10}>
+        <Link href={projectPageLink} passHref>
+          <a href={projectPageLink} className={linkStyle}>
+            <picture>
+              <source media="(min-width:600px)" srcSet={image.url} />
+              <img
+                className={imageStyle}
+                src={mobileImage.url}
+                alt={imageAlt}
+              />
+            </picture>
+          </a>
+        </Link>
+      </TiltWrapper>
       <div className={contentWrapperStyle}>
         <H1>{title}</H1>
         <Paragraph1>{description}</Paragraph1>
         <div className={ctaWrapperStyle}>
           <Link href={projectPageLink} passHref>
             <Button kind={'minimal'}>
-              <a href={projectPageLink} className={linkStyle}>
+              <a
+                href={projectPageLink}
+                className={`${linkStyle} gradient-link-animated`}
+              >
                 VIEW PROJECT
               </a>
             </Button>

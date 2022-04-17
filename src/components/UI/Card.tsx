@@ -7,6 +7,7 @@ import { useStyletron } from 'baseui';
 // Components
 import { H2, ParagraphMedium } from 'baseui/typography';
 import Image from 'next/image';
+import TiltWrapper from '@components/UI/TiltWrapper';
 
 const Card: React.FC<ICard> = ({
   image,
@@ -33,7 +34,9 @@ const Card: React.FC<ICard> = ({
 
   return (
     <div className={wrapperStyle}>
-      <Image src={image} alt={imageAlt} />
+      <TiltWrapper scale={1.02} degrees={15}>
+        <Image src={image} alt={imageAlt} />
+      </TiltWrapper>
       <div>
         <H2 className={titleStyle}>{title}</H2>
         <ParagraphMedium>{firstParagraph}</ParagraphMedium>

@@ -15,6 +15,7 @@ import { HeadingMedium, ParagraphMedium } from 'baseui/typography';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Tag, VARIANT } from 'baseui/tag';
+import TiltWrapper from '@components/UI/TiltWrapper';
 
 const {
   ROUTES: { POST },
@@ -82,7 +83,9 @@ const BlogCard: React.FC<IBlogCard> = ({
     <div className={wrapperStyle}>
       <Link href={blogPostLink} passHref>
         <a href={blogPostLink}>
-          <Image src={image} alt={imageAlt} />
+          <TiltWrapper scale={1.02} degrees={15}>
+            <Image src={image} alt={imageAlt} />
+          </TiltWrapper>
         </a>
       </Link>
       <div>

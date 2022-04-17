@@ -1,4 +1,6 @@
+// Constants and utils
 import CONTENT from '@utils/data';
+import { createMarkup } from '@utils/index';
 
 // Hooks
 import { useStyletron } from 'baseui';
@@ -13,8 +15,8 @@ import TiltWrapper from '@components/UI/TiltWrapper';
 import { wrapper, flexCenter } from '@styles/styles';
 
 const {
-  HEADER: {
-    NAVIGATION: { LOGO },
+  HOME: {
+    MAIN_BANNER: { IMG_ALT, TITLE, DESCRIPTION },
   },
 } = CONTENT;
 
@@ -57,17 +59,15 @@ const MainBanner: React.FC = () => {
   return (
     <div className={wrapperStyle}>
       <div className={topSectionStyle}>
-        <H1 className={mainTitleStyle}>Design, Develop and Deploy</H1>
+        <H1 className={mainTitleStyle}>{TITLE}</H1>
         <Paragraph1>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-          accusamus, nihil nemo ea nam magni natus quisquam in ipsam eveniet
-          quia illo tenetur aut nobis atque veritatis eligendi nesciunt quam!
+          <span dangerouslySetInnerHTML={createMarkup(DESCRIPTION)}></span>
         </Paragraph1>
       </div>
       <div className={bottomSectionStyle}>
         <TiltWrapper scale={1.02} degrees={15}>
           <div>
-            <Image alt={LOGO.ALT} src={avatarImg} />
+            <Image alt={IMG_ALT} src={avatarImg} />
           </div>
         </TiltWrapper>
       </div>
