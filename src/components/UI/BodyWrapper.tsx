@@ -8,12 +8,15 @@ import { wrapper } from '@styles/styles';
 
 const BodyWrapper: React.FC<IBodyWrapper> = ({ children }) => {
   // Style
-  const [css] = useStyletron();
+  const [css, theme] = useStyletron();
 
   const wrapperStyle = css({
     ...wrapper,
     marginTop: '120px',
     marginBottom: '120px',
+    [theme.mediaQuery.medium]: {
+      minHeight: 'calc(100vh - 360px)',
+    },
   });
 
   const innerWrapperStyle = css({

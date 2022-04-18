@@ -1,7 +1,8 @@
 // server.js
-const {createServer} = require('http');
-const {parse} = require('url');
+const { createServer } = require('http');
+const { parse } = require('url');
 const next = require('next');
+require('dotenv').config();
 
 const dev = process.env.NODE_ENV !== 'production';
 const hostname = 'localhost';
@@ -10,7 +11,7 @@ const hostname = 'localhost';
 const port = process.env.PORT ? process.env.PORT : 3000;
 
 // when using middleware `hostname` and `port` must be provided below
-const app = next({dev, hostname, port});
+const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
@@ -28,6 +29,6 @@ app.prepare().then(() => {
     }
   }).listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http://${hostname}:${port} let's gooo 🚀`);
+    console.log(`> Ready on http://${hostname}:${port} okeeeey let's gooo 🚀`);
   });
 });

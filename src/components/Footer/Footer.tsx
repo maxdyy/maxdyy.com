@@ -14,15 +14,15 @@ import { MdPrivacyTip } from 'react-icons/md';
 // Style
 import { wrapper } from '@styles/styles';
 
-const Footer = () => {
-  const {
-    FOOTER: {
-      SOCIAL: { GITHUB, TWITTER, LINKEDIN },
-      COPYRIGHT,
-      PRIVACY,
-    },
-  } = CONTENT;
+const {
+  FOOTER: {
+    SOCIAL: { GITHUB, TWITTER, LINKEDIN },
+    COPYRIGHT,
+    PRIVACY,
+  },
+} = CONTENT;
 
+const Footer = () => {
   // Style
   const [css, theme] = useStyletron();
   const footerStyle = css({

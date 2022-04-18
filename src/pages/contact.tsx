@@ -5,6 +5,8 @@ import CONTENT from '@utils/data';
 import Layout from '@components/UI/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 import BodyWrapper from '@components/UI/BodyWrapper';
+import ContactForm from '@components/Contact/ContactForm';
+import { H1, Paragraph1 } from 'baseui/typography';
 
 const {
   HEAD: { TITLE, DESCRIPTION, AUTHOR },
@@ -21,7 +23,14 @@ const Contact: React.FC = () => {
         imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
       />
       <BodyWrapper>
-        <div></div>
+        <H1>MAXDYY Blog</H1>
+        <Paragraph1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          earum nobis placeat? Recusandae, tempore quidem dolorum, fuga ex,
+          iusto atque voluptatum corrupti voluptates sequi non? Dolor ea atque
+          laudantium labore!
+        </Paragraph1>
+        <ContactForm />
       </BodyWrapper>
     </Layout>
   );

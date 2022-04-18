@@ -58,7 +58,7 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     flexDirection: 'column',
     justifyContent: 'center',
     padding: '25px',
-    backgroundColor: theme.colors.primary700,
+    backgroundColor: '#272727',
     [theme.mediaQuery.medium]: {
       width: 'calc(40% - 25px)',
     },
