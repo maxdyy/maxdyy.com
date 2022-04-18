@@ -127,7 +127,7 @@ const ContactForm: React.FC = () => {
 
   const [submitting, setSubmitting] = useState(false);
 
-  const [showNotification, setShowNotification] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
   const [notificationText, setNotificationText] = useState(
     'Your message has been sent successfully!',
   );
