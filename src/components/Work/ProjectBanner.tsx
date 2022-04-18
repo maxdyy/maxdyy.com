@@ -1,3 +1,6 @@
+import CONTENT from '@utils/data';
+import { createMarkup } from '@utils/index';
+
 // Interface
 import IProjectBanner from '@interface/projectBanner';
 import { projectBannerDirection } from '@interface/projectBanner';
@@ -6,10 +9,13 @@ import { projectBannerDirection } from '@interface/projectBanner';
 import { useStyletron } from 'baseui';
 
 // Components
-import Link from 'next/link';
 import { H1, Paragraph1 } from 'baseui/typography';
 import { Button } from 'baseui/button';
 import TiltWrapper from '@components/UI/TiltWrapper';
+
+const {
+  WORK: { PROJECT_CTA_LABEL, PROJECT_COMING_SOON },
+} = CONTENT;
 
 const ProjectBanner: React.FC<IProjectBanner> = ({
   mobileImage,
@@ -49,6 +55,8 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     },
   });
 
+  const projectTitleStyle = css({ margin: '15px 0' });
+
   const imageStyle = css({
     width: '100%',
   });
@@ -76,37 +84,66 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     fontSize: '22px',
   });
 
+  const projectImage = () => (
+    <picture>
+      <source media="(min-width:600px)" srcSet={image.url} />
+      <img className={imageStyle} src={mobileImage.url} alt={imageAlt} />
+    </picture>
+  );
+
+  const projectImageBanner = () => {
+    if (projectPageLink) {
+      return (
+        <a
+          href={projectPageLink}
+          className={linkStyle}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {projectImage()}
+        </a>
+      );
+    } else {
+      return projectImage();
+    }
+  };
+
+  const projectCTA = () => {
+    if (projectPageLink) {
+      return (
+        <Button kind={'minimal'}>
+          <a
+            href={projectPageLink}
+            className={`${linkStyle} gradient-link-animated`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {PROJECT_CTA_LABEL}
+          </a>
+        </Button>
+      );
+    } else {
+      return (
+        <Button kind={'minimal'} type="button" disabled>
+          <span className={`${linkStyle} gradient-link-animated`}>
+            {PROJECT_COMING_SOON}
+          </span>
+        </Button>
+      );
+    }
+  };
+
   return (
     <div className={wrapperStyle}>
       <TiltWrapper className={imageWrapperStyle} scale={1.02} degrees={10}>
-        <Link href={projectPageLink} passHref>
-          <a href={projectPageLink} className={linkStyle}>
-            <picture>
-              <source media="(min-width:600px)" srcSet={image.url} />
-              <img
-                className={imageStyle}
-                src={mobileImage.url}
-                alt={imageAlt}
-              />
-            </picture>
-          </a>
-        </Link>
+        {projectImageBanner()}
       </TiltWrapper>
       <div className={contentWrapperStyle}>
-        <H1>{title}</H1>
-        <Paragraph1>{description}</Paragraph1>
-        <div className={ctaWrapperStyle}>
-          <Link href={projectPageLink} passHref>
-            <Button kind={'minimal'}>
-              <a
-                href={projectPageLink}
-                className={`${linkStyle} gradient-link-animated`}
-              >
-                VIEW PROJECT
-              </a>
-            </Button>
-          </Link>
-        </div>
+        <H1 className={projectTitleStyle}>{title}</H1>
+        <Paragraph1>
+          <span dangerouslySetInnerHTML={createMarkup(description)} />
+        </Paragraph1>
+        <div className={ctaWrapperStyle}>{projectCTA()}</div>
       </div>
     </div>
   );

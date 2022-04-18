@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 // Consts
 import CONSTS from '@utils/consts';
 import CONTENT from '@utils/data';
+import { createMarkup } from '@utils/index';
 
 // Interface
 import IBlogPage from '@interface/blogPage';
@@ -20,6 +21,7 @@ import PostsGrind from '@components/Blog/PostsGrid';
 const { REVALIDATE_INTERVAL } = CONSTS;
 const {
   HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  BLOG,
 } = CONTENT;
 
 const Blog = ({ posts }: IBlogPage) => {
@@ -35,12 +37,11 @@ const Blog = ({ posts }: IBlogPage) => {
         />
         <BodyWrapper>
           <section>
-            <H1>MAXDYY Blog</H1>
+            <H1>{BLOG.TITLE}</H1>
             <Paragraph1>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium earum nobis placeat? Recusandae, tempore quidem
-              dolorum, fuga ex, iusto atque voluptatum corrupti voluptates sequi
-              non? Dolor ea atque laudantium labore!
+              <span
+                dangerouslySetInnerHTML={createMarkup(BLOG.DESCRIPTION)}
+              ></span>
             </Paragraph1>
             <PostsGrind posts={posts} />
           </section>

@@ -1,5 +1,6 @@
 // Constants
 import CONTENT from '@utils/data';
+import { createMarkup } from '@utils/index';
 
 // Components
 import Layout from '@components/UI/Layout';
@@ -10,6 +11,7 @@ import { H1, Paragraph1 } from 'baseui/typography';
 
 const {
   HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  CONTACT,
 } = CONTENT;
 
 const Contact: React.FC = () => {
@@ -23,12 +25,9 @@ const Contact: React.FC = () => {
         imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
       />
       <BodyWrapper>
-        <H1>MAXDYY Blog</H1>
+        <H1>{CONTACT.TITLE}</H1>
         <Paragraph1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          earum nobis placeat? Recusandae, tempore quidem dolorum, fuga ex,
-          iusto atque voluptatum corrupti voluptates sequi non? Dolor ea atque
-          laudantium labore!
+          <span dangerouslySetInnerHTML={createMarkup(CONTACT.DESCRIPTION)} />
         </Paragraph1>
         <ContactForm />
       </BodyWrapper>

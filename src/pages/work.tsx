@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 // Constants
 import CONSTS from '@utils/consts';
 import CONTENT from '@utils/data';
+import { createMarkup } from '@utils/index';
 
 // Interfaces
 import IWorkPage from '@interface/workPage';
@@ -24,6 +25,7 @@ const { REVALIDATE_INTERVAL } = CONSTS;
 
 const {
   HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  WORK,
 } = CONTENT;
 
 const Work: React.FC<IWorkPage> = ({ projects }) => {
@@ -44,12 +46,9 @@ const Work: React.FC<IWorkPage> = ({ projects }) => {
       />
       <BodyWrapper>
         <section className={sectionStyle}>
-          <H1>MAXDYY Work</H1>
+          <H1>{WORK.TITLE}</H1>
           <Paragraph1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-            earum nobis placeat? Recusandae, tempore quidem dolorum, fuga ex,
-            iusto atque voluptatum corrupti voluptates sequi non? Dolor ea atque
-            laudantium labore!
+            <span dangerouslySetInnerHTML={createMarkup(WORK.DESCRIPTION)} />
           </Paragraph1>
           <ProjectsList projects={projects} />
         </section>

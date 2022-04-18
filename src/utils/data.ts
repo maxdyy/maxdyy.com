@@ -129,6 +129,72 @@ const CONTENT = {
       CTA_URL: `/contact`,
     },
   },
+  BLOG: {
+    TITLE: 'MAXDYY - Blog',
+    DESCRIPTION: `              
+              This is the blog page section. Here you can find blog posts about
+              tech, computer science and web developer career. 
+              <br>
+              As a web developer, I am always on the lookout for new technologies to add
+              to my skillset. 
+              <br>
+              <br>
+              In this blog, I will share with you some of the
+              latest tech trends that I think are worth your attention.
+              <br>
+              I will
+              also write about my experience as a web developer and share career
+              advice that I think will be helpful to you.`,
+    READ_TIME_LABEL: `Read time:`,
+    CREATED_LABEL: `Created:`,
+  },
+  WORK: {
+    TITLE: 'MAXDYY - Work',
+    DESCRIPTION: `
+                In this section, you can find some of my latest selected projects that I worked on outside of non-disclosure agreements.
+                <br>
+                All projects are using cutting edge Front End technologies and are optimized for performance and user experience.
+                <br>
+                <br>
+                From automated testing to bundle optimization, I have a proven track record of shipping high-quality products.
+                <br>
+                My goal is always to build the best possible solution for the given problem, whether it is a small website or a large scale application.`,
+    PROJECT_CTA_LABEL: `VIEW PROJECT`,
+    PROJECT_COMING_SOON: `COMING SOON...`,
+  },
+  CONTACT: {
+    TITLE: 'MAXDYY - Contact',
+    DESCRIPTION: `
+                  Let's talk! 
+                  <br>
+                  Don't hesitate to send me a message if you want to work together on a project or if you want to chat about web development. 
+                  <br>
+                  I speak English, Italian, Ukrainian and Russian.`,
+    CONTACT_FORM: {
+      NAME: {
+        LABEL: `Your name`,
+        ERROR: `Please enter your name`,
+      },
+      EMAIL: {
+        LABEL: `Your email`,
+        ERROR: `Please enter your email`,
+      },
+      MESSAGE: {
+        LABEL: `Your message`,
+        ERROR: `Please enter your message`,
+      },
+      PRIVACY: {
+        LABEL: `I agree to the`,
+        ERROR: `Please agree to the privacy policy`,
+      },
+      SUBMIT: {
+        CTA: `SEND MESSAGE`,
+        SUBMITTING: 'SENDING...',
+        SUCCESS: 'Your message has been sent successfully!',
+        ERROR: 'Something went wrong. Please try again later.',
+      },
+    },
+  },
 };
 
 export default CONTENT;

@@ -19,6 +19,7 @@ import { Notification, KIND } from 'baseui/notification';
 
 const {
   FOOTER: { PRIVACY },
+  CONTACT: { CONTACT_FORM },
 } = CONTENT;
 
 const ContactForm: React.FC = () => {
@@ -60,7 +61,7 @@ const ContactForm: React.FC = () => {
 
   const privacyCheckBoxWrapperStyle = css({
     marginTop: '20px',
-    width: '230px',
+    width: '240px',
   });
 
   const privacyLinkStyle = css({
@@ -129,7 +130,7 @@ const ContactForm: React.FC = () => {
 
   const [showNotification, setShowNotification] = useState(false);
   const [notificationText, setNotificationText] = useState(
-    'Your message has been sent successfully!',
+    CONTACT_FORM.SUBMIT.SUCCESS,
   );
   const [notificationPositive, setNotificationPositive] = useState(true);
   useEffect(() => {
@@ -184,11 +185,11 @@ const ContactForm: React.FC = () => {
 
     if (data.statusCode === 202) {
       setShowNotification(true);
-      setNotificationText('Your message has been sent successfully!');
+      setNotificationText(CONTACT_FORM.SUBMIT.SUCCESS);
       setNotificationPositive(true);
     } else {
       setShowNotification(true);
-      setNotificationText('Something went wrong. Please try again later.');
+      setNotificationText(CONTACT_FORM.SUBMIT.ERROR);
       setNotificationPositive(false);
     }
 
@@ -202,8 +203,8 @@ const ContactForm: React.FC = () => {
         <div className={formSectionWrapperStyle}>
           <div className={nameInputWrapperStyle}>
             <FormControl
-              label="Your name"
-              error={showNameError ? 'Please input your name' : null}
+              label={CONTACT_FORM.NAME.LABEL}
+              error={showNameError ? CONTACT_FORM.NAME.ERROR : null}
             >
               <Input
                 id="contact-form-name"
@@ -217,8 +218,8 @@ const ContactForm: React.FC = () => {
           </div>
           <div className={emailInputWrapperStyle}>
             <FormControl
-              label="Your email"
-              error={showEmailError ? 'Please input your email' : null}
+              label={CONTACT_FORM.EMAIL.LABEL}
+              error={showEmailError ? CONTACT_FORM.EMAIL.ERROR : null}
             >
               <Input
                 id="contact-form-email"
@@ -233,8 +234,8 @@ const ContactForm: React.FC = () => {
         </div>
         <div>
           <FormControl
-            label="Your message"
-            error={showMessageError ? 'Please input your message' : null}
+            label={CONTACT_FORM.MESSAGE.LABEL}
+            error={showMessageError ? CONTACT_FORM.MESSAGE.ERROR : null}
           >
             <Textarea
               id="contact-form-message"
@@ -248,11 +249,7 @@ const ContactForm: React.FC = () => {
         </div>
         <div className={privacyCheckBoxWrapperStyle}>
           <FormControl
-            error={
-              showPrivacyAcceptedError
-                ? 'Please accept the privacy policy'
-                : null
-            }
+            error={showPrivacyAcceptedError ? CONTACT_FORM.PRIVACY.ERROR : null}
           >
             <Checkbox
               checked={privacyAccepted}
@@ -260,7 +257,7 @@ const ContactForm: React.FC = () => {
               onBlur={() => setPrivacyAcceptedVisited(true)}
               error={showPrivacyAcceptedError}
             >
-              Accept the
+              {CONTACT_FORM.PRIVACY.LABEL}
               <StyledLink
                 className={privacyLinkStyle}
                 href={PRIVACY.URL}
@@ -275,7 +272,9 @@ const ContactForm: React.FC = () => {
         <div className={submitButtonWrapperStyle}>
           <Button kind={'minimal'} onClick={onFormSubmit} disabled={submitting}>
             <span className={`gradient-link-animated ${submitButtonTextStyle}`}>
-              SUBMIT FORM
+              {submitting
+                ? CONTACT_FORM.SUBMIT.SUBMITTING
+                : CONTACT_FORM.SUBMIT.CTA}
             </span>
           </Button>
         </div>

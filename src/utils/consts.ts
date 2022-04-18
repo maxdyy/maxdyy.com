@@ -92,7 +92,7 @@ const CONSTS = {
         }
       }`,
       PROJECTS_QUERY: `{
-        projects(orderBy: createdAt_ASC) {
+        projects(orderBy:createdAt_DESC) {
           id
           projectBannerAlt
           projectBannerDesktop {

@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 
 // Consts
 import CONSTS from '@utils/consts';
+import CONTENT from '@utils/data';
 import { getBlogPostTagKind } from '@utils/index';
 
 // Interface
@@ -20,6 +21,10 @@ import TiltWrapper from '@components/UI/TiltWrapper';
 const {
   ROUTES: { POST },
 } = CONSTS;
+
+const {
+  BLOG: { READ_TIME_LABEL, CREATED_LABEL },
+} = CONTENT;
 
 const BlogCard: React.FC<IBlogCard> = ({
   id,
@@ -91,8 +96,12 @@ const BlogCard: React.FC<IBlogCard> = ({
       <div>
         <div className={blogPostInfoWrapperStyle}>
           <div className={blogPostDateInfoStyle}>
-            <div>Read time: {readtime}</div>
-            <div>Created: {format(new Date(createdAt), 'MM/dd/yyyy')}</div>
+            <div>
+              {READ_TIME_LABEL} {readtime}
+            </div>
+            <div>
+              {CREATED_LABEL} {format(new Date(createdAt), 'MM/dd/yyyy')}
+            </div>
           </div>
           <div>{blogTypeTags}</div>
         </div>

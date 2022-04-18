@@ -17,7 +17,7 @@ const ProjectsList: React.FC<IProjectsList> = ({ projects }) => {
 
   const { left, right } = projectBannerDirection;
 
-  const projectBanners = [...projects, ...projects].map((project, index) => {
+  const projectBanners = projects.map((project, index) => {
     return (
       <ProjectBanner
         key={project.id}
