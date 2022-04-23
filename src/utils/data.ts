@@ -1,22 +1,38 @@
 const CONTENT = {
   HEAD: {
     TITLE: {
-      HOME: `MAXDYY - Web Development`,
-      BLOG: `MAXDYY - Blog`,
-      WORK: `MAXDYY - Work`,
-      ABOUT: `MAXDYY - About`,
-      POST: `MAXDYY - `,
-      PRIVACY: `MAXDYY - Privacy Policy`,
-      ERROR: `MAXDYY - ERROR `,
+      HOME: `maxdyy - Web Development`,
+      BLOG: `maxdyy - Blog`,
+      WORK: `maxdyy - Work`,
+      POST: `maxdyy - `,
+      PRIVACY: `maxdyy - Privacy Policy`,
+      ERROR: `maxdyy - error `,
+      CONTACT: `maxdyy - Contact`,
     },
     DESCRIPTION: {
-      HOME: `All about Web Development`,
-      BLOG: `All about Web Development`,
-      PRIVACY: `Privacy Policy Page`,
-      ABOUT: `About MAXDYY`,
-      ERROR: `MAXDYY - ERROR `,
+      HOME: `Design, Develop and Deploy - My name is Maksym Dmukhovskyy, I am a Lead Front End Developer with extensive experience in designing, developing and deploying high-performing websites.`,
+      BLOG: `Here you can find blog posts about tech, computer science and web developer career.
+             As a web developer, I am always on the lookout for new technologies to add to my skillset.
+             In this blog, I will share with you some of the latest tech trends that I think are worth your attention.
+             I will also write about my experience as a web developer and share career advice that I think will be helpful to you.`,
+      PRIVACY: `This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.`,
+      WORK: `In this section, you can find some of my latest selected projects that I worked on outside of non-disclosure agreements.
+             All projects are using cutting edge Front End technologies and are optimized for performance and user experience.
+             From automated testing to bundle optimization, I have a proven track record of shipping high-quality products.
+             My goal is always to build the best possible solution for the given problem, whether it is a small website or a large scale application.`,
+      ERROR: `Error page :( - Something went wrong`,
+      CONTACT: `Here you can contact me. Don't hesitate to send me a message if you want to work together on a project or if you want to chat about web development. I speak English, Italian, Ukrainian and Russian.`,
+    },
+    KEYWORDS: {
+      HOME: `Web Development Design Technology`,
+      BLOG: `Blog Career Tech Web Software`,
+      WORK: `Projects Work Experience`,
+      PRIVACY: `Privacy Policy Cookies`,
+      ERROR: `Error page`,
+      CONTACT: `Contact Message Email`,
     },
     AUTHOR: `Maksym Dmukhovskyy`,
+    LOGO: `https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`,
   },
   HEADER: {
     NAVIGATION: {
@@ -130,7 +146,7 @@ const CONTENT = {
     },
   },
   BLOG: {
-    TITLE: 'MAXDYY - Blog',
+    TITLE: 'maxdyy - Blog',
     DESCRIPTION: `              
               This is the blog page section. Here you can find blog posts about
               tech, computer science and web developer career. 
@@ -149,7 +165,7 @@ const CONTENT = {
     CREATED_LABEL: `Created:`,
   },
   WORK: {
-    TITLE: 'MAXDYY - Work',
+    TITLE: 'maxdyy - Work',
     DESCRIPTION: `
                 In this section, you can find some of my latest selected projects that I worked on outside of non-disclosure agreements.
                 <br>
@@ -163,7 +179,7 @@ const CONTENT = {
     PROJECT_COMING_SOON: `COMING SOON...`,
   },
   CONTACT: {
-    TITLE: 'MAXDYY - Contact',
+    TITLE: 'maxdyy - Contact',
     DESCRIPTION: `
                   Let's talk! 
                   <br>

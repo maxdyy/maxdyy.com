@@ -10,7 +10,7 @@ import { useStyletron } from 'baseui';
 
 const Error = ({ statusCode }) => {
   const {
-    HEAD: { TITLE, DESCRIPTION, AUTHOR },
+    HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
   } = CONTENT;
 
   // Style
@@ -58,11 +58,11 @@ const Error = ({ statusCode }) => {
     <Layout>
       <div className={pageWrapper}>
         <SeoHead
-          title={TITLE.HOME}
-          description={DESCRIPTION.HOME}
+          title={TITLE.ERROR}
+          description={DESCRIPTION.ERROR}
           author={AUTHOR}
-          keywords={DESCRIPTION.HOME}
-          imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+          keywords={KEYWORDS.ERROR}
+          imageUrl={LOGO}
         />
         <video className={videoStyle} autoPlay loop muted playsInline>
           <source src="/video/error-background.mp4" type="video/mp4" />

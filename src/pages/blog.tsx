@@ -20,7 +20,7 @@ import PostsGrind from '@components/Blog/PostsGrid';
 
 const { REVALIDATE_INTERVAL } = CONSTS;
 const {
-  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
   BLOG,
 } = CONTENT;
 
@@ -29,11 +29,11 @@ const Blog = ({ posts }: IBlogPage) => {
     <Layout>
       <div>
         <SeoHead
-          title={TITLE.HOME}
-          description={DESCRIPTION.HOME}
+          title={TITLE.BLOG}
+          description={DESCRIPTION.BLOG}
           author={AUTHOR}
-          keywords={DESCRIPTION.HOME}
-          imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+          keywords={KEYWORDS.BLOG}
+          imageUrl={LOGO}
         />
         <BodyWrapper>
           <section>

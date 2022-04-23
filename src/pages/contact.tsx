@@ -10,7 +10,7 @@ import ContactForm from '@components/Contact/ContactForm';
 import { H1, Paragraph1 } from 'baseui/typography';
 
 const {
-  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
   CONTACT,
 } = CONTENT;
 
@@ -18,11 +18,11 @@ const Contact: React.FC = () => {
   return (
     <Layout>
       <SeoHead
-        title={TITLE.HOME}
-        description={DESCRIPTION.HOME}
+        title={TITLE.CONTACT}
+        description={DESCRIPTION.CONTACT}
         author={AUTHOR}
-        keywords={DESCRIPTION.HOME}
-        imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+        keywords={KEYWORDS.CONTACT}
+        imageUrl={LOGO}
       />
       <BodyWrapper>
         <H1>{CONTACT.TITLE}</H1>

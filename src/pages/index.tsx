@@ -14,7 +14,7 @@ import PunchLineParagraph from '@components/Home/PunchLineParagraph';
 import Bubbles from '@components/Home/Bubbles';
 
 const {
-  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
 } = CONTENT;
 
 const Index = () => (
@@ -24,8 +24,8 @@ const Index = () => (
         title={TITLE.HOME}
         description={DESCRIPTION.HOME}
         author={AUTHOR}
-        keywords={DESCRIPTION.HOME}
-        imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+        keywords={KEYWORDS.HOME}
+        imageUrl={LOGO}
       />
       <BodyWrapper>
         <>

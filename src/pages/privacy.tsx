@@ -9,7 +9,7 @@ import { H1, H2, H3, H4, Paragraph1 } from 'baseui/typography';
 import { StyledLink } from 'baseui/link';
 
 const {
-  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
 } = CONTENT;
 
 const Privacy: React.FC = () => {
@@ -17,11 +17,11 @@ const Privacy: React.FC = () => {
     <Layout>
       <div>
         <SeoHead
-          title={TITLE.HOME}
-          description={DESCRIPTION.HOME}
+          title={TITLE.PRIVACY}
+          description={DESCRIPTION.PRIVACY}
           author={AUTHOR}
-          keywords={DESCRIPTION.HOME}
-          imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+          keywords={KEYWORDS.PRIVACY}
+          imageUrl={LOGO}
         />
 
         <BodyWrapper>

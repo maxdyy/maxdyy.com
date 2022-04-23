@@ -27,11 +27,18 @@ import SeoHead from '@components/SEO/SeoHead';
 const { REVALIDATE_INTERVAL, ROUTES } = CONSTS;
 
 const {
-  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  HEAD: { TITLE, AUTHOR },
 } = CONTENT;
 
 const BlogPost = ({ post }: IBlogPostPage) => {
-  const { postTitle, postImage, postText } = post;
+  const {
+    postTitle,
+    postImage,
+    postText,
+    postDescription,
+    postKeywords,
+    postThumbnail,
+  } = post;
 
   useEffect(() => {
     const codeBlocks = document.querySelectorAll('pre code');
@@ -60,18 +67,18 @@ const BlogPost = ({ post }: IBlogPostPage) => {
   return (
     <Layout>
       <SeoHead
-        title={TITLE.HOME}
-        description={DESCRIPTION.HOME}
+        title={`${TITLE.POST} ${postTitle}`}
+        description={postDescription}
         author={AUTHOR}
-        keywords={DESCRIPTION.HOME}
-        imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+        keywords={postKeywords}
+        imageUrl={postThumbnail?.url}
       />
       <BodyWrapper>
         <div className={imageWrapperStyle}>
           <Image
-            src={postImage.url}
-            width={postImage.width}
-            height={postImage.height}
+            src={postImage?.url}
+            width={postImage?.width}
+            height={postImage?.height}
             alt={postTitle}
             objectFit="cover"
           />

@@ -24,7 +24,7 @@ import ProjectsList from '@components/Work/ProjectsList';
 const { REVALIDATE_INTERVAL } = CONSTS;
 
 const {
-  HEAD: { TITLE, DESCRIPTION, AUTHOR },
+  HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
   WORK,
 } = CONTENT;
 
@@ -38,11 +38,11 @@ const Work: React.FC<IWorkPage> = ({ projects }) => {
   return (
     <Layout>
       <SeoHead
-        title={TITLE.HOME}
-        description={DESCRIPTION.HOME}
+        title={TITLE.WORK}
+        description={DESCRIPTION.WORK}
         author={AUTHOR}
-        keywords={DESCRIPTION.HOME}
-        imageUrl="https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc"
+        keywords={KEYWORDS.WORK}
+        imageUrl={LOGO}
       />
       <BodyWrapper>
         <section className={sectionStyle}>
