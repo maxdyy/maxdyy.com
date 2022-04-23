@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import hljs from 'highlight.js';
 
 // Consts
@@ -76,7 +77,10 @@ const BlogPost = ({ post }: IBlogPostPage) => {
           />
         </div>
         <h1 className={titleStyle}>{postTitle}</h1>
-        <ReactMarkdown className={`${postStyle} maxdyy-post-markdown`}>
+        <ReactMarkdown
+          className={`${postStyle} maxdyy-post-markdown`}
+          remarkPlugins={[remarkGfm]}
+        >
           {postText}
         </ReactMarkdown>
       </BodyWrapper>
