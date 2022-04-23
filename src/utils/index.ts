@@ -1,3 +1,5 @@
+import DOMPurify from 'isomorphic-dompurify';
+
 import { blogPostType } from '@interface/post';
 import { KIND } from 'baseui/tag';
 
@@ -17,5 +19,6 @@ export const getBlogPostTagKind = (postType: blogPostType) => {
 };
 
 export const createMarkup = (text: string) => {
-  return { __html: text };
+  const purifiedText = DOMPurify.sanitize(text);
+  return { __html: purifiedText };
 };
