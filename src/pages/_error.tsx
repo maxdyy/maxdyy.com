@@ -1,21 +1,17 @@
-import React from 'react';
-import Head from 'next/head';
-
 // Consts
-import CONSTS from '../utils/consts';
+import CONTENT from '@utils/data';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '@components/UI/Layout';
+import SeoHead from '@components/SEO/SeoHead';
 
 // Style
-import {useStyletron} from 'baseui';
+import { useStyletron } from 'baseui';
 
-const Error = ({statusCode}) => {
+const Error = ({ statusCode }) => {
   const {
-    CONTENT: {
-      HEAD: {TITLE, DESCRIPTION, AUTHOR},
-    },
-  } = CONSTS;
+    HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
+  } = CONTENT;
 
   // Style
   const [css, theme] = useStyletron();
@@ -61,19 +57,13 @@ const Error = ({statusCode}) => {
   return (
     <Layout>
       <div className={pageWrapper}>
-        <Head>
-          <title>
-            {TITLE.ERROR}
-            {statusCode}
-          </title>
-          <meta name="description" content={DESCRIPTION.ERROR} />
-          <meta name="author" content={AUTHOR} />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@maxdyy" />
-          <meta name="twitter:title" content={`\`${TITLE.ERROR}`} />
-          <meta name="twitter:description" content={DESCRIPTION.ERROR} />
-          <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
-        </Head>
+        <SeoHead
+          title={TITLE.ERROR}
+          description={DESCRIPTION.ERROR}
+          author={AUTHOR}
+          keywords={KEYWORDS.ERROR}
+          imageUrl={LOGO}
+        />
         <video className={videoStyle} autoPlay loop muted playsInline>
           <source src="/video/error-background.mp4" type="video/mp4" />
         </video>
@@ -85,9 +75,9 @@ const Error = ({statusCode}) => {
   );
 };
 
-Error.getInitialProps = ({res, err}) => {
+Error.getInitialProps = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return {statusCode};
+  return { statusCode };
 };
 
 export default Error;

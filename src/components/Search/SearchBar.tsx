@@ -1,19 +1,19 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 // Constants
-import CONSTS from '../../utils/consts';
+import CONSTS from '@utils/consts';
 
 // Hooks
-import {useStyletron} from 'baseui';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
+import { useStyletron } from 'baseui';
+import useOnClickOutside from '@hooks/useOnClickOutside';
 
 // Components
-import {Button} from 'baseui/button';
-import {Search} from 'baseui/icon';
-import {Input} from 'baseui/input';
+import { Button } from 'baseui/button';
+import { Search } from 'baseui/icon';
+import { Input } from 'baseui/input';
 
-import SearchResults from './SearchResults';
+import SearchResults from '@components/Search/SearchResults';
 
 const SearchBar = () => {
   // State
@@ -29,8 +29,8 @@ const SearchBar = () => {
   useEffect(() => {
     const {
       API: {
-        ENDPOINTS: {MASTER},
-        QUERIES: {SEARCH_POSTS},
+        ENDPOINTS: { MASTER },
+        QUERIES: { SEARCH_POSTS },
       },
     } = CONSTS;
 
@@ -40,11 +40,11 @@ const SearchBar = () => {
       data: {
         query: SEARCH_POSTS,
       },
-    }).then(result => setInitialSearchPosts(result.data.data.blogPosts));
+    }).then((result) => setInitialSearchPosts(result.data.data.blogPosts));
   }, []);
 
   // Filter Search Function
-  const handleSearch = e => {
+  const handleSearch = (e) => {
     if (e.keyCode === 27) {
       toggleSearchOpen(false);
       return;
@@ -54,7 +54,7 @@ const SearchBar = () => {
 
     toggleSearchOpen(true);
     const filteredSearchResults = initialSearchPosts.filter(
-      post =>
+      (post) =>
         post.postTitle.toLowerCase().includes(newSearchQuery) ||
         post.postText.toLowerCase().includes(newSearchQuery),
     );
@@ -72,7 +72,11 @@ const SearchBar = () => {
     flexGrow: 1,
     flexShrink: 1,
     maxWidth: '50px',
+    marginRight: '24px',
     [theme.mediaQuery.medium]: {
+      marginRight: 0,
+    },
+    [theme.mediaQuery.large]: {
       position: 'relative',
       maxWidth: '360px',
     },
@@ -85,10 +89,10 @@ const SearchBar = () => {
       display: searchOpen ? 'block' : 'none',
       opacity: searchOpen ? 1 : 0,
       position: 'absolute',
-      top: '75px',
+      top: '66px',
       left: 0,
     },
-    [theme.mediaQuery.medium]: {
+    [theme.mediaQuery.large]: {
       display: 'block',
       opacity: 1,
       position: 'static',
@@ -98,7 +102,7 @@ const SearchBar = () => {
   });
 
   const searchBarButton = css({
-    [theme.mediaQuery.medium]: {
+    [theme.mediaQuery.large]: {
       display: 'none',
     },
   });
@@ -107,11 +111,10 @@ const SearchBar = () => {
     <div ref={searchBarRef} className={searchWrapperStyle}>
       <div className={searchBarStyle}>
         <Input
-          endEnhancer={<Search size="18px" />}
           placeholder="Search..."
           aria-label="search"
           onFocus={() => toggleSearchOpen(true)}
-          onChange={e => handleSearch(e)}
+          onChange={(e) => handleSearch(e)}
         />
       </div>
       {searchOpen && searchQuery ? (
@@ -124,7 +127,12 @@ const SearchBar = () => {
         <Button
           onClick={() => toggleSearchOpen(!searchOpen)}
           kind={'minimal'}
-          $style={{padding: '10px'}}
+          $style={{
+            paddingTop: '10px',
+            paddingLeft: '10px',
+            paddingBottom: '10px',
+            paddingRight: '10px',
+          }}
         >
           <Search size={30} />
         </Button>

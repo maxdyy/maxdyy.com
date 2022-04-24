@@ -1,16 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import CONSTS from '../../utils/consts';
+import CONSTS from '@utils/consts';
 
 // Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from 'baseui';
 
 // Components
-import {Paragraph3} from 'baseui/typography';
+import { Paragraph3 } from 'baseui/typography';
 
-const SearchResultItem = ({post, onResultClick}) => {
-  const {ROUTES} = CONSTS;
-  const {postTitle, id} = post;
+const { ROUTES } = CONSTS;
+
+const SearchResultItem = ({ post, onResultClick }) => {
+  const { postTitle, postSlug } = post;
 
   // Style
   const [css, theme] = useStyletron();
@@ -37,9 +38,11 @@ const SearchResultItem = ({post, onResultClick}) => {
     },
   });
 
+  const blogPostUrl = `${ROUTES.POST}${postSlug}`;
+
   return (
     <div className={searchItem}>
-      <Link href={`/post/[id]`} as={`${ROUTES.POST}${id}`}>
+      <Link href={blogPostUrl}>
         <a className={searchItemLink} onClick={onResultClick}>
           <Paragraph3
             $style={{

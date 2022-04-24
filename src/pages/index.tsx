@@ -1,49 +1,47 @@
-import React from 'react';
-import Head from 'next/head';
-
 // Constants
-import CONSTS from '../utils/consts';
+import CONTENT from '@utils/data';
 
 // API
-import getPosts from '../api/get/posts';
+import getPosts from '@api/get/posts';
 
 // Components
-import Layout from '../components/Layout';
-import Posts from '../components/Home/Posts';
+import Layout from '@components/UI/Layout';
+import SeoHead from '@components/SEO/SeoHead';
+import BodyWrapper from '@components/UI/BodyWrapper';
+import MainBanner from '@components/Home/MainBanner';
+import CardsGrid from '@components/Home/CardsGrid';
+import PunchLineParagraph from '@components/Home/PunchLineParagraph';
+import Bubbles from '@components/Home/Bubbles';
 
-const Index = ({posts}) => {
-  const {
-    CONTENT: {
-      HEAD: {TITLE, DESCRIPTION, AUTHOR},
-    },
-  } = CONSTS;
+const {
+  HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
+} = CONTENT;
 
-  return (
-    <Layout>
-      <div>
-        <Head>
-          <title>{TITLE.HOME}</title>
-          <meta name="description" content={DESCRIPTION.HOME} />
-          <meta name="author" content={AUTHOR} />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@maxdyy" />
-          <meta name="twitter:title" content={TITLE.HOME} />
-          <meta name="twitter:description" content={DESCRIPTION.HOME} />
-          <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
-          <meta
-            name="twitter:image"
-            content={`https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`}
-          />
-        </Head>
-        <Posts posts={posts} />
-      </div>
-    </Layout>
-  );
-};
+const Index = () => (
+  <Layout>
+    <div>
+      <SeoHead
+        title={TITLE.HOME}
+        description={DESCRIPTION.HOME}
+        author={AUTHOR}
+        keywords={KEYWORDS.HOME}
+        imageUrl={LOGO}
+      />
+      <BodyWrapper>
+        <>
+          <MainBanner />
+          <CardsGrid />
+          <PunchLineParagraph />
+          <Bubbles />
+        </>
+      </BodyWrapper>
+    </div>
+  </Layout>
+);
 
 Index.getInitialProps = async () => {
   const posts = await getPosts();
-  return {posts};
+  return { posts };
 };
 
 export default Index;

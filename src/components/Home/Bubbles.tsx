@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Hooks
-import {useStyletron} from 'baseui';
+import { useStyletron } from 'baseui';
 
 const Bubbles = () => {
   // Style

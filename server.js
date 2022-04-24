@@ -1,36 +1,34 @@
-const express = require('express');
+// server.js
+const { createServer } = require('http');
+const { parse } = require('url');
 const next = require('next');
-const compression = require('compression');
+require('dotenv').config();
 
-/*
-Note: process.env.NODE_ENV is automatically set by GAE  when deployed
-  but will need to be manually set locally via `NODE_ENV=production npm run start`
-*/
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({dev});
+const hostname = 'localhost';
 
-const handle = app.getRequestHandler();
-
-// GAE passes the port the app will run on via process.env.PORT
+// Google App Engine passes the port the app will run on via process.env.PORT
 const port = process.env.PORT ? process.env.PORT : 3000;
 
-app
-  .prepare()
-  .then(() => {
-    const server = express();
-    server.use(compression());
+// when using middleware `hostname` and `port` must be provided below
+const app = next({ dev, hostname, port });
+const handle = app.getRequestHandler();
 
-    // Note: We're using Next.Js 9's file based dynamic routing so no need to match dynamic urls
-    server.get('*', (req, res) => handle(req, res));
+app.prepare().then(() => {
+  createServer(async (req, res) => {
+    try {
+      // Be sure to pass `true` as the second argument to `url.parse`.
+      // This tells it to parse the query portion of the URL.
+      const parsedUrl = parse(req.url, true);
 
-      server.listen(port, err => {
-      if (err) throw err;
-      console.log(
-        `> Ready on http://localhost:${port} NODE_ENV: ${process.env.NODE_ENV} 🚀`,
-      );
-    });
-  })
-  .catch(ex => {
-    console.error(ex.stack);
-    process.exit(1);
+      await handle(req, res, parsedUrl);
+    } catch (err) {
+      console.error('Error occurred handling', req.url, err);
+      res.statusCode = 500;
+      res.end('internal server error');
+    }
+  }).listen(port, (err) => {
+    if (err) throw err;
+    console.log(`> Ready on http://${hostname}:${port} okeeeey let's gooo 🚀`);
   });
+});
