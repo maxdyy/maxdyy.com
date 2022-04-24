@@ -4,8 +4,8 @@ import CONSTS from '../../utils/consts';
 const getSearchPosts = () => {
   const {
     API: {
-      ENDPOINTS: {MASTER},
-      QUERIES: {SEARCH_POSTS},
+      ENDPOINTS: { MASTER },
+      QUERIES: { SEARCH_POSTS },
     },
   } = CONSTS;
 
@@ -15,7 +15,7 @@ const getSearchPosts = () => {
     data: {
       query: SEARCH_POSTS,
     },
-  }).then(result => result.data.blogPosts);
+  }).then((result) => result.data.blogPosts);
 };
 
 export default getSearchPosts;

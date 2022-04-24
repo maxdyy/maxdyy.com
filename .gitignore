@@ -6,5 +6,5 @@ yarn-error.log
 tmp
 .idea
 maxdyy.com.iml
-.env
 .vscode
+.env

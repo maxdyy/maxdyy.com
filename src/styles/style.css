@@ -1,61 +1,61 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background-color: #141414;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #141414;
 }
 
 .maxdyy-link-no-decor {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Post Markdown */
 .maxdyy-post-markdown p {
-    text-align: left;
-    line-height: 140%;
-    margin: 24px 0;
+  text-align: left;
+  line-height: 140%;
+  margin: 24px 0;
 }
 
 .maxdyy-post-markdown table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .maxdyy-post-markdown thead {
-    border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .maxdyy-post-markdown td,
 .maxdyy-post-markdown th {
-    padding: 15px 5px;
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    border-radius: 2px;
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
 }
 
 .maxdyy-post-markdown code,
 .maxdyy-post-markdown kbd,
 .maxdyy-post-markdown pre,
 .maxdyy-post-markdown samp {
-    font-size: 16px;
-    line-height: 32px;
+  font-size: 16px;
+  line-height: 32px;
 }
 
 .maxdyy-post-markdown blockquote {
-    border-left: 5px solid #E2E2E2;
-    margin: 18px 0 32px 32px;
-    padding-left: 18px;
-    font-style: italic;
+  border-left: 5px solid #e2e2e2;
+  margin: 18px 0 32px 32px;
+  padding-left: 18px;
+  font-style: italic;
 }
 
 .maxdyy-post-markdown a {
-    color: #EEEEEE;
+  color: #eeeeee;
 }
-
-
 
 /*
 Atom One Dark by Daniel Gamage
@@ -75,23 +75,23 @@ hue-6-2: #e6c07b
 */
 
 .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    color: #abb2bf;
-    background: #282c34;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
 }
 
 .hljs-comment,
 .hljs-quote {
-    color: #5c6370;
-    font-style: italic;
+  color: #5c6370;
+  font-style: italic;
 }
 
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
-    color: #c678dd;
+  color: #c678dd;
 }
 
 .hljs-section,
@@ -99,11 +99,11 @@ hue-6-2: #e6c07b
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-    color: #e06c75;
+  color: #e06c75;
 }
 
 .hljs-literal {
-    color: #56b6c2;
+  color: #56b6c2;
 }
 
 .hljs-string,
@@ -111,12 +111,12 @@ hue-6-2: #e6c07b
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-    color: #98c379;
+  color: #98c379;
 }
 
 .hljs-built_in,
 .hljs-class .hljs-title {
-    color: #e6c07b;
+  color: #e6c07b;
 }
 
 .hljs-attr,
@@ -127,7 +127,7 @@ hue-6-2: #e6c07b
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-number {
-    color: #d19a66;
+  color: #d19a66;
 }
 
 .hljs-symbol,
@@ -136,473 +136,497 @@ hue-6-2: #e6c07b
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-    color: #61aeee;
+  color: #61aeee;
 }
 
 .hljs-emphasis {
-    font-style: italic;
+  font-style: italic;
 }
 
 .hljs-strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .hljs-link {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* BUBBLE ANIMATION */
 
 .bubble {
-    position: absolute;
-    background: #1F1F1F;
-    border: 1px solid #292929;
-    border-radius: 50%;
-    background-position: center center;
-    background-size: 80% 80%;
-    background-repeat: no-repeat;
+  position: absolute;
+  background: #1f1f1f;
+  border: 1px solid #292929;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
 }
 
 .bubble.s {
-    height: 90px;
-    width: 90px;
+  height: 90px;
+  width: 90px;
 }
 
 .bubble.m {
-    height: 120px;
-    width: 120px;
+  height: 120px;
+  width: 120px;
 }
 
 .bubble.l {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 
 .vscode {
-    background-image: url("../../public/tech-logos/vscode.svg");
-    animation: noiseVscode 6s ease-in-out infinite;
-    animation-delay: -1.5s;
-    background-size: 90px;
+  background-image: url('../../public/tech-logos/vscode.svg');
+  animation: noiseVscode 6s ease-in-out infinite;
+  animation-delay: -1.5s;
+  background-size: 90px;
 }
 
 .animation-wrapper-vscode {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -1.5s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -1.5s;
 }
 
 .git {
-    top: 10px;
-    animation: noiseGit 6s ease-in-out infinite;
-    animation-delay: -6.7s;
-    background-image: url("../../public/tech-logos/git.svg");
-    background-size: 75px;
+  top: 10px;
+  animation: noiseGit 6s ease-in-out infinite;
+  animation-delay: -6.7s;
+  background-image: url('../../public/tech-logos/git.svg');
+  background-size: 75px;
 }
 
 .animation-wrapper-git {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -6.7s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -6.7s;
 }
 
 .graphql {
-    top: 50px;
-    animation: noiseGraphql 7s ease-in-out infinite;
-    animation-delay: -14s;
-    background-image: url("../../public/tech-logos/graphql.svg");
-    background-size: 100px;
+  top: 50px;
+  animation: noiseGraphql 7s ease-in-out infinite;
+  animation-delay: -14s;
+  background-image: url('../../public/tech-logos/graphql.svg');
+  background-size: 100px;
 }
 
 .animation-wrapper-graphql {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -14s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -14s;
 }
 
 .css {
-    top: 70px;
-    animation: noiseCSS 8s ease-in-out infinite;
-    animation-delay: -19s;
-    background-image: url("../../public/tech-logos/css.svg");
-    background-size: 70% 70%;
-    background-position: center 70%;
+  top: 70px;
+  animation: noiseCSS 8s ease-in-out infinite;
+  animation-delay: -19s;
+  background-image: url('../../public/tech-logos/css.svg');
+  background-size: 70% 70%;
+  background-position: center 70%;
 }
 
 .animation-wrapper-css {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -19s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -19s;
 }
 
 .github {
-    top: 40px;
-    animation: noiseGithub 6s ease-in-out infinite;
-    animation-delay: -26s;
-    background-image: url("../../public/tech-logos/github.svg");
+  top: 40px;
+  animation: noiseGithub 6s ease-in-out infinite;
+  animation-delay: -26s;
+  background-image: url('../../public/tech-logos/github.svg');
 }
 
 .animation-wrapper-github {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -26s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -26s;
 }
 
 .google-cloud {
-    top: 15px;
-    animation: noiseGoogle 7s ease-in-out infinite;
-    animation-delay: -32s;
-    background-image: url("../../public/tech-logos/google-cloud.svg");
-    background-position: center 70%;
+  top: 15px;
+  animation: noiseGoogle 7s ease-in-out infinite;
+  animation-delay: -32s;
+  background-image: url('../../public/tech-logos/google-cloud.svg');
+  background-position: center 70%;
 }
 
 .animation-wrapper-google-cloud {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -32s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -32s;
 }
 
 .html {
-    top: 35px;
-    animation: noiseHTML 6s ease-in-out infinite;
-    animation-delay: -38s;
-    background-image: url("../../public/tech-logos/html.svg");
-    background-size: 70% 70%;
-    background-position: center 70%;
+  top: 35px;
+  animation: noiseHTML 6s ease-in-out infinite;
+  animation-delay: -38s;
+  background-image: url('../../public/tech-logos/html.svg');
+  background-size: 70% 70%;
+  background-position: center 70%;
 }
 
 .animation-wrapper-html {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -38s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -38s;
 }
 
 .photoshop {
-    top: 190px;
-    animation: noisePhotoshop 8s ease-in-out infinite;
-    animation-delay: -4.2s;
-    background-image: url("../../public/tech-logos/photoshop.svg");
-    background-color: #001d26;
-    background-size: 60% 60%;
+  top: 190px;
+  animation: noisePhotoshop 8s ease-in-out infinite;
+  animation-delay: -4.2s;
+  background-image: url('../../public/tech-logos/photoshop.svg');
+  background-color: #001d26;
+  background-size: 60% 60%;
 }
 
 .animation-wrapper-photoshop {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -4.2s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -4.2s;
 }
 
 .jQuery {
-    top: 175px;
-    animation: noiseJQuery 6s ease-in-out infinite;
-    animation-delay: -9s;
-    background-image: url("../../public/tech-logos/jQuery.svg");
+  top: 175px;
+  animation: noiseJQuery 6s ease-in-out infinite;
+  animation-delay: -9s;
+  background-image: url('../../public/tech-logos/jQuery.svg');
 }
 
 .animation-wrapper-jQuery {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -9s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -9s;
 }
 
 .javascriptBBL {
-    top: 165px;
-    animation: noiseJavascript 6s ease-in-out infinite;
-    animation-delay: -23s;
-    background-image: url("../../public/tech-logos/javascript.svg");
-    background-color: #f7df1e;
-    background-size: 67% 67%;
+  top: 165px;
+  animation: noiseJavascript 6s ease-in-out infinite;
+  animation-delay: -23s;
+  background-image: url('../../public/tech-logos/javascript.svg');
+  background-color: #f7df1e;
+  background-size: 67% 67%;
 }
 
 .animation-wrapper-javascriptBBL {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -23s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -23s;
 }
 
 .python {
-    top: 170px;
-    animation: noisePython 7s ease-in-out infinite;
-    animation-delay: -29.7s;
-    background-image: url("../../public/tech-logos/python.svg");
+  top: 170px;
+  animation: noisePython 7s ease-in-out infinite;
+  animation-delay: -29.7s;
+  background-image: url('../../public/tech-logos/python.svg');
 }
 
 .animation-wrapper-python {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -29.7s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -29.7s;
 }
 
 .webpack {
-    top: 170px;
-    animation: noiseWebpack 7s ease-in-out infinite;
-    animation-delay: -35s;
-    background-image: url("../../public/tech-logos/webpack.svg");
-    background-position: center;
+  top: 170px;
+  animation: noiseWebpack 7s ease-in-out infinite;
+  animation-delay: -35s;
+  background-image: url('../../public/tech-logos/webpack.svg');
+  background-position: center;
 }
 
 .animation-wrapper-webpack {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -35s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -35s;
 }
 
 .sass {
-    top: 190px;
-    animation: noiseSASS 6s ease-in-out infinite;
-    animation-delay: -39s;
-    background-image: url("../../public/tech-logos/sass.svg");
+  top: 190px;
+  animation: noiseSASS 6s ease-in-out infinite;
+  animation-delay: -39s;
+  background-image: url('../../public/tech-logos/sass.svg');
 }
 
 .animation-wrapper-sass {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -39s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -39s;
 }
 
 .react {
-    top: 160px;
-    animation: noiseReact 6s ease-in-out infinite;
-    animation-delay: -42.8s;
-    background-image: url("../../public/tech-logos/react.svg");
-    background-color: #222;
+  top: 160px;
+  animation: noiseReact 6s ease-in-out infinite;
+  animation-delay: -42.8s;
+  background-image: url('../../public/tech-logos/react.svg');
+  background-color: #222;
 }
 
 .animation-wrapper-react {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -42.8s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -42.8s;
 }
 
 .gulp {
-    top: 200px;
-    animation: noiseGulp 8s ease-in-out infinite;
-    animation-delay: -16.5s;
-    background-image: url("../../public/tech-logos/gulp.svg");
-    background-size: 35px;
+  top: 200px;
+  animation: noiseGulp 8s ease-in-out infinite;
+  animation-delay: -16.5s;
+  background-image: url('../../public/tech-logos/gulp.svg');
+  background-size: 35px;
 }
 
 .animation-wrapper-gulp {
-    position: absolute;
-    animation: floatBubble 45s linear infinite;
-    animation-delay: -16.5s;
+  position: absolute;
+  animation: floatBubble 45s linear infinite;
+  animation-delay: -16.5s;
 }
 
 @keyframes floatBubble {
-    0% {
-        transform: rotate(0.0001deg) translateX(-150px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateX(-150px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateX(2200px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateX(2200px);
+  }
 }
 
 @keyframes noiseGulp {
-    0% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(40px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(40px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 }
 
 @keyframes noiseVscode {
-    0% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 }
 
 @keyframes noiseGit {
-    0% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 }
 
 @keyframes noiseGraphql {
-    0% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(25px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(25px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 }
 
 @keyframes noiseCSS {
-    0% {
-        transform: rotate(0.0001deg) translateY(35px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(35px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(-5px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(-5px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(35px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(35px);
+  }
 }
 
 @keyframes noiseGithub {
-    0% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(55px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(55px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 }
 
 @keyframes noiseGoogle {
-    0% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(0px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(0px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 }
 
 @keyframes noiseHTML {
-    0% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(10px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(10px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(-20px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(-20px);
+  }
 }
 
 @keyframes noiseJavascript {
-    0% {
-        transform: rotate(0.0001deg) translateY(70px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(70px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(15px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(15px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(70px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(70px);
+  }
 }
 
 @keyframes noiseJQuery {
-    0% {
-        transform: rotate(0.0001deg) translateY(25px);
-    }
+  0% {
+    transform: rotate(0.0001deg) translateY(25px);
+  }
 
-    50% {
-        transform: rotate(0.0001deg) translateY(-5px);
-    }
+  50% {
+    transform: rotate(0.0001deg) translateY(-5px);
+  }
 
-    100% {
-        transform: rotate(0.0001deg) translateY(25px);
-    }
+  100% {
+    transform: rotate(0.0001deg) translateY(25px);
+  }
 }
 
 @keyframes noisePhotoshop {
-    0% {
-        transform: translateY(35px);
-    }
+  0% {
+    transform: translateY(35px);
+  }
 
-    50% {
-        transform: translateY(10px);
-    }
+  50% {
+    transform: translateY(10px);
+  }
 
-    100% {
-        transform: translateY(35px);
-    }
+  100% {
+    transform: translateY(35px);
+  }
 }
 
 @keyframes noisePython {
-    0% {
-        transform: translateY(25px);
-    }
+  0% {
+    transform: translateY(25px);
+  }
 
-    50% {
-        transform: translateY(-10px);
-    }
+  50% {
+    transform: translateY(-10px);
+  }
 
-    100% {
-        transform: translateY(25px);
-    }
+  100% {
+    transform: translateY(25px);
+  }
 }
 
 @keyframes noiseReact {
-    0% {
-        transform: translateY(35px);
-    }
+  0% {
+    transform: translateY(35px);
+  }
 
-    50% {
-        transform: translateY(0px);
-    }
+  50% {
+    transform: translateY(0px);
+  }
 
-    100% {
-        transform: translateY(35px);
-    }
+  100% {
+    transform: translateY(35px);
+  }
 }
 
 @keyframes noiseSASS {
-    0% {
-        transform: translateY(-5px);
-    }
+  0% {
+    transform: translateY(-5px);
+  }
 
-    50% {
-        transform: translateY(25px);
-    }
+  50% {
+    transform: translateY(25px);
+  }
 
-    100% {
-        transform: translateY(-5px);
-    }
+  100% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes noiseWebpack {
-    0% {
-        transform: translateY(35px);
-    }
+  0% {
+    transform: translateY(35px);
+  }
 
-    50% {
-        transform: translateY(-15px);
-    }
+  50% {
+    transform: translateY(-15px);
+  }
 
-    100% {
-        transform: translateY(35px);
-    }
+  100% {
+    transform: translateY(35px);
+  }
+}
+
+.gradient-link-animated {
+  background-color: #FBDA61;
+  background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: gradient-link-animation 8s ease infinite;
+}
+
+@keyframes gradient-link-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
