@@ -13,10 +13,10 @@ import { useStyletron } from 'baseui';
 
 // Components
 import { HeadingMedium, ParagraphMedium } from 'baseui/typography';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Tag, VARIANT } from 'baseui/tag';
 import TiltWrapper from '@components/UI/TiltWrapper';
+import SmartImage from '@components/UI/SmartImage';
 
 const {
   ROUTES: { POST },
@@ -42,6 +42,10 @@ const BlogCard: React.FC<IBlogCard> = ({
 
   const wrapperStyle = css({
     marginBottom: '60px',
+    width: '100%',
+  });
+
+  const imageStyle = css({
     width: '100%',
   });
 
@@ -89,7 +93,18 @@ const BlogCard: React.FC<IBlogCard> = ({
       <Link href={blogPostLink} passHref>
         <a href={blogPostLink}>
           <TiltWrapper scale={1.02} degrees={15}>
-            <Image src={image} alt={imageAlt} />
+            <SmartImage
+              className={imageStyle}
+              imageAlt={imageAlt}
+              mobileSrc={image.url}
+              mobileWidth={image.width}
+              mobileHeight={image.height}
+              mobileHandle={image.handle}
+              desktopSrc={image.url}
+              desktopHeight={image.height}
+              desktopWidth={image.width}
+              desktopHandle={image.handle}
+            />
           </TiltWrapper>
         </a>
       </Link>

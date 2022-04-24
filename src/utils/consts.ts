@@ -1,4 +1,5 @@
 const CONSTS = {
+  ASSETS_URL: 'https://media.graphassets.com',
   REVALIDATE_INTERVAL: 1000,
   ROUTES: {
     POST: `/blog/`,
@@ -100,12 +101,14 @@ const CONSTS = {
             id
             width
             url
+            handle
           }
           projectBannerMobile {
             height
             id
             width
             url
+            handle
           }
           projectDescription
           projectTitle

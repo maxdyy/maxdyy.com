@@ -12,6 +12,7 @@ import { useStyletron } from 'baseui';
 import { H1, Paragraph1 } from 'baseui/typography';
 import { Button } from 'baseui/button';
 import TiltWrapper from '@components/UI/TiltWrapper';
+import SmartImage from '@components/UI/SmartImage';
 
 const {
   WORK: { PROJECT_CTA_LABEL, PROJECT_COMING_SOON },
@@ -84,12 +85,22 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     fontSize: '22px',
   });
 
-  const projectImage = () => (
-    <picture>
-      <source media="(min-width:600px)" srcSet={image.url} />
-      <img className={imageStyle} src={mobileImage.url} alt={imageAlt} />
-    </picture>
-  );
+  const projectImage = () => {
+    return (
+      <SmartImage
+        className={imageStyle}
+        imageAlt={imageAlt}
+        mobileSrc={mobileImage.url}
+        mobileWidth={mobileImage.width}
+        mobileHeight={mobileImage.height}
+        mobileHandle={mobileImage.handle}
+        desktopSrc={image.url}
+        desktopHeight={image.height}
+        desktopWidth={image.width}
+        desktopHandle={image.handle}
+      />
+    );
+  };
 
   const projectImageBanner = () => {
     if (projectPageLink) {

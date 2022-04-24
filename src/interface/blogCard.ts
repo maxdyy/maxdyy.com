@@ -5,10 +5,10 @@ interface IBlogCard {
   postSlug: string;
   blogPostType: [blogPostType];
   image: {
-    src: string;
+    url: string;
     height: number;
     width: number;
-    blurDataURL?: string;
+    handle: string;
   };
   createdAt: string;
   readtime: string;
