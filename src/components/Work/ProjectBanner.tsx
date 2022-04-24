@@ -70,6 +70,7 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
     backgroundColor: '#272727',
     [theme.mediaQuery.medium]: {
       width: 'calc(40% - 25px)',
+      minWidth: '315px',
     },
   });
 

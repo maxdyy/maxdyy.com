@@ -35,7 +35,7 @@ const Card: React.FC<ICard> = ({
   return (
     <div className={wrapperStyle}>
       <TiltWrapper scale={1.02} degrees={15}>
-        <Image src={image} alt={imageAlt} />
+        <Image src={image} alt={imageAlt} placeholder="blur" />
       </TiltWrapper>
       <div>
         <H2 className={titleStyle}>{title}</H2>
