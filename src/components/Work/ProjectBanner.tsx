@@ -108,7 +108,7 @@ const ProjectBanner: React.FC<IProjectBanner> = ({
       return (
         <a
           href={projectPageLink}
-          className={linkStyle}
+          className={`${linkStyle} ${imageStyle}`}
           target="_blank"
           rel="noreferrer"
         >
