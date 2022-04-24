@@ -33,18 +33,12 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
       id,
       postSlug,
       createdAt,
-      postThumbnailBig: { url, height, width },
+      postThumbnailBig,
       postTitle,
       postDescription,
       readtime,
       blogPostType,
     } = post;
-
-    const image = {
-      src: url,
-      height,
-      width,
-    };
 
     return (
       <BlogCard
@@ -54,7 +48,7 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
         readtime={readtime}
         blogPostType={blogPostType}
         postSlug={postSlug}
-        image={image}
+        image={postThumbnailBig}
         imageAlt={postTitle}
         title={postTitle}
         paragraph={postDescription}
