@@ -23,12 +23,12 @@ const SeoHead = ({postTitle, postThumbnail, postDescription, postKeywords}) => {
       <meta name="twitter:description" content={postDescription} />
       <meta
         name="twitter:image"
-        content={`https://media.graphcms.com/resize=width:450/${postThumbnail.handle}`}
+        content={`https://media.graphassets.com/resize=width:450/${postThumbnail.handle}`}
       />
       <meta property="og:title" content={`${TITLE.POST} ${postTitle}`} />
       <meta
         property="og:image"
-        content={`https://media.graphcms.com/resize=width:450/${postThumbnail.handle}`}
+        content={`https://media.graphassets.com/resize=width:450/${postThumbnail.handle}`}
       />
     </Head>
   );

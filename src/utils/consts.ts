@@ -22,14 +22,14 @@ const CONSTS = {
               width
               height
             }
-            postType
+            blogPostType
             postTitle
             postText
             readtime
           }
         }
       `,
-      POST_QUERY: id => {
+      POST_QUERY: (id) => {
         return `{
         blogPost(where: {
           id: "${id}"
@@ -46,7 +46,7 @@ const CONSTS = {
               width
               height
             }
-            postType
+            blogPostType
             postTitle
             postText
             postDescription

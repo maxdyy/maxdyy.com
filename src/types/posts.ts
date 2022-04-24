@@ -5,7 +5,7 @@ export type PostsProps = {
       createdAt: string;
       postThumbnail: object;
       postImage: object;
-      postType: string;
+      blogPostType: string;
       postTitle: string;
       postText: string;
       postDescription: string;

@@ -32,7 +32,7 @@ const Index = ({posts}) => {
           <meta name="twitter:image" content={`/apple-icon-120x120.png`} />
           <meta
             name="twitter:image"
-            content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
+            content={`https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
         <Posts posts={posts} />

@@ -66,7 +66,7 @@ const About = () => {
           <meta name="twitter:description" content={DESCRIPTION.ABOUT} />
           <meta
             name="twitter:image"
-            content={`https://media.graphcms.com/0ejxFb2mQGabFqUCL4pc`}
+            content={`https://media.graphassets.com/0ejxFb2mQGabFqUCL4pc`}
           />
         </Head>
         <div className={aboutTextWrapper}>
