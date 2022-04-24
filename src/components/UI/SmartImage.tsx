@@ -2,8 +2,9 @@
 import ISmartImage from '@interface/smartImage';
 
 // Hooks
-import useSmartBlurImage from '@hooks/useSmartBlurImage';
 import { useStyletron } from 'baseui';
+import useSmartBlurImage from '@hooks/useSmartBlurImage';
+import useMatchMedia from '@hooks/useMatchMedia';
 
 const SmartImage: React.FC<ISmartImage> = ({
   className,
@@ -42,12 +43,16 @@ const SmartImage: React.FC<ISmartImage> = ({
     filter: smartMobileBlur ? 'blur(3px)' : 'none',
     transition: smartMobileBlur ? 'filter 0.3s ease-out' : 'none',
     objectFit: 'cover',
+    width: '100%',
+    height: '100%',
 
     [theme.mediaQuery.medium]: {
       filter: smartDesktopBlur ? 'blur(3px)' : 'none',
       transition: smartDesktopBlur ? 'filter 0.3s ease-out' : 'none',
     },
   });
+
+  const isDesktop = useMatchMedia('(min-width: 600px)');
 
   return (
     <picture className={pictureStyle}>
@@ -56,6 +61,8 @@ const SmartImage: React.FC<ISmartImage> = ({
         className={`${className} ${imageStyle}`}
         src={smartMobileSrc}
         alt={imageAlt}
+        height={isDesktop ? desktopHeight : mobileHeight}
+        width={isDesktop ? desktopWidth : mobileWidth}
       />
     </picture>
   );
