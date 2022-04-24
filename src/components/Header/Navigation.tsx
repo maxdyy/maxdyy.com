@@ -49,12 +49,23 @@ const Navigation = () => {
     },
   });
 
+  const navigationItemStyle = css({
+    paddingLeft: '0',
+    [theme.mediaQuery.medium]: {
+      paddingLeft: '24px',
+    },
+  });
+
   const linkStyle = css({
     color: 'inherit',
     textDecoration: 'none',
     width: '250px',
+    fontSize: '24px',
+    lineHeight: '30px',
     [theme.mediaQuery.medium]: {
       width: 'auto',
+      fontSize: '16px',
+      lineHeight: '20px',
     },
   });
 
@@ -85,7 +96,7 @@ const Navigation = () => {
   return (
     <nav>
       <StyledNavigationList className={navigationStyle}>
-        <StyledNavigationItem>
+        <StyledNavigationItem className={navigationItemStyle}>
           <Link href={BLOG.URL} passHref>
             <Button kind={'minimal'}>
               <a href={BLOG.URL} className={linkStyle}>
@@ -94,7 +105,7 @@ const Navigation = () => {
             </Button>
           </Link>
         </StyledNavigationItem>
-        <StyledNavigationItem>
+        <StyledNavigationItem className={navigationItemStyle}>
           <Link href={WORK.URL} passHref>
             <Button kind={'minimal'}>
               <a href={WORK.URL} className={linkStyle}>
@@ -103,7 +114,9 @@ const Navigation = () => {
             </Button>
           </Link>
         </StyledNavigationItem>
-        <StyledNavigationItem className={lastNavigationItemStyle}>
+        <StyledNavigationItem
+          className={`${lastNavigationItemStyle} ${navigationItemStyle}`}
+        >
           <Link href={CONTACT.URL} passHref>
             <Button kind={'minimal'}>
               <a href={CONTACT.URL} className={linkStyle}>
