@@ -39,12 +39,12 @@ const SmartImage: React.FC<ISmartImage> = ({
   });
 
   const imageStyle = css({
-    filter: smartMobileBlur ? 'blur(10px)' : 'none',
+    filter: smartMobileBlur ? 'blur(2px)' : 'none',
     transition: smartMobileBlur ? 'filter 0.3s ease-out' : 'none',
     objectFit: 'cover',
 
     [theme.mediaQuery.medium]: {
-      filter: smartDesktopBlur ? 'blur(10px)' : 'none',
+      filter: smartDesktopBlur ? 'blur(2px)' : 'none',
       transition: smartDesktopBlur ? 'filter 0.3s ease-out' : 'none',
     },
   });
