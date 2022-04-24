@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import hljs from 'highlight.js';
@@ -23,6 +22,7 @@ import { useStyletron } from 'baseui';
 import Layout from '@components/UI/Layout';
 import BodyWrapper from '@components/UI/BodyWrapper';
 import SeoHead from '@components/SEO/SeoHead';
+import SmartImage from '@components/UI/SmartImage';
 
 const { REVALIDATE_INTERVAL, ROUTES } = CONSTS;
 
@@ -53,6 +53,10 @@ const BlogPost = ({ post }: IBlogPostPage) => {
     justifyContent: 'center',
   });
 
+  const imageStyle = css({
+    width: '100%',
+  });
+
   const titleStyle = css({
     color: theme.colors.contentPrimary,
     margin: '48px 0 0 0',
@@ -75,12 +79,17 @@ const BlogPost = ({ post }: IBlogPostPage) => {
       />
       <BodyWrapper>
         <div className={imageWrapperStyle}>
-          <Image
-            src={postImage?.url}
-            width={postImage?.width}
-            height={postImage?.height}
-            alt={postTitle}
-            objectFit="cover"
+          <SmartImage
+            className={imageStyle}
+            imageAlt={postTitle}
+            mobileSrc={postImage.url}
+            mobileWidth={postImage.width}
+            mobileHeight={postImage.height}
+            mobileHandle={postImage.handle}
+            desktopSrc={postImage.url}
+            desktopHeight={postImage.height}
+            desktopWidth={postImage.width}
+            desktopHandle={postImage.handle}
           />
         </div>
         <h1 className={titleStyle}>{postTitle}</h1>
