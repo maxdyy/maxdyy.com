@@ -66,7 +66,13 @@ const Header = () => {
           <StyledNavigationItem>
             <Link href={LOGO.URL} passHref>
               <a href={LOGO.URL} className={logoWrapperStyle}>
-                <Image alt={LOGO.ALT} src={logoImg} placeholder="blur" />
+                <Image
+                  alt={LOGO.ALT}
+                  src={logoImg}
+                  placeholder="blur"
+                  height={40}
+                  width={40}
+                />
               </a>
             </Link>
           </StyledNavigationItem>

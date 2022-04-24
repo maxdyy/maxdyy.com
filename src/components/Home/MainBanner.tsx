@@ -67,7 +67,13 @@ const MainBanner: React.FC = () => {
       <div className={bottomSectionStyle}>
         <TiltWrapper scale={1.02} degrees={15}>
           <div>
-            <Image alt={IMG_ALT} src={avatarImg} placeholder="blur" />
+            <Image
+              alt={IMG_ALT}
+              src={avatarImg}
+              placeholder="blur"
+              width={1200}
+              height={1200}
+            />
           </div>
         </TiltWrapper>
       </div>
