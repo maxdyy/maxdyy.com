@@ -163,6 +163,9 @@ const CONTENT = {
               advice that I think will be helpful to you.`,
     READ_TIME_LABEL: `Read time:`,
     CREATED_LABEL: `Created:`,
+    FILTERS_LABEL: `Filter blog posts by tag:`,
+    NO_POSTS_LABEL: `No posts found.`,
+    NO_POSTS_LABEL_2: `Try to change the filters.`,
   },
   WORK: {
     TITLE: 'maxdyy - Work',

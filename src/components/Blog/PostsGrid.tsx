@@ -1,3 +1,8 @@
+import { useState } from 'react';
+
+// Constants
+import CONTENT from '@utils/data';
+
 // Interface
 import IPostsGrid from '@interface/postsGrid';
 
@@ -6,6 +11,12 @@ import { useStyletron } from 'baseui';
 
 // Components
 import BlogCard from '@components/Blog/BlogCard';
+import BlogFilters from '@components/Blog/BlogFilters';
+import { H4 } from 'baseui/typography';
+
+const {
+  BLOG: { NO_POSTS_LABEL, NO_POSTS_LABEL_2 },
+} = CONTENT;
 
 const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
   // Style
@@ -28,7 +39,22 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
     },
   });
 
-  const postItems = posts.map((post) => {
+  const noPostsLabelStyle = css({
+    marginTop: '80px',
+    textAlign: 'center',
+  });
+
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const filteredPosts = selectedFilters.length
+    ? posts.filter((post) => {
+        return selectedFilters.some((filter) => {
+          return post.blogPostType.includes(filter);
+        });
+      })
+    : posts;
+
+  const postItems = filteredPosts.map((post) => {
     const {
       id,
       postSlug,
@@ -56,7 +82,23 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
     );
   });
 
-  return <div className={gridWrapperStyle}>{postItems}</div>;
+  return (
+    <>
+      <BlogFilters
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+      />
+      {postItems.length ? (
+        <div className={gridWrapperStyle}>{postItems}</div>
+      ) : (
+        <div className={noPostsLabelStyle}>
+          <H4>
+            {NO_POSTS_LABEL} <br /> {NO_POSTS_LABEL_2}
+          </H4>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default PostsGrind;

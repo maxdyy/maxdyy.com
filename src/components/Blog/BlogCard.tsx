@@ -14,7 +14,7 @@ import { useStyletron } from 'baseui';
 // Components
 import { HeadingMedium, ParagraphMedium } from 'baseui/typography';
 import Link from 'next/link';
-import { Tag, VARIANT } from 'baseui/tag';
+import { Tag, VARIANT, SIZE } from 'baseui/tag';
 import TiltWrapper from '@components/UI/TiltWrapper';
 import SmartImage from '@components/UI/SmartImage';
 
@@ -81,6 +81,7 @@ const BlogCard: React.FC<IBlogCard> = ({
         closeable={false}
         variant={VARIANT.solid}
         key={`${id}-${blogType}`}
+        size={SIZE.medium}
       >
         {blogType}
       </Tag>
