@@ -7,7 +7,8 @@ import Layout from '@components/UI/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 import BodyWrapper from '@components/UI/BodyWrapper';
 import ContactForm from '@components/Contact/ContactForm';
-import { H1, Paragraph1 } from 'baseui/typography';
+import { Paragraph1 } from 'baseui/typography';
+import MainTitle from '@components/UI/MainTitle';
 
 const {
   HEAD: { TITLE, DESCRIPTION, KEYWORDS, AUTHOR, LOGO },
@@ -25,7 +26,7 @@ const Contact: React.FC = () => {
         imageUrl={LOGO}
       />
       <BodyWrapper>
-        <H1>{CONTACT.TITLE}</H1>
+        <MainTitle title={CONTACT.TITLE} />
         <Paragraph1>
           <span dangerouslySetInnerHTML={createMarkup(CONTACT.DESCRIPTION)} />
         </Paragraph1>

@@ -18,8 +18,9 @@ import { useStyletron } from 'baseui';
 import Layout from '@components/UI/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 import BodyWrapper from '@components/UI/BodyWrapper';
-import { H1, Paragraph1 } from 'baseui/typography';
+import { Paragraph1 } from 'baseui/typography';
 import ProjectsList from '@components/Work/ProjectsList';
+import MainTitle from '@components/UI/MainTitle';
 
 const { REVALIDATE_INTERVAL } = CONSTS;
 
@@ -46,7 +47,7 @@ const Work: React.FC<IWorkPage> = ({ projects }) => {
       />
       <BodyWrapper>
         <section className={sectionStyle}>
-          <H1>{WORK.TITLE}</H1>
+          <MainTitle title={WORK.TITLE} />
           <Paragraph1>
             <span dangerouslySetInnerHTML={createMarkup(WORK.DESCRIPTION)} />
           </Paragraph1>

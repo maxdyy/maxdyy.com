@@ -1,9 +1,9 @@
-import { blogPostType } from '@interface/post';
+import { blogPostTypes } from '@interface/post';
 
 interface IBlogCard {
   id: string;
   postSlug: string;
-  blogPostType: [blogPostType];
+  blogPostType: [blogPostTypes];
   image: {
     url: string;
     height: number;

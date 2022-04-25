@@ -15,8 +15,9 @@ import getPosts from '@api/get/posts';
 import Layout from '@components/UI/Layout';
 import SeoHead from '@components/SEO/SeoHead';
 import BodyWrapper from '@components/UI/BodyWrapper';
-import { H1, Paragraph1 } from 'baseui/typography';
+import { Paragraph1 } from 'baseui/typography';
 import PostsGrind from '@components/Blog/PostsGrid';
+import MainTitle from '@components/UI/MainTitle';
 
 const { REVALIDATE_INTERVAL } = CONSTS;
 const {
@@ -37,7 +38,7 @@ const Blog = ({ posts }: IBlogPage) => {
         />
         <BodyWrapper>
           <section>
-            <H1>{BLOG.TITLE}</H1>
+            <MainTitle title={BLOG.TITLE} />
             <Paragraph1>
               <span
                 dangerouslySetInnerHTML={createMarkup(BLOG.DESCRIPTION)}

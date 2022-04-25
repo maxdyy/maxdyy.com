@@ -8,8 +8,9 @@ import { useStyletron } from 'baseui';
 // Components
 import avatarImg from '@public/avatar.png';
 import Image from 'next/image';
-import { H1, Paragraph1 } from 'baseui/typography';
+import { Paragraph1 } from 'baseui/typography';
 import TiltWrapper from '@components/UI/TiltWrapper';
+import MainTitle from '@components/UI/MainTitle';
 
 // Style
 import { wrapper, flexCenter } from '@styles/styles';
@@ -59,7 +60,7 @@ const MainBanner: React.FC = () => {
   return (
     <div className={wrapperStyle}>
       <div className={topSectionStyle}>
-        <H1 className={mainTitleStyle}>{TITLE}</H1>
+        <MainTitle className={mainTitleStyle} title={TITLE} />
         <Paragraph1>
           <span dangerouslySetInnerHTML={createMarkup(DESCRIPTION)}></span>
         </Paragraph1>

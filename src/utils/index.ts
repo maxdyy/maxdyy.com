@@ -1,17 +1,17 @@
 import DOMPurify from 'isomorphic-dompurify';
 
-import { blogPostType } from '@interface/post';
+import { blogPostTypes } from '@interface/post';
 import { KIND } from 'baseui/tag';
 
-export const getBlogPostTagKind = (postType: blogPostType) => {
+export const getBlogPostTagKind = (postType: blogPostTypes) => {
   switch (postType) {
-    case blogPostType.career:
+    case blogPostTypes.career:
       return KIND.red;
-    case blogPostType.web:
+    case blogPostTypes.web:
       return KIND.blue;
-    case blogPostType.dev:
+    case blogPostTypes.dev:
       return KIND.green;
-    case blogPostType.tech:
+    case blogPostTypes.tech:
       return KIND.yellow;
     default:
       return KIND.purple;

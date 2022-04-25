@@ -1,6 +1,6 @@
 import ICmsImage from '@interface/cmsImage';
 
-export enum blogPostType {
+export enum blogPostTypes {
   career = 'career',
   web = 'web',
   dev = 'dev',
@@ -11,7 +11,7 @@ interface IPost {
   id: string;
   postSlug: string;
   createdAt: string;
-  blogPostType: [blogPostType];
+  blogPostType: [blogPostTypes];
   postThumbnail: ICmsImage;
   postThumbnailBig: ICmsImage;
   postImage: ICmsImage;
