@@ -10,6 +10,7 @@ import IPostsGrid from '@interface/postsGrid';
 import { useStyletron } from 'baseui';
 
 // Components
+import NewBlogCard from '@components/Blog/NewBlogCard';
 import BlogCard from '@components/Blog/BlogCard';
 import BlogFilters from '@components/Blog/BlogFilters';
 import { H4 } from 'baseui/typography';
@@ -44,15 +45,18 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
     textAlign: 'center',
   });
 
+  const latestBlogPost = posts[0];
+  const mainBlogPosts = posts.slice(1);
+
   const [selectedFilters, setSelectedFilters] = useState([]);
 
   const filteredPosts = selectedFilters.length
-    ? posts.filter((post) => {
+    ? mainBlogPosts.filter((post) => {
         return selectedFilters.some((filter) => {
           return post.blogPostType.includes(filter);
         });
       })
-    : posts;
+    : mainBlogPosts;
 
   const postItems = filteredPosts.map((post) => {
     const {
@@ -84,6 +88,17 @@ const PostsGrind: React.FC<IPostsGrid> = ({ posts }) => {
 
   return (
     <>
+      <NewBlogCard
+        id={latestBlogPost.id}
+        createdAt={latestBlogPost.createdAt}
+        readtime={latestBlogPost.readtime}
+        blogPostType={latestBlogPost.blogPostType}
+        postSlug={latestBlogPost.postSlug}
+        image={latestBlogPost.postThumbnailBig}
+        imageAlt={latestBlogPost.postTitle}
+        title={latestBlogPost.postTitle}
+        paragraph={latestBlogPost.postDescription}
+      />
       <BlogFilters
         selectedFilters={selectedFilters}
         setSelectedFilters={setSelectedFilters}
