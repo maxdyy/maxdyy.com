@@ -56,8 +56,7 @@ const Privacy: React.FC = () => {
             <Paragraph1>
               * Company (referred to as either &quot;the Company&quot;,
               &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this
-              Agreement) refers to Individual Entrepreneur Maxdyy, Tbilisi, Vake
-              district, Zakaria Paliashvili Street, N 41.
+              Agreement) refers to Maksym Dmukhovskyy.
             </Paragraph1>
             <Paragraph1>
               * Cookies are small files that are placed on Your computer, mobile
