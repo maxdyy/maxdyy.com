@@ -77,7 +77,7 @@ const CONTENT = {
     },
     COPYRIGHT: {
       START: `© 2017-`,
-      END: ` | Individual Entrepreneur Maxdyy`,
+      END: ` | Maksym Dmukhovskyy`,
     },
   },
   HOME: {
